@@ -1,0 +1,7 @@
+body, #app-bar {
+  background-color: #FAFAFA;
+}
+
+#app-bar button {
+  color: #616161;
+}
