@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppBar, Toolbar, Grid, Button } from 'material-ui';
+import Home from './home/Home';
 import './App.css';
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
             <Button>Profiles</Button>
           </Toolbar>
         </AppBar>
+        <Home/>
       </Grid>
     );
   }
