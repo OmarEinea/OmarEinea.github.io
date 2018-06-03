@@ -1,7 +1,7 @@
 #  Omar Einea | Website
 
-A website about myself, made using ReactJS.
-It will include details about my projects, skills, certifications, courses and events I attended or organized.
+A website about myself, made using ReactJS. Its data is dynamically fetched from Firebase when it loads.
+It will include details about my projects, skills, certifications, profiles, courses and events I attended or organized.
 
 This website can be accessed through one of the following links:
 
@@ -14,6 +14,8 @@ This website can be accessed through one of the following links:
 - [ReactJS](https://github.com/facebook/react)
 - [Material UI](https://github.com/mui-org/material-ui)
 - [FetchJS](https://github.com/github/fetch)
+- [WebpackJS](https://github.com/webpack/webpack)
+- [BabelJS](https://github.com/babel/babel)
 
 
 ### License

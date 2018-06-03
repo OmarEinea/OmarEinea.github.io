@@ -1,5 +1,3 @@
-var webpack = require('webpack');
-
 module.exports = {
 	entry: './app/App.js',
 	output: {
@@ -15,6 +13,10 @@ module.exports = {
 				query: {
 					presets: ['env', 'react']
 				}
+			}, {
+				test: /\.css$/,
+				exclude: /node_modules/,
+				use: ['style-loader', 'css-loader']
 			}
 		]
 	},
