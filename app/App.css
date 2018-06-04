@@ -1,7 +1,3 @@
-body, #app-bar {
-  background-color: #FAFAFA;
-}
-
-#app-bar button {
-  color: #616161;
+body, header div {
+  background-color: #ECEFF1;
 }
