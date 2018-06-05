@@ -17,9 +17,25 @@
   height: 80px;
 }
 
+#profile a {
+  min-width: 0;
+  margin: 20px 4px;
+  border-radius: 25px;
+  color: #FAFAFA;
+  background-color: #DB236B;
+}
+
+#profile a[target] {
+  width: 36px;
+}
+
 @media screen and (min-width: 960px) {
   #bio {
     margin-left: 32px;
     height: 100%;
+  }
+
+  #profile a {
+    margin-bottom: 0;
   }
 }

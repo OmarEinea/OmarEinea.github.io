@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid, Typography, Avatar, Paper } from 'material-ui';
+import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
 import { url, get } from '../db';
 import './Home.css';
 
@@ -13,7 +13,7 @@ export default class Main extends Component {
   render() {
     return (
       <Grid container>
-        <Grid item md={4} xs={12} align="center">
+        <Grid item md={4} xs={12} align="center" id="profile">
           <span style={{position: 'relative'}}>
             <Avatar id="photo" src={url('photo')}/>
             <Avatar id="logo" src={url('logo')}/>
@@ -21,9 +21,21 @@ export default class Main extends Component {
           <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
             Omar Einea
           </Typography>
-          <Typography style={{fontSize: 17, color: '#616161', marginBottom: 16}}>
+          <Typography style={{fontSize: 17, color: '#616161'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
+          <Button variant="raised" href={url('resume.docx')}>
+            <i class="fas fa-download" style={{marginRight: 8, fontSize: 16}}/>Resume
+          </Button>
+          <Button variant="raised" target="_blank" href="https://www.linkedin.com/in/OmarEinea/">
+            <i class="fab fa-lg fa-linkedin"/>
+          </Button>
+          <Button variant="raised" target="_blank" href="https://github.com/OmarEinea/">
+            <i class="fab fa-lg fa-github"/>
+          </Button>
+          <Button variant="raised" target="_blank" href="https://stackoverflow.com/u/4794459/">
+            <i class="fab fa-lg fa-stack-overflow"/>
+          </Button>
         </Grid>
         <Grid item md={8} xs={12}>
           <Paper id="bio">
