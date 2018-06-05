@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MuiThemeProvider, createMuiTheme, AppBar, Toolbar, Grid, Button } from 'material-ui';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui';
+import { AppBar, Toolbar, Grid, Button } from 'material-ui';
 import Home from './home/Home';
 import './App.css';
+
+const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}});
 
 class App extends React.Component {
   render() {
     return (
-      <MuiThemeProvider theme={createMuiTheme({typography: {fontFamily: 'Quicksand'}})}>
+      <MuiThemeProvider theme={theme}>
         <Grid container style={{maxWidth: 1000, margin: '-8px auto'}}>
           <AppBar position="static" elevation="0">
             <Toolbar>
