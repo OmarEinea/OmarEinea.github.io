@@ -13,17 +13,22 @@ export default class Main extends Component {
   render() {
     return (
       <Grid container>
-        <Grid item md={4} xs={12}>
-          <div style={{position: 'relative', marginBottom: 16}}>
+        <Grid item md={4} xs={12} align="center">
+          <span style={{position: 'relative'}}>
             <Avatar id="photo" src={url('photo')}/>
             <Avatar id="logo" src={url('logo')}/>
-          </div>
-          <Typography variant="display1" align="center" gutterBottom>Omar Einea</Typography>
-          <Typography style={{fontSize: 18, color: '#424242'}} gutterBottom>Application Developer. Web, Mobile & PC.</Typography>
+          </span>
+          <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
+            Omar Einea
+          </Typography>
+          <Typography style={{fontSize: 17, color: '#616161', marginBottom: 16}}>
+            Application Developer. Web, Mobile & PC.
+          </Typography>
         </Grid>
         <Grid item md={8} xs={12}>
-          <Paper style={{marginLeft: 36, height: '100%'}}>
-            <Typography variant="subheading" style={{padding: 16}} dangerouslySetInnerHTML={{__html: this.state.bio}}/>
+          <Paper id="bio">
+            <Typography variant="subheading" style={{padding: 16}}
+              dangerouslySetInnerHTML={{__html: this.state.bio}}/>
           </Paper>
         </Grid>
       </Grid>

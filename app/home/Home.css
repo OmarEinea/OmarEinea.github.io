@@ -1,17 +1,25 @@
 #photo, #logo {
-  border: solid #616161 3px;
+  border: solid #757575 2px;
+  background-color: #757575;
 }
 
 #photo {
-  box-shadow: 0 0 0 1px black inset;
+  box-shadow: 0 0 0 1px #757575 inset;
   width: 320px;
   height: 320px;
 }
 
 #logo {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  left: 72px;
+  bottom: 4px;
   width: 80px;
   height: 80px;
+}
+
+@media screen and (min-width: 960px) {
+  #bio {
+    margin-left: 32px;
+    height: 100%;
+  }
 }
