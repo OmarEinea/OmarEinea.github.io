@@ -5,8 +5,8 @@ It will include details about my projects, skills, certifications, profiles, cou
 
 This website can be accessed through one of the following links:
 
+- https://omareinea.com
 - https://omareinea.github.io
-- https://omareinea.com (soon)
 
 
 ### Resources
@@ -15,8 +15,8 @@ This website can be accessed through one of the following links:
 - [Material UI](https://github.com/mui-org/material-ui)
 - [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 - [Quicksand Font](https://fonts.google.com/specimen/Quicksand)
-- [FetchJS](https://github.com/github/fetch)
 - [WebpackJS](https://github.com/webpack/webpack)
+- [FetchJS](https://github.com/github/fetch)
 - [BabelJS](https://github.com/babel/babel)
 
 
