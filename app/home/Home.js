@@ -21,7 +21,7 @@ export default class Main extends Component {
           <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
             Omar Einea
           </Typography>
-          <Typography style={{fontSize: 17, color: '#616161'}}>
+          <Typography style={{fontSize: 17, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
           <Button variant="raised" href={url('resume.docx')}>

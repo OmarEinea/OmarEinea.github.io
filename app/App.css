@@ -1,3 +1,20 @@
-body, header div {
+body {
   background-color: #ECEFF1;
+}
+
+#toolbar {
+  justify-content: center;
+  padding-left: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  #toolbar {
+    flex-flow: row wrap;
+    margin: 8px 0 16px;
+    padding: 0 8px;
+  }
+
+  #toolbar button {
+    margin: 8px 2px;
+  }
 }
