@@ -14,10 +14,10 @@ export default class Intro extends Component {
     return (
       <Grid container>
         <Grid item md={4} xs={12} align="center" id="profile">
-          <span style={{position: 'relative'}}>
+          <div style={{position: 'relative', width: 324, height: 324}}>
             <Avatar id="photo" src={url('photo')}/>
             <Avatar id="logo" src={url('logo')}/>
-          </span>
+          </div>
           <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
             Omar Einea
           </Typography>

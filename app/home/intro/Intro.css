@@ -5,13 +5,14 @@
 
 #photo {
   box-shadow: 0 0 0 1px #757575 inset;
-  width: 320px;
-  height: 320px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 #logo {
   position: absolute;
-  left: 72px;
+  right: 4px;
   bottom: 4px;
   width: 80px;
   height: 80px;

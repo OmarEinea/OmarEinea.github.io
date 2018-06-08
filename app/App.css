@@ -4,14 +4,13 @@ body {
 
 #toolbar {
   justify-content: center;
-  padding-left: 16px;
+  padding: 0;
 }
 
 @media screen and (max-width: 600px) {
   #toolbar {
     flex-flow: row wrap;
-    margin: 8px 0 16px;
-    padding: 0 8px;
+    margin: 8px 8px 16px;
   }
 
   #toolbar button {

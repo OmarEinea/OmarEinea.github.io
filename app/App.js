@@ -13,7 +13,7 @@ class App extends React.Component {
       <MuiThemeProvider theme={theme}>
         <Grid container direction="column" style={{maxWidth: 1000, margin: '-8px auto'}}>
           <Toolbar id="toolbar">
-            <Hidden smDown><div style={{width: 370}}/></Hidden>
+            <Hidden smDown><div style={{flexBasis: '36%'}}/></Hidden>
             <Button style={{color: '#9E125E'}}>Skills</Button>
             <Button style={{color: '#DB236B'}}>Projects</Button>
             <Button style={{color: '#E32f4C'}}>Certificates</Button>
