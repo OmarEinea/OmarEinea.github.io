@@ -21,19 +21,22 @@ export default class Intro extends Component {
           <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
             Omar Einea
           </Typography>
-          <Typography style={{fontSize: 17, color: '#616161', whiteSpace: 'nowrap'}}>
+          <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
-          <Button variant="raised" href={url('resume.docx')}>
+          <Button variant="raised" href="my/resume">
             <i class="fas fa-download" style={{marginRight: 8, fontSize: 16}}/>Resume
           </Button>
-          <Button variant="raised" target="_blank" href="https://www.linkedin.com/in/OmarEinea/">
+          <Button variant="raised" target="_self" href="mailto:hello@omareinea.com">
+            <i class="fas fa-lg fa-envelope"/>
+          </Button>
+          <Button variant="raised" target="_blank" href="my/linkedin">
             <i class="fab fa-lg fa-linkedin"/>
           </Button>
-          <Button variant="raised" target="_blank" href="https://github.com/OmarEinea/">
+          <Button variant="raised" target="_blank" href="my/github">
             <i class="fab fa-lg fa-github"/>
           </Button>
-          <Button variant="raised" target="_blank" href="https://stackoverflow.com/u/4794459/">
+          <Button variant="raised" target="_blank" href="my/stackoverflow">
             <i class="fab fa-lg fa-stack-overflow"/>
           </Button>
         </Grid>
