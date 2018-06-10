@@ -1,5 +1,14 @@
 body {
   background-color: #ECEFF1;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
 }
 
 #toolbar {

@@ -7,12 +7,12 @@ export default class Intro extends Component {
   constructor() {
     super();
     this.state = {bio: ''};
-    get('bio').then(data => data.json()).then(bio => this.setState({bio}));
+    get('home/bio').then(data => data.json()).then(bio => this.setState({bio}));
   }
 
   render() {
     return (
-      <Grid container>
+      <Grid container class="container" style={{marginBottom: 24}}>
         <Grid item md={4} xs={12} align="center" id="profile">
           <div style={{position: 'relative', width: 324, height: 324}}>
             <Avatar id="photo" src={url('photo')}/>

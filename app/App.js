@@ -11,15 +11,15 @@ class App extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <Grid container direction="column" style={{maxWidth: 1000, margin: '-8px auto'}}>
-          <Toolbar id="toolbar">
+        <Grid container direction="column">
+          <Toolbar id="toolbar" class="container">
             <Hidden smDown><div style={{flexBasis: '36%'}}/></Hidden>
             <Button style={{color: '#9E125E'}}>Skills</Button>
             <Button style={{color: '#DB236B'}}>Projects</Button>
             <Button style={{color: '#E32f4C'}}>Certificates</Button>
-            <Button style={{color: '#F24354'}}>Events</Button>
-            <Button style={{color: '#FA5E35'}}>Courses</Button>
-            <Button style={{color: '#FE7131'}}>Profiles</Button>
+            <Button style={{color: '#F24354'}}>Courses</Button>
+            <Button style={{color: '#FA5E35'}}>Events</Button>
+            <Button style={{color: '#FE7131'}}>Story</Button>
           </Toolbar>
           <Home/>
         </Grid>
