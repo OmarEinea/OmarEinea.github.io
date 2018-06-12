@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
 import { url } from '../../db';
 import fetch from 'fetch';
+import './Profiles.css';
 
 export default class Profiles extends Component {
   constructor() {

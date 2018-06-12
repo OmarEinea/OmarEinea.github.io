@@ -1,0 +1,63 @@
+.js-calendar-graph-svg {
+  float: right;
+  font-size: 12px;
+  fill: #9E9E9E;
+}
+
+#graph {
+  overflow: hidden;
+  max-width: 610px;
+  margin-left: 38px;
+}
+
+#legend {
+  margin-left: 26px;
+  font-size: 13px;
+  color: #424242;
+  padding: 12px;
+}
+
+#legend ul {
+  display: inline-block;
+  margin: 0 5px 0 3px;
+  padding: 0;
+}
+
+#legend ul li {
+  margin-left: 3px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+#github {
+  padding: 24px 16px 16px;
+}
+
+#github h3 {
+  color: #424242;
+  padding: 12px 14px 0;
+}
+
+#github i {
+  padding-right: 8px;
+  color: #424242;
+}
+
+#github b {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  #graph {
+    margin: auto;
+  }
+  #legend {
+    margin: 0;
+  }
+  #github {
+    padding: 16px 8px;
+  }
+}
