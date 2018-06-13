@@ -3,12 +3,33 @@ body {
   margin: 0;
 }
 
+b {
+  font-weight: 500;
+}
+
+.font {
+  font-family: 'Quicksand';
+}
+
 .container {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   width: 100%;
+}
+
+.container.box {
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 8px;
+  }
 }
 
 #toolbar {
@@ -19,7 +40,7 @@ body {
 @media screen and (max-width: 600px) {
   #toolbar {
     flex-flow: row wrap;
-    margin: 8px 8px 16px;
+    margin: 8px 0 16px;
   }
 
   #toolbar button {
