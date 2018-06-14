@@ -1,13 +1,13 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { url } from '../../db';
+import { get, url } from '../../db';
 import fetch from 'fetch';
 import './Profiles.css';
 
 export default class Profiles extends Component {
   constructor() {
     super();
-    this.state = {graph: {}, github: {}};
+    this.state = {graph: {}, github: {}, stack: {}, xda: {}};
     fetch('https://urlreq.appspot.com/req?method=GET&url=' +
           'https://github.com/users/OmarEinea/contributions')
       .then(data => data.text()).then(html => {
@@ -21,8 +21,23 @@ export default class Profiles extends Component {
     fetch('https://api.github.com/users/OmarEinea').then(data => data.json())
       .then(github => this.setState({github: {
         followers: github.followers,
-        repos: github.public_repos
+        repos: github.public_repos,
+        stars: this.state.github.stars
       }}));
+    get('home/profiles').then(data => data.json())
+      .then(profiles => this.setState({
+        xda: profiles.xda, github: {
+          stars: profiles.github.stars,
+          repos: this.state.github.repos,
+          followers: this.state.github.followers
+        }
+      }));
+    fetch('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow')
+      .then(data => data.json()).then(stack => {
+        const { reputation } = stack.items[0];
+        const { gold, silver, bronze } = stack.items[0].badge_counts;
+        this.setState({stack: {reputation, gold, silver, bronze}});
+      });
   }
 
   render() {
@@ -34,7 +49,7 @@ export default class Profiles extends Component {
           </Grid>
           <Grid container class="container box">
             <Grid item sm={4} xs={12} id="github">
-              <img width="160" src={url('logos/github.png')}></img>
+              <img height="50" src={url('logos/gh.png')}></img>
               <Typography variant="subheading">
                 <i class="fas fa-fw fa-hdd"/>
                 <b>{this.state.github.repos}</b> Repositories
@@ -42,6 +57,10 @@ export default class Profiles extends Component {
               <Typography variant="subheading">
                 <i class="fas fa-fw fa-user-friends"/>
                 <b>{this.state.github.followers}</b> Followers
+              </Typography>
+              <Typography variant="subheading">
+                <i class="fas fa-fw fa-star"/>
+                <b>{this.state.github.stars}</b> Stars
               </Typography>
             </Grid>
             <Grid item sm={8} xs={12} justify="center" class="font">
@@ -59,6 +78,43 @@ export default class Profiles extends Component {
                   </ul>
                   More
                 </div>
+              </div>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item sm={6} xs={12}>
+              <div class="box flair" style={{marginRight: 8}}>
+                <img height="45" src={url('logos/so.png')}></img>
+                <Typography variant="title">
+                  <i class="fas fa-fw fa-thumbs-up"/>
+                  {this.state.stack.reputation} Up Votes
+                </Typography>
+                <Typography variant="subheading">
+                  <i class="fas fa-fw fa-trophy" style={{marginLeft: 2}}/> Badges
+                  <b style={{color: '#c38b5f'}}>
+                    <i class="fas fa-fw fa-certificate"/> {this.state.stack.bronze}
+                  </b>
+                  <b style={{color: '#8c9298'}}>
+                    <i class="fas fa-fw fa-certificate"/> {this.state.stack.silver}
+                  </b>
+                  <b style={{color: '#cda400'}}>
+                    <i class="fas fa-fw fa-certificate"/> {this.state.stack.gold}
+                  </b>
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item sm={6} xs={12}>
+              <div class="box flair" style={{marginLeft: 8}}>
+                <img height="45" src={url('logos/xda.png')}></img>
+                <Typography variant="title">
+                  <i class="fas fa-fw fa-thumbs-up"/>
+                  {this.state.xda.thanks} Thanks
+                </Typography>
+                <Typography variant="subheading">
+                  <i class="fas fa-fw fa-user-edit" style={{margin: '0 3px'}}/>
+                  <b>{this.state.xda.posts}</b> Posts
+                  in <b>{this.state.xda.threads}</b> Threads
+                </Typography>
               </div>
             </Grid>
           </Grid>
