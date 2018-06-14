@@ -19,10 +19,11 @@ b {
   width: 100%;
 }
 
-.container.box {
+.box {
   border: 1px solid #DDDDDD;
   border-radius: 2px;
-  margin-bottom: 8px;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
   padding: 8px;
 }
 

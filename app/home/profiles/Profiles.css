@@ -31,23 +31,42 @@
 }
 
 #github {
-  padding: 24px 16px 16px;
+  padding: 24px 28px 16px;
 }
 
 #github h3 {
   color: #424242;
-  padding: 12px 14px 0;
+  padding-top: 12px;
 }
 
 #github i {
   padding-right: 8px;
-  color: #424242;
 }
 
 #github b {
   width: 20px;
   display: inline-block;
   text-align: center;
+}
+
+.box.flair {
+  padding: 28px 36px;
+}
+
+.flair h2, .flair h3 {
+  padding-top: 16px;
+  color: #424242;
+}
+
+.flair > * > i {
+  padding-right: 8px;
+}
+
+.flair b i {
+  font-size: 11px;
+  vertical-align: text-top;
+  line-height: 20px;
+  margin-left: 8px;
 }
 
 @media screen and (max-width: 960px) {
@@ -58,6 +77,16 @@
     margin: 0;
   }
   #github {
-    padding: 16px 8px;
+    padding: 20px;
+  }
+  .box.flair {
+    padding: 20px 28px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box.flair {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
