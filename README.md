@@ -15,9 +15,6 @@ This website can be accessed through one of the following links:
 - [Material UI](https://github.com/mui-org/material-ui)
 - [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 - [Quicksand Font](https://fonts.google.com/specimen/Quicksand)
-- [WebpackJS](https://github.com/webpack/webpack)
-- [FetchJS](https://github.com/github/fetch)
-- [BabelJS](https://github.com/babel/babel)
 
 
 ### License

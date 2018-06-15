@@ -86,7 +86,6 @@
 
 @media screen and (max-width: 600px) {
   .box.flair {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 0 12px !important;
   }
 }

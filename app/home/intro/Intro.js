@@ -15,8 +15,8 @@ export default class Intro extends Component {
       <Grid container class="container" style={{marginBottom: 36}}>
         <Grid item md={4} xs={12} align="center" id="profile">
           <div style={{position: 'relative', width: 324, height: 324}}>
-            <Avatar id="photo" src={url('photo')}/>
-            <Avatar id="logo" src={url('logo')}/>
+            <Avatar id="photo" src={url('my/photo')}/>
+            <Avatar id="logo" src={url('my/logo')}/>
           </div>
           <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
             Omar Einea

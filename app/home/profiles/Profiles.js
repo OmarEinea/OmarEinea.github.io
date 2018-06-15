@@ -43,13 +43,13 @@ export default class Profiles extends Component {
   render() {
     return (
       <Grid container style={{backgroundColor: '#FAFAFA'}}>
-        <Grid container class="container">
+        <Grid container class="container" style={{paddingTop: 16, paddingBottom: 24}}>
           <Grid container justify="center">
-            <Typography variant="display1" style={{padding: 24}}>My Dev Profiles</Typography>
+            <Typography variant="display1" style={{padding: 28}}>My Dev Profiles</Typography>
           </Grid>
           <Grid container class="container box">
             <Grid item sm={4} xs={12} id="github">
-              <img height="50" src={url('logos/gh.png')}></img>
+              <a href="my/github"><img height="50" src={url('logos/gh.png')}></img></a>
               <Typography variant="subheading">
                 <i class="fas fa-fw fa-hdd"/>
                 <b>{this.state.github.repos}</b> Repositories
@@ -69,7 +69,7 @@ export default class Profiles extends Component {
               </Typography>
               <div id="graph" dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
               <div id="legend">
-                Summary of commits made by <a href="my/github">@OmarEinea</a>
+                Commits made by me
                 <div style={{float: 'right'}}>
                   Less
                   <ul>
@@ -83,8 +83,8 @@ export default class Profiles extends Component {
           </Grid>
           <Grid container>
             <Grid item sm={6} xs={12}>
-              <div class="box flair" style={{marginRight: 8}}>
-                <img height="45" src={url('logos/so.png')}></img>
+              <div class="box flair" style={{marginRight: 12}}>
+                <a href="my/stackoverflow"><img height="45" src={url('logos/so.png')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {this.state.stack.reputation} Up Votes
@@ -104,8 +104,8 @@ export default class Profiles extends Component {
               </div>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <div class="box flair" style={{marginLeft: 8}}>
-                <img height="45" src={url('logos/xda.png')}></img>
+              <div class="box flair" style={{marginLeft: 12}}>
+                <a href="my/xda-developers"><img height="45" src={url('logos/xda.png')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {this.state.xda.thanks} Thanks

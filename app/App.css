@@ -1,6 +1,19 @@
 body {
   background-color: #ECEFF1;
+  position: relative;
   margin: 0;
+}
+
+body::before {
+  background: url(app/pattern.jpg);
+  position: absolute;
+  opacity: .04;
+  z-index: -1;
+  content: "";
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 b {
@@ -22,8 +35,8 @@ b {
 .box {
   border: 1px solid #DDDDDD;
   border-radius: 2px;
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
+  margin-top: 12px !important;
+  margin-bottom: 12px !important;
   padding: 8px;
 }
 
@@ -36,12 +49,13 @@ b {
 #toolbar {
   justify-content: center;
   padding: 0;
+  margin: 8px auto;
 }
 
 @media screen and (max-width: 600px) {
   #toolbar {
     flex-flow: row wrap;
-    margin: 8px 0 16px;
+    margin-bottom: 16px;
   }
 
   #toolbar button {
