@@ -8,16 +8,18 @@ export default class Profiles extends Component {
   constructor() {
     super();
     this.state = {graph: {}, github: {}, stack: {}, xda: {}};
-    fetch('https://urlreq.appspot.com/req?method=GET&url=' +
-          'https://github.com/users/OmarEinea/contributions')
-      .then(data => data.text()).then(html => {
-        let regex = /data-count="([0-9]+)"/g, match, commits = 0;
-        html = html.replace('width="676" height="104"', 'width="667" height="108"')
-                   .replace('translate(16, 20)', 'translate(20, 24)');
-        while(match = regex.exec(html))
-          commits += Number(match[1]);
-        this.setState({graph: {html, commits}});
-      });
+    if(process.env.NODE_ENV === 'production') {
+      fetch('https://urlreq.appspot.com/req?method=GET&url=' +
+            'https://github.com/users/OmarEinea/contributions')
+        .then(data => data.text()).then(html => {
+          let regex = /data-count="([0-9]+)"/g, match, commits = 0;
+          html = html.replace('width="676" height="104"', 'width="667" height="108"')
+                     .replace('translate(16, 20)', 'translate(20, 24)');
+          while(match = regex.exec(html))
+            commits += Number(match[1]);
+          this.setState({graph: {html, commits}});
+        });
+    }
     fetch('https://api.github.com/users/OmarEinea').then(data => data.json())
       .then(github => this.setState({github: {
         followers: github.followers,
