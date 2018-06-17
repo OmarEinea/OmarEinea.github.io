@@ -6,14 +6,21 @@ body {
 
 body::before {
   background: url(app/pattern.jpg);
-  position: absolute;
   opacity: .04;
   z-index: -1;
   content: "";
+}
+
+body::before, #footer > :first-child {
+  position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
   top: 0;
+}
+
+#footer * {
+  color: #FAFAFA !important;
 }
 
 b {
