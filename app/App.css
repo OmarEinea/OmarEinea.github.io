@@ -6,7 +6,7 @@ body {
 
 body::before {
   background: url(app/pattern.jpg);
-  opacity: .04;
+  opacity: .05;
   z-index: -1;
   content: "";
 }

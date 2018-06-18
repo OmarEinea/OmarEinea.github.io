@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { get, url } from '../../db';
+import { get, logo } from '../../db';
 import fetch from 'fetch';
 import './Profiles.css';
 
@@ -51,7 +51,7 @@ export default class Profiles extends Component {
           </Grid>
           <Grid container class="container box">
             <Grid item sm={4} xs={12} id="github">
-              <a href="my/github"><img height="50" src={url('logos/gh.png')}></img></a>
+              <a href="my/github"><img height="50" src={logo('gh')}></img></a>
               <Typography variant="subheading">
                 <i class="fas fa-fw fa-hdd"/>
                 <b>{this.state.github.repos}</b> Repositories
@@ -86,7 +86,7 @@ export default class Profiles extends Component {
           <Grid container>
             <Grid item sm={6} xs={12}>
               <div class="box flair" style={{marginRight: 12}}>
-                <a href="my/stackoverflow"><img height="45" src={url('logos/so.png')}></img></a>
+                <a href="my/stackoverflow"><img height="45" src={logo('so')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {this.state.stack.reputation} Up Votes
@@ -107,7 +107,7 @@ export default class Profiles extends Component {
             </Grid>
             <Grid item sm={6} xs={12}>
               <div class="box flair" style={{marginLeft: 12}}>
-                <a href="my/xda-developers"><img height="45" src={url('logos/xda.png')}></img></a>
+                <a href="my/xda-developers"><img height="45" src={logo('xda')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {this.state.xda.thanks} Thanks
