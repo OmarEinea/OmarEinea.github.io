@@ -9,7 +9,7 @@ export default class Circle extends Component {
       <Grid item direction="column" align="center" style={{margin: 16}}>
         <div style={{position: 'relative', marginBottom: 8}}>
           <CircularProgress variant="static" value={100} thickness={7} size={150}
-            style={{position: 'absolute', left: 0, top: 0, color: '#EEE'}}/>
+            style={{position: 'absolute', left: 0, top: 0, color: '#ECECEC'}}/>
           <CircularProgress variant="static" value={rate} thickness={7} size={150}/>
           <img width="60" src={logo(name)} style={{position: 'absolute', left: 45, top: 45}}/>
         </div>
