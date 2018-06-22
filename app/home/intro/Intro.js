@@ -18,14 +18,15 @@ export default class Intro extends Component {
             <Avatar id="photo" src={url('my/photo')}/>
             <Avatar id="logo" src={url('my/logo')}/>
           </div>
-          <Typography variant="display1" style={{margin: '12px 0', fontWeight: 300}}>
+          <Typography variant="display1" style={{margin: '12px 0'}}>
             Omar Einea
           </Typography>
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
           <Button variant="raised" href="my/resume">
-            <i class="fas fa-download" style={{marginRight: 8, fontSize: 16}}/>Resume
+            <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
+            Resume
           </Button>
           <Button variant="raised" target="_self" href="mailto:hello@omareinea.com">
             <i class="fas fa-lg fa-envelope"/>

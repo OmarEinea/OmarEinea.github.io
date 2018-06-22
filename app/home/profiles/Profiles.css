@@ -4,15 +4,7 @@
   fill: #9E9E9E;
 }
 
-#graph {
-  overflow: hidden;
-  max-width: 610px;
-  margin-left: 38px;
-}
-
 #legend {
-  margin-left: 26px;
-  font-size: 13px;
   color: #424242;
   padding: 12px;
 }
@@ -70,12 +62,6 @@
 }
 
 @media screen and (max-width: 960px) {
-  #graph {
-    margin: auto;
-  }
-  #legend {
-    margin: 0;
-  }
   #github {
     padding: 20px;
   }

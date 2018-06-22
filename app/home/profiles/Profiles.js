@@ -13,8 +13,9 @@ export default class Profiles extends Component {
             'https://github.com/users/OmarEinea/contributions')
         .then(data => data.text()).then(html => {
           let regex = /data-count="([0-9]+)"/g, match, commits = 0;
-          html = html.replace('width="676" height="104"', 'width="667" height="108"')
-                     .replace('translate(16, 20)', 'translate(20, 24)');
+          html = html.replace('translate(16, 20)', 'translate(20, 24)')
+                     .replace('height="104"', 'height="108"')
+                     .replace(/dx="-14"/g, 'dx="-20"');
           while(match = regex.exec(html))
             commits += Number(match[1]);
           this.setState({graph: {html, commits}});
@@ -49,8 +50,8 @@ export default class Profiles extends Component {
           <Grid container justify="center">
             <Typography variant="display1" style={{padding: 28}}>My Dev Profiles</Typography>
           </Grid>
-          <Grid container class="container box">
-            <Grid item sm={4} xs={12} id="github">
+          <Grid container class="box">
+            <Grid item md={3} xs={12} id="github">
               <a href="my/github"><img height="50" src={logo('gh')}></img></a>
               <Typography variant="subheading">
                 <i class="fas fa-fw fa-hdd"/>
@@ -65,22 +66,25 @@ export default class Profiles extends Component {
                 <b>{this.state.github.stars}</b> Stars
               </Typography>
             </Grid>
-            <Grid item sm={8} xs={12} justify="center" class="font">
-              <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
-                {this.state.graph.commits} contributions last year
-              </Typography>
-              <div id="graph" dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
-              <div id="legend">
-                Commits made by me
-                <div style={{float: 'right'}}>
-                  Less
-                  <ul>
-                    {['#eee', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-                      .map(color => <li style={{backgroundColor: color}}></li>)}
-                  </ul>
-                  More
-                </div>
-              </div>
+            <Grid item md={9} xs={12} align="center">
+              <Grid item style={{maxWidth: 685}}>
+                <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
+                  {this.state.graph.commits} contributions last year
+                </Typography>
+                <div class="font" style={{overflow: 'hidden', marginLeft: 8}}
+                  dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
+                <Typography variant="caption" align="left" id="legend">
+                  Commits made by me
+                  <div style={{float: 'right'}}>
+                    Less
+                    <ul>
+                      {['#eee', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+                        .map(color => <li style={{backgroundColor: color}}></li>)}
+                    </ul>
+                    More
+                  </div>
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
           <Grid container>
