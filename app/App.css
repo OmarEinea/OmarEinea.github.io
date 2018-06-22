@@ -53,6 +53,16 @@ b {
   }
 }
 
+@media screen and (max-width: 960px) {
+  .no-sm-padding {
+    padding: 0 !important;
+  }
+
+  .no-sm-padding .box:first-child {
+    margin-bottom: 0 !important;
+  }
+}
+
 #toolbar {
   justify-content: center;
   padding: 0;
