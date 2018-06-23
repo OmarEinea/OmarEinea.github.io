@@ -4,9 +4,9 @@ import { url, get } from '../../db';
 import './Intro.css';
 
 export default class Intro extends Component {
-  constructor() {
-    super();
-    this.state = {bio: ''};
+  state = {bio: ''};
+
+  componentWillMount() {
     get('home/bio').then(data => data.json()).then(bio => this.setState({bio}));
   }
 

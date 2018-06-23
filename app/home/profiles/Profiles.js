@@ -5,9 +5,9 @@ import fetch from 'fetch';
 import './Profiles.css';
 
 export default class Profiles extends Component {
-  constructor() {
-    super();
-    this.state = {graph: {}, github: {}, stack: {}, xda: {}};
+  state = {graph: {}, github: {}, stack: {}, xda: {}};
+
+  componentWillMount() {
     if(process.env.NODE_ENV === 'production') {
       fetch('https://urlreq.appspot.com/req?method=GET&url=' +
             'https://github.com/users/OmarEinea/contributions')

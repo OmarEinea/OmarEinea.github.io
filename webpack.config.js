@@ -12,7 +12,7 @@ module.exports = {
 				exclude: /node_modules/,
 				query: {
 					presets: ['env', 'react'],
-					plugins: ['react-html-attrs']
+					plugins: ['react-html-attrs', 'transform-class-properties']
 				}
 			}, {
 				test: /\.css$/,

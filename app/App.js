@@ -11,10 +11,7 @@ const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
   pages = {Home, Skills: '', Projects: '', Certificates: '', Courses: '', Events: '', Story: ''};
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {page: 'Home'};
-  }
+  state = {page: 'Home'};
 
   render() {
     const CurrentPage = pages[this.state.page] || Home;
