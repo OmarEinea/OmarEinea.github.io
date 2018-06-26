@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme, Hidden } from 'material-ui';
-import { Grid, Toolbar, Button } from 'material-ui';
+import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
 import Home from './home/Home';
 import Skills from './skills/Skills';
 import Footer from './Footer';
+import { url } from './db';
 import './App.css';
 
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
@@ -14,16 +15,40 @@ const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
 class App extends React.Component {
   state = {page: 'Home'};
 
+  goto(page) {
+    this.setState({page});
+    document.title = 'Omar Einea | ' + page;
+  }
+
+  buttonColor(page, index) {
+    return {
+      color: colors[index],
+      boxShadow: this.state.page === page ?
+        'inset 0px 0px 0px 1px ' + colors[index] : 'unset'
+    };
+  }
+
   render() {
-    const CurrentPage = pages[this.state.page] || Home;
+    const currentPage = this.state.page, CurrentPage = pages[currentPage] || (() => <p/>);
     return (
       <MuiThemeProvider theme={theme}>
         <Grid container direction="column">
-          <Toolbar id="toolbar" class="container">
-            <Hidden smDown><div style={{flexBasis: '36%'}}/></Hidden>
+          <Toolbar id="toolbar" class={'container' + (currentPage === 'Home' ? '' : ' not-home')}>
+            <Hidden smDown>
+              <div style={{flexBasis: '36%'}}>
+                <Grid container id="home-link">
+                  <Avatar style={{border: '1px solid #757575', cursor: 'pointer'}}
+                    onClick={() => this.goto('Home')} src={url('my/logo')}/>
+                  <Typography variant="headline" onClick={() => this.goto('Home')}
+                    style={{lineHeight: '42px', marginLeft: 12, color: '#616161', cursor: 'pointer'}}>
+                    Omar Einea
+                  </Typography>
+                </Grid>
+              </div>
+            </Hidden>
             {Object.keys(pages).slice(1).map((page, index) =>
-              <Button onClick={() => this.setState({page})}
-                style={{color: colors[index]}}>{page}</Button>
+              <Button style={this.buttonColor(page, index)}
+                onClick={() => this.goto(page)}>{page}</Button>
             )}
           </Toolbar>
           <CurrentPage/>

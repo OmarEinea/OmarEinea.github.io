@@ -65,8 +65,8 @@ b {
 
 #toolbar {
   justify-content: center;
-  padding: 0;
-  margin: 8px auto;
+  padding: 8px 0;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -78,4 +78,14 @@ b {
   #toolbar button {
     margin: 8px 2px;
   }
+}
+
+#toolbar.not-home {
+  border-bottom: solid 1.5px;
+  border-image: linear-gradient(to right, #9E125E, #FE7131);
+  border-image-slice: 1;
+}
+
+#toolbar:not(.not-home) #home-link {
+  display: none;
 }
