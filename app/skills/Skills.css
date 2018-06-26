@@ -1,0 +1,23 @@
+#skills {
+  margin-top: -12px;
+  margin-bottom: 24px;
+}
+
+#skills h1 {
+  text-align: center;
+  padding-top: 42px;
+  padding-bottom: 28px;
+  color: #616161;
+  width: 100%;
+}
+
+#lines-list {
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 750px) {
+  #lines-list {
+    width: 100%;
+  }
+}

@@ -3,6 +3,7 @@ import { Grid, Typography, Paper } from 'material-ui';
 import { get } from '../db';
 import Circle from './widgets/Circle';
 import Line from './widgets/Line';
+import './Skills.css';
 
 export default class Skills extends Component {
   state = {circles: [], lines: []};

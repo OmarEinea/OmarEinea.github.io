@@ -6,7 +6,7 @@ export default class Line extends Component {
   render() {
     const [ name, rate ] = this.props.skill;
     return (
-      <Grid item direction="column" style={{margin: '12px 16px'}}>
+      <Grid item direction="column" style={{padding: '12px 16px'}}>
         <Typography variant="title" style={{color: '#424242', marginBottom: 6}}>
           {name}
         </Typography>
