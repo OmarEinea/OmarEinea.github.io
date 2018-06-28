@@ -8,7 +8,7 @@ export default class Skills extends Component {
   state = {circles: [], lines: []};
 
   componentWillMount() {
-    get('skills/top').then(data => data.json()).then(skills => this.setState({
+    get('skills/top').then(skills => this.setState({
       circles: Object.entries(skills.circles).reverse(),
       lines: Object.entries(skills.lines).reverse()
     }));

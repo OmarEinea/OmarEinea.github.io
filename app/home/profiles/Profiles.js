@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { get, logo } from '../../db';
+import { get, logo, json } from '../../db';
 import fetch from 'fetch';
 import './Profiles.css';
 
@@ -21,14 +21,13 @@ export default class Profiles extends Component {
           this.setState({graph: {html, commits}});
         });
     }
-    fetch('https://api.github.com/users/OmarEinea').then(data => data.json())
-      .then(github => this.setState({github: {
+    fetch('https://api.github.com/users/OmarEinea')
+      .then(json).then(github => this.setState({github: {
         followers: github.followers,
         repos: github.public_repos,
         stars: this.state.github.stars
       }}));
-    get('home/profiles').then(data => data.json())
-      .then(profiles => this.setState({
+    get('home/profiles').then(profiles => this.setState({
         xda: profiles.xda, github: {
           stars: profiles.github.stars,
           repos: this.state.github.repos,
@@ -36,7 +35,7 @@ export default class Profiles extends Component {
         }
       }));
     fetch('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow')
-      .then(data => data.json()).then(stack => {
+      .then(json).then(stack => {
         const { reputation } = stack.items[0];
         const { gold, silver, bronze } = stack.items[0].badge_counts;
         this.setState({stack: {reputation, gold, silver, bronze}});

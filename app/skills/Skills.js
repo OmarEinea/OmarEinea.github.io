@@ -21,9 +21,9 @@ export default class Skills extends Component {
   }
 
   componentWillMount() {
-    get('skills/circles').then(data => data.json()).then(skills => {
+    get('skills/circles').then(skills => {
       this.processData('circles')(skills);
-      get('skills/lines').then(data => data.json()).then(this.processData('lines'));
+      get('skills/lines').then(this.processData('lines'));
     });
   }
 

@@ -7,7 +7,7 @@ export default class Intro extends Component {
   state = {bio: ''};
 
   componentWillMount() {
-    get('home/bio').then(data => data.json()).then(bio => this.setState({bio}));
+    get('home/bio').then(bio => this.setState({bio}));
   }
 
   render() {
