@@ -9,7 +9,7 @@ export default class CertCard extends Component {
   render() {
     const [ title, { desc, auth } ] = this.props.data, { expanded } = this.state;
     return (
-      <Card style={{margin: '8px 6px', position: 'relative'}}>
+      <Card style={{margin: '6px 8px', position: 'relative'}}>
         <CardMedia style={{paddingTop: '70%', marginBottom: 82}}
           image={url(`certs/${title}.jpg`)}/>
         <ClickAwayListener onClickAway={() => {if(expanded) this.setState({expanded: false})}}>
