@@ -30,10 +30,10 @@ export default class Skills extends Component {
   render() {
     const { circles, lines } = this.state;
     return (
-      <Grid container class="container" id="skills">
+      <Grid container class="container" style={{marginBottom: 24}}>
         {circles.map(([category, skills]) =>
           <Grid container justify="center">
-            <Typography variant="display1">{category}</Typography>
+            <Typography variant="display1" class="category">{category}</Typography>
             {skills.map(skill =>
               <Paper style={{margin: 8}}><Circle skill={skill}/></Paper>
             )}
@@ -42,7 +42,7 @@ export default class Skills extends Component {
         <div style={{width: '100%'}}>
           {lines.map(([category, skills]) =>
             <div id="lines-list">
-              <Typography variant="display1">{category}</Typography>
+              <Typography variant="display1" class="category">{category}</Typography>
               <Paper style={{margin: 8, padding: '12px 8px 16px'}}>
                 {skills.map(skill => <Line skill={skill}/>)}
               </Paper>

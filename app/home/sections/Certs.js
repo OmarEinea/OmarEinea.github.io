@@ -20,7 +20,7 @@ export default class Certificates extends Component {
         </Grid>
         {this.state.certs.map((cert) =>
           <Grid item sm={4} xs={12}>
-            <CertCard data={cert}/>
+            <CertCard cert={cert}/>
           </Grid>
         )}
       </Grid>

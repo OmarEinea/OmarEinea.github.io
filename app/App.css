@@ -47,6 +47,14 @@ b {
   padding: 8px;
 }
 
+.category {
+  text-align: center;
+  padding-top: 42px;
+  padding-bottom: 28px;
+  color: #616161;
+  width: 100%;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     padding: 0 8px;
