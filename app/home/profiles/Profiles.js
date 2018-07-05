@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid, Typography } from 'material-ui';
+import { Grid, Typography, Hidden } from 'material-ui';
 import { get, logo, json } from '../../db';
 import fetch from 'fetch';
 import './Profiles.css';
@@ -86,9 +86,10 @@ export default class Profiles extends Component {
               </Grid>
             </Grid>
           </Grid>
+          <Hidden xsDown><Grid container style={{height: 4}}/></Hidden>
           <Grid container>
             <Grid item sm={6} xs={12}>
-              <div class="box flair" style={{marginRight: 12}}>
+              <div class="box flair">
                 <a href="my/stackoverflow"><img height="45" src={logo('so')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>
@@ -109,7 +110,7 @@ export default class Profiles extends Component {
               </div>
             </Grid>
             <Grid item sm={6} xs={12}>
-              <div class="box flair" style={{marginLeft: 12}}>
+              <div class="box flair">
                 <a href="my/xda-developers"><img height="45" src={logo('xda')}></img></a>
                 <Typography variant="title">
                   <i class="fas fa-fw fa-thumbs-up"/>

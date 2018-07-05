@@ -21,12 +21,12 @@ export default class Skills extends Component {
           <Grid container justify="center">
             <Typography variant="display1" style={{padding: 28}}>My Skills</Typography>
           </Grid>
-          <Grid container md={7} xs={12} style={{paddingRight: 12}} class="no-sm-padding">
+          <Grid container md={7} xs={12}>
             <Grid container justify="center" class="box">
               {this.state.circles.map(skill => <Circle skill={skill}/>)}
             </Grid>
           </Grid>
-          <Grid container md={5} xs={12} style={{paddingLeft: 12}} class="no-sm-padding">
+          <Grid container md={5} xs={12}>
             <Grid container direction="column" class="box">
               {this.state.lines.map(skill => <Line skill={skill}/>)}
             </Grid>

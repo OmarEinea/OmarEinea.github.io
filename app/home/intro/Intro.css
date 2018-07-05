@@ -18,7 +18,7 @@
   height: 80px;
 }
 
-#profile a {
+#intro a {
   min-width: 0;
   margin: 20px 4px;
   border-radius: 25px;
@@ -26,8 +26,12 @@
   background-color: #DB236B;
 }
 
-#profile a[target] {
+#intro a[target] {
   width: 36px;
+}
+
+#bio {
+  margin: 0 8px;
 }
 
 #bio ul {
@@ -44,7 +48,7 @@
     height: 100%;
   }
 
-  #profile a {
+  #intro a {
     margin-bottom: 0;
   }
 }

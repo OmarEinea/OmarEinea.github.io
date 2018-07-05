@@ -69,9 +69,3 @@
     padding: 20px 28px;
   }
 }
-
-@media screen and (max-width: 600px) {
-  .box.flair {
-    margin: 0 0 12px !important;
-  }
-}

@@ -30,10 +30,10 @@ class App extends React.Component {
   }
 
   render() {
-    const currentPage = this.state.page, CurrentPage = pages[currentPage] || (() => <p/>);
+    const currentPage = this.state.page, CurrentPage = pages[currentPage] || (() => <p style={{flex: 1}}/>);
     return (
       <MuiThemeProvider theme={theme}>
-        <Grid container direction="column">
+        <Grid id="root" container direction="column">
           <Toolbar id="toolbar" class={'container' + (currentPage === 'Home' ? '' : ' not-home')}>
             <Hidden smDown>
               <div style={{flexBasis: '36%'}}>
