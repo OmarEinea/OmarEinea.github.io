@@ -1,7 +1,17 @@
-.js-calendar-graph-svg {
-  float: right;
+#graph {
+  position: relative;
+  overflow: hidden;
+  margin-left: 8px;
+  height: 108px;
+}
+
+#graph .js-calendar-graph-svg {
+  font-family: 'Quicksand';
   font-size: 12px;
   fill: #9E9E9E;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #legend {

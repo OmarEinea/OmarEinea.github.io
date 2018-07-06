@@ -70,8 +70,7 @@ export default class Profiles extends Component {
                 <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
                   {this.state.graph.commits} contributions last year
                 </Typography>
-                <div class="font" style={{overflow: 'hidden', marginLeft: 8}}
-                  dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
+                <div id="graph" dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
                 <Typography variant="caption" align="left" id="legend">
                   Commits made by me
                   <div style={{float: 'right'}}>

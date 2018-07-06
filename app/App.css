@@ -35,10 +35,6 @@ b {
   font-weight: 500;
 }
 
-.font {
-  font-family: 'Quicksand';
-}
-
 .container {
   max-width: 1024px;
   margin-left: auto;
