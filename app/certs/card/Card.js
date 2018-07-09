@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { ClickAwayListener, Typography, Collapse, Modal } from 'material-ui';
+import { ClickAwayListener, Typography, Collapse } from 'material-ui';
 import { Card, CardMedia, CardContent, CardActions, IconButton } from 'material-ui';
+import Gallery from '../gallery/Gallery';
 import { url } from '../../db';
-import './Card.css';
 
 export default class CertCard extends Component {
   state = {text: false, image: false};
@@ -14,11 +14,10 @@ export default class CertCard extends Component {
       <Card style={{margin: '6px 8px', position: 'relative'}}>
         <CardMedia style={{paddingTop: '70%', marginBottom: 82, cursor: 'pointer'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}/>
-        <Modal open={image} onBackdropClick={() => this.setState({image: false})}>
-          <img class="modal-image" src={url(`certs/${title}.jpg`)}/>
-        </Modal>
+        <Gallery images={[title]} isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="82px" timeout="auto" class="collapse">
+          <Collapse in={text} collapsedHeight="82px" timeout="auto"
+            style={{position: 'absolute', bottom: 0, backgroundColor: 'white', maxHeight: '100%', width: '100%'}}>
             <CardContent style={{padding: 16}}>
               <Typography variant="title" style={{fontSize: 19, marginBottom: 8}} noWrap>
                 {title}

@@ -1,0 +1,7 @@
+.gallery > div:first-child {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.gallery > div:focus {
+  outline: 0;
+}
