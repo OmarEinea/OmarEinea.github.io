@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme, Hidden } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
@@ -13,7 +13,7 @@ const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
   colors = ['#9E125E', '#DB236B', '#E32f4C', '#F24354', '#FA5E35', '#FE7131'],
   pages = {Home, Skills, Projects: '', Certificates, Courses: '', Events: '', Story: ''};
 
-class App extends React.Component {
+class App extends Component {
   state = {page: 'Home'};
 
   goto(page) {

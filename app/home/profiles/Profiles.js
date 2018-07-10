@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Grid, Typography, Hidden } from 'material-ui';
 import { get, logo, json } from '../../db';
-import fetch from 'fetch';
+import 'fetch';
 import './Profiles.css';
 
 export default class Profiles extends Component {

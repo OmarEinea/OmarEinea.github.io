@@ -1,4 +1,4 @@
-import fetch from 'fetch';
+import 'fetch';
 
 export const json = data => data.json();
 export const get = query => fetch(`https://eineao-website.firebaseio.com/${query}.json`).then(json);
