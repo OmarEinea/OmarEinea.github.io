@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ClickAwayListener, Typography, Modal, Grid } from 'material-ui';
-import { url } from '../../db';
+import { url } from 'db';
 import './Gallery.css';
 
 export default class Gallery extends Component {

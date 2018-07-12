@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 module.exports = (_, { mode }) => {
   const configs = {
     entry: './app/App.js',
@@ -21,6 +23,15 @@ module.exports = (_, { mode }) => {
           use: ['style-loader', 'css-loader?url=false&minimize']
         }
       ]
+    },
+    resolve: {
+      alias: {
+        '~': resolve('app'),
+        'db$': resolve('app/utils/db'),
+        'gallery$': resolve('app/utils/gallery/Gallery'),
+        'material-ui': '@material-ui/core',
+        'fetch': 'whatwg-fetch'
+      }
     }
   };
   if(mode === 'production')
@@ -30,18 +41,11 @@ module.exports = (_, { mode }) => {
       'material-ui': 'window["material-ui"]',
       'fetch': 'fetch'
     };
-  else {
-    configs.resolve = {
-      alias: {
-        'material-ui': '@material-ui/core',
-        'fetch': 'whatwg-fetch'
-      }
-    };
+  else
     configs.plugins = [
       new (require('webpack')).ProvidePlugin({
         'React': 'react'
       })
     ];
-  }
   return configs;
 };

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
-import { url, get } from '../../db';
+import { url, get } from 'db';
 import './Intro.css';
 
 export default class Intro extends Component {

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { get } from '../db';
+import { get } from 'db';
 import CertCard from './card/Card';
 
 export default class Skills extends Component {

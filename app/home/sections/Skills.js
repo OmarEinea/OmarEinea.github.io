@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { Grid } from 'material-ui';
-import { get } from '../../db';
-import Circle from '../../skills/widgets/Circle';
-import Line from '../../skills/widgets/Line';
+import { get } from 'db';
+import Circle from '~/skills/widgets/Circle';
+import Line from '~/skills/widgets/Line';
 
 export default class Skills extends Component {
   state = {circles: [], lines: []};

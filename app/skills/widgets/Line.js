@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { logo } from '../../db';
 
 export default class Line extends Component {
   render() {

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Grid } from 'material-ui';
-import { get } from '../../db';
-import CertCard from '../../certs/card/Card';
+import { get } from 'db';
+import CertCard from '~/certs/card/Card';
 
 export default class Certificates extends Component {
   state = {certs: []};

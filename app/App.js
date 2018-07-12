@@ -2,11 +2,11 @@ import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { MuiThemeProvider, createMuiTheme, Hidden } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
+import { url } from 'db';
 import Home from './home/Home';
 import Skills from './skills/Skills';
 import Certificates from './certs/Certs';
 import Footer from './Footer';
-import { url } from './db';
 import './App.css';
 
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography, CircularProgress } from 'material-ui';
-import { logo } from '../../db';
+import { logo } from 'db';
 
 export default class Circle extends Component {
   render() {

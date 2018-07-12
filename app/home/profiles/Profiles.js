@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Grid, Typography, Hidden } from 'material-ui';
-import { get, logo, json } from '../../db';
+import { get, logo, json } from 'db';
 import 'fetch';
 import './Profiles.css';
 

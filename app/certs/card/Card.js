@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { ClickAwayListener, Typography, Collapse } from 'material-ui';
 import { Card, CardMedia, CardContent, CardActions, IconButton } from 'material-ui';
-import Gallery from '../gallery/Gallery';
-import { url } from '../../db';
+import { url } from 'db';
+import Gallery from 'gallery';
 
 export default class CertCard extends Component {
   state = {text: false, image: false};
