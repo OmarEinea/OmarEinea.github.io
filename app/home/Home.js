@@ -4,16 +4,17 @@ import Intro from './intro/Intro';
 import Profiles from './profiles/Profiles';
 import Skills from './sections/Skills';
 import Certificates from './sections/Certs';
+import Events from './sections/Events';
 
 export default class Home extends Component {
-  sections = Object.entries({Skills, Profiles, Certificates});
+  sections = Object.entries({Skills, Events, Profiles, Certificates});
 
   render() {
     return (
       <Grid container>
         <Intro/>
-        {this.sections.map(([title, Section]) =>
-          <Grid container style={{backgroundColor: Certificates === Section || '#FAFAFA'}}>
+        {this.sections.map(([title, Section], index) =>
+          <Grid container style={{backgroundColor: index % 2 === 0 && '#FAFAFA'}}>
             <Grid container class="container" style={{paddingTop: 20, paddingBottom: 30}}>
               <Grid container justify="center">
                 <Typography variant="display1" style={{padding: 30}}>
