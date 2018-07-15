@@ -9,12 +9,13 @@ export default class EventCard extends Component {
 
   render() {
     const { text, image } = this.state,
-      [ title, { desc, place } ] = this.props.event;
+      [ title, { desc, place, images } ] = this.props.event;
     return (
       <Card style={{margin: '6px 8px', position: 'relative'}}>
         <CardMedia style={{paddingTop: '56.25%', marginBottom: 54, cursor: 'pointer'}}
           image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}/>
-        <Gallery images={[title]} isOpen={image} onClose={() => this.setState({image: false})}/>
+        <Gallery title={title} images={images.split(',')} folder="events"
+          isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="54px" timeout="auto"
             style={{position: 'absolute', bottom: 0, backgroundColor: 'white', maxHeight: '100%', width: '100%'}}>

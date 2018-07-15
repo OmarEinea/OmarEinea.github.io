@@ -1,7 +1,26 @@
+.gallery {
+  display: flex;
+  justify-content: center;
+}
+
 .gallery > div:first-child {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.gallery > div:focus {
+.gallery .content {
   outline: 0;
+  align-items: center;
+  display: inline-flex;
+  max-width: calc(100% - 16px);
+}
+
+.gallery .nav {
+  position: fixed;
+  font-size: 36px;
+  padding: 16px;
+}
+
+.gallery i {
+  cursor: pointer;
+  padding: .32em;
 }

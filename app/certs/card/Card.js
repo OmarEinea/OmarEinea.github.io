@@ -14,7 +14,7 @@ export default class CertCard extends Component {
       <Card style={{margin: '6px 8px', position: 'relative'}}>
         <CardMedia style={{paddingTop: '70%', marginBottom: 82, cursor: 'pointer'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}/>
-        <Gallery images={[title]} isOpen={image} onClose={() => this.setState({image: false})}/>
+        <Gallery title={title} folder="certs" isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="82px" timeout="auto"
             style={{position: 'absolute', bottom: 0, backgroundColor: 'white', maxHeight: '100%', width: '100%'}}>
