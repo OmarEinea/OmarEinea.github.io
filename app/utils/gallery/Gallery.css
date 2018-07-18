@@ -22,5 +22,6 @@
 
 .gallery i {
   cursor: pointer;
-  padding: .32em;
+  padding: 6px .5em;
+  vertical-align: middle;
 }

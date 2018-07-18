@@ -12,8 +12,10 @@ export default class EventCard extends Component {
       [ title, { desc, place, images } ] = this.props.event;
     return (
       <Card style={{margin: '6px 8px', position: 'relative'}}>
-        <CardMedia style={{paddingTop: '56.25%', marginBottom: 54, cursor: 'pointer'}}
-          image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}/>
+        <CardMedia image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}
+          style={{paddingTop: '56.25%', marginBottom: 54, cursor: 'pointer', position: 'relative'}}>
+          <i class="fas fa-images fa-lg white-text" style={{position: 'absolute', bottom: 20, left: 16}}/>
+        </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="events"
           isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>

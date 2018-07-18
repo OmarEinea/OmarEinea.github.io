@@ -24,16 +24,20 @@ export default class Gallery extends Component {
   }
 
   render() {
-    const { isOpen, onClose } = this.props, { loaded, index } = this.state;
+    const { images } = this,
+      { loaded, index } = this.state,
+      { isOpen, onClose } = this.props;
     return (
       <Modal open={isOpen} onBackdropClick={onClose} class="gallery">
         <div class="content white-text">
           <div>
-            <Typography variant="subheading" style={{height: 28}}>
+            <Typography variant="subheading">
               {loaded && <span>
-                {this.images[index]}
-                <i class="fas fa-times" onClick={onClose}
-                  style={{float: 'right', marginRight: -5}}/>
+                {images[index]}
+                <span style={{float: 'right'}}>
+                  ({index + 1} of {images.length})
+                  <i class="fas fa-times" onClick={onClose} style={{marginRight: -8}}/>
+                </span>
               </span>}
             </Typography>
             <img src={url(this.urls[index])}
@@ -45,7 +49,7 @@ export default class Gallery extends Component {
               <i onClick={this.gotoImage(index - 1)} class="fas fa-chevron-left"/>
             </div>
           }
-          {this.images.length > 1 && index + 1 < this.images.length &&
+          {images.length > 1 && index + 1 < images.length &&
             <div class="nav" style={{right: 0}}>
               <i onClick={this.gotoImage(index + 1)} class="fas fa-chevron-right"/>
             </div>
