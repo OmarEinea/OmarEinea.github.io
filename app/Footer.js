@@ -22,7 +22,7 @@ export default class Footer extends Component {
             <IconButton href="mailto:hello@omareinea.com">
               <i class="fas fa-envelope"/>
             </IconButton>
-            {['linkedin', 'facebook', 'google-plus', 'twitter'].map(profile =>
+            {['linkedin', 'instagram', 'google-plus', 'facebook'].map(profile =>
               <IconButton target="_blank" href={'my/' + profile}>
                 <i class={'fab fa-' + profile}/>
               </IconButton>

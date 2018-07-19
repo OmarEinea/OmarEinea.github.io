@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid, Typography } from 'material-ui';
+import { Grid, Typography, Tooltip } from 'material-ui';
 
 export default class Line extends Component {
   render() {
@@ -9,9 +9,11 @@ export default class Line extends Component {
         <Typography variant="title" style={{color: '#424242', marginBottom: 6}}>
           {name}
         </Typography>
-        <div style={{backgroundColor: '#ECECEC', height: 16, width: '100%'}}>
-          <div style={{backgroundColor: '#3F51B5', height: '100%', width: rate + '%'}}></div>
-        </div>
+        <Tooltip title={rate + '%'} placement="right">
+          <div style={{backgroundColor: '#ECECEC', height: 16, width: '100%'}}>
+            <div style={{backgroundColor: '#3F51B5', height: '100%', width: rate + '%'}}></div>
+          </div>
+        </Tooltip>
       </Grid>
     );
   }

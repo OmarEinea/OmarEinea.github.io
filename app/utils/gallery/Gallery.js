@@ -31,7 +31,7 @@ export default class Gallery extends Component {
       <Modal open={isOpen} onBackdropClick={onClose} class="gallery">
         <div class="content white-text">
           <div>
-            <Typography variant="subheading">
+            <Typography variant="subheading" style={{height: 28}}>
               {loaded && <span>
                 {images[index]}
                 <span style={{float: 'right'}}>

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ClickAwayListener, Typography, Collapse, CardActions } from 'material-ui';
-import { Card, CardMedia, CardContent, IconButton } from 'material-ui';
+import { Card, CardMedia, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
 
@@ -14,6 +14,7 @@ export default class EventCard extends Component {
       <Card style={{margin: '6px 8px', position: 'relative'}}>
         <CardMedia image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}
           style={{paddingTop: '56.25%', marginBottom: 54, cursor: 'pointer', position: 'relative'}}>
+          <Button class="dark-hover" style={{position: 'absolute', top: 0, bottom: 0, width: '100%'}}/>
           <i class="fas fa-images fa-lg white-text" style={{position: 'absolute', bottom: 20, left: 16}}/>
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="events"

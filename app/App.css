@@ -83,3 +83,11 @@ b {
 #toolbar:not(.not-home) #home-link {
   display: none;
 }
+
+button.dark-hover {
+  border-radius: 0;
+}
+
+button.dark-hover:hover {
+  background-color: rgba(0, 0, 0, .3);
+}

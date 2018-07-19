@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ClickAwayListener, Typography, Collapse } from 'material-ui';
-import { Card, CardMedia, CardContent, CardActions, IconButton } from 'material-ui';
+import { Card, CardMedia, CardContent, CardActions, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
 
@@ -12,8 +12,10 @@ export default class CertCard extends Component {
       [ title, { desc, auth } ] = this.props.cert;
     return (
       <Card style={{margin: '6px 8px', position: 'relative'}}>
-        <CardMedia style={{paddingTop: '70%', marginBottom: 82, cursor: 'pointer'}}
-          image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}/>
+        <CardMedia style={{paddingTop: '70%', marginBottom: 82, cursor: 'pointer', position: 'relative'}}
+          image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}>
+          <Button class="dark-hover" style={{position: 'absolute', top: 0, bottom: 0, width: '100%'}}/>
+        </CardMedia>
         <Gallery title={title} folder="certs" isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="82px" timeout="auto"
