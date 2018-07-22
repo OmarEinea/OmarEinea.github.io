@@ -11,17 +11,16 @@ export default class EventCard extends Component {
     const { text, image } = this.state,
       [ title, { desc, place, images } ] = this.props.event;
     return (
-      <Card style={{margin: '6px 8px', position: 'relative'}}>
-        <CardMedia image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}
-          style={{paddingTop: '56.25%', marginBottom: 54, cursor: 'pointer', position: 'relative'}}>
-          <Button class="dark-hover" style={{position: 'absolute', top: 0, bottom: 0, width: '100%'}}/>
+      <Card class="card">
+        <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
+          image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}>
+          <Button class="image-button"/>
           <i class="fas fa-images fa-lg white-text" style={{position: 'absolute', bottom: 20, left: 16}}/>
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="events"
           isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="54px" timeout="auto"
-            style={{position: 'absolute', bottom: 0, backgroundColor: 'white', maxHeight: '100%', width: '100%'}}>
+          <Collapse in={text} collapsedHeight="54px" timeout="auto" class="collapse">
             <CardActions style={{padding: 16}}>
               <Typography variant="title" style={{fontSize: 19, flex: 1}} noWrap>
                 {title}

@@ -11,15 +11,14 @@ export default class CertCard extends Component {
     const { text, image } = this.state,
       [ title, { desc, auth } ] = this.props.cert;
     return (
-      <Card style={{margin: '6px 8px', position: 'relative'}}>
-        <CardMedia style={{paddingTop: '70%', marginBottom: 82, cursor: 'pointer', position: 'relative'}}
+      <Card class="card">
+        <CardMedia style={{paddingTop: '70%', marginBottom: 82, position: 'relative'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}>
-          <Button class="dark-hover" style={{position: 'absolute', top: 0, bottom: 0, width: '100%'}}/>
+          <Button class="image-button"/>
         </CardMedia>
         <Gallery title={title} folder="certs" isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="82px" timeout="auto"
-            style={{position: 'absolute', bottom: 0, backgroundColor: 'white', maxHeight: '100%', width: '100%'}}>
+          <Collapse in={text} collapsedHeight="82px" timeout="auto" class="collapse">
             <CardContent style={{padding: 16}}>
               <Typography variant="title" style={{fontSize: 19, marginBottom: 8}} noWrap>
                 {title}
