@@ -10,12 +10,12 @@ export default class Skills extends Component {
 
   processData(type) {
     return skills => {
-      const order = skills.order.split(','), orderedSkills = [];
+      const { order } = skills, orderedSkills = [];
       delete skills.order;
       for(let category in skills)
         skills[category] = Object.entries(skills[category]).sort((a, b) => b[1] - a[1]);
       skills = Object.entries(skills);
-      order.map(index => orderedSkills.push(skills[index - 1]));
+      order.split(',').map(index => orderedSkills.push(skills[index - 1]));
       this.setState({[type]: orderedSkills});
     };
   }
