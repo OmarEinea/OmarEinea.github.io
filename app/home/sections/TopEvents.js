@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Grid } from 'material-ui';
 import { get } from 'db';
-import EventCard from '~/events/card/Card';
+import EventCard from '~/events/card/EventCard';
 
 export default class Events extends Component {
   state = {events: []};

@@ -2,9 +2,9 @@ import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
 import Intro from './intro/Intro';
 import Profiles from './profiles/Profiles';
-import Skills from './sections/Skills';
-import Certificates from './sections/Certs';
-import Events from './sections/Events';
+import Skills from './sections/TopSkills';
+import Certificates from './sections/TopCerts';
+import Events from './sections/TopEvents';
 
 export default class Home extends Component {
   sections = Object.entries({Skills, Events, Profiles, Certificates});
