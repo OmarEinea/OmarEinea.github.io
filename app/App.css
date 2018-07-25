@@ -95,6 +95,12 @@ b {
   background-color: white;
 }
 
+.card .collapse.down {
+  z-index: 1;
+  bottom: unset;
+  top: 0;
+}
+
 .card .image-button {
   border-radius: 0;
   top: 0;

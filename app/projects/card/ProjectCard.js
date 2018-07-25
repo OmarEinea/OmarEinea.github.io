@@ -12,6 +12,21 @@ export default class ProjectCard extends Component {
       [ title, { desc, type, images, skills, repo, demo } ] = this.props.project;
     return (
       <Card class="card">
+        <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
+          <Collapse in={text} collapsedHeight="80px" timeout="auto" class="collapse down">
+            <CardHeader title={title} subheader={type} style={{paddingLeft: 16}}
+              avatar={
+                <Avatar src={url(`projects/${title}/logo.png`)}/>
+              }
+              action={
+                <IconButton onClick={() => this.setState({text: !text})}>
+                  <i style={{fontSize: 14}} class={'fas fa-chevron-' + (text ? 'up' : 'down')}/>
+                </IconButton>
+              }
+            />
+            <Typography style={{padding: '0 16px 16px'}}>{desc}</Typography>
+          </Collapse>
+        </ClickAwayListener>
         <CardMedia style={{paddingTop: '60%', marginTop: 80, position: 'relative'}}
           image={url(`projects/${title}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <i class="fas fa-images fa-lg"
@@ -20,6 +35,29 @@ export default class ProjectCard extends Component {
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="projects"
           isOpen={image} onClose={() => this.setState({image: false})} format="png"/>
+        <CardActions style={{padding: 16}}>
+          <div style={{flex: 1, height: 44}}>
+            {skills.split(',').map(skill =>
+              <Tooltip title={skill}>
+                <img width="44" style={{marginRight: 10}} src={logo(skill)}/>
+              </Tooltip>
+            )}
+          </div>
+          <div style={{display: 'flex', flexDirection: 'column', margin: '-4px -2px'}}>
+            <Tooltip title="code" placement="right">
+              <IconButton href={'https://github.com/' + repo}
+                style={{width: 30, height: 30, fontSize: 22}}>
+                <i class="fab fa-github-alt fa-1x"/>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="demo" placement="right">
+              <IconButton href={demo}
+                style={{width: 30, height: 30, fontSize: 19}}>
+                <i class="fas fa-eye fa-1x"/>
+              </IconButton>
+            </Tooltip>
+          </div>
+        </CardActions>
       </Card>
     );
   }
