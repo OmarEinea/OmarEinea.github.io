@@ -12,7 +12,7 @@ export default class Intro extends Component {
 
   render() {
     return (
-      <Grid container class="container" style={{marginBottom: 36}}>
+      <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
           <div style={{position: 'relative', width: 324, height: 324}}>
             <Avatar id="photo" src={url('my/photo')}/>

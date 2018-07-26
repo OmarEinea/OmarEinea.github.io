@@ -14,7 +14,7 @@ body {
 
 #root::before {
   background: url(app/pattern.jpg);
-  opacity: .05;
+  opacity: .04;
   z-index: -1;
   content: "";
 }
