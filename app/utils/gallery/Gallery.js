@@ -7,13 +7,13 @@ export default class Gallery extends Component {
   state = {loaded: false, index: 0};
 
   componentWillMount() {
-    let { title, images, folder } = this.props;
+    let { title, images, folder, format = 'jpg' } = this.props;
     this.urls = [];
     if(images)
       for(let i = 1; i <= images.length; i++)
-        this.urls.push(`${folder}/${title}/${i}.jpg`);
+        this.urls.push(`${folder}/${title}/${i}.${format}`);
     else {
-      this.urls.push(`${folder}/${title}.jpg`);
+      this.urls.push(`${folder}/${title}.${format}`);
       images = [title];
     }
     this.images = images;
@@ -30,18 +30,18 @@ export default class Gallery extends Component {
     return (
       <Modal open={isOpen} onBackdropClick={onClose} class="gallery">
         <div class="content white-text">
-          <div>
-            <Typography variant="subheading" style={{height: 28}}>
-              {loaded && <span>
+          <div class="main">
+            {loaded && <div>
+              <Typography variant="subheading" style={{flex: 1}} noWrap>
                 {images[index]}
-                <span style={{float: 'right'}}>
-                  ({index + 1} of {images.length})
-                  <i class="fas fa-times" onClick={onClose} style={{marginRight: -8}}/>
-                </span>
-              </span>}
-            </Typography>
+              </Typography>
+              <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
+                ({index + 1} of {images.length})
+                <i class="fas fa-times" onClick={onClose}/>
+              </Typography>
+            </div> || <div/>}
             <img src={url(this.urls[index])}
-              style={{maxHeight: 'calc(100vh - 68px)', maxWidth: '100%'}}
+              style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
               onLoad={() => this.setState({loaded: true})}/>
           </div>
           {index > 0 &&
