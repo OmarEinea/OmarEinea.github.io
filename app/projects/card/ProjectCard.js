@@ -8,15 +8,16 @@ export default class ProjectCard extends Component {
   state = {text: false, image: false};
 
   render() {
-    let { text, image } = this.state,
+    let { text, image } = this.state, { full } = this.props,
       [ title, { desc, type, images, skills, repo, demo } ] = this.props.project;
     return (
       <Card class="card">
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
-          <Collapse in={text} collapsedHeight="80px" timeout="auto" class="collapse down">
-            <CardHeader title={title} subheader={type} style={{paddingLeft: 16}}
+          <Collapse in={text} collapsedHeight={`${full ? 80 : 64}px`} timeout="auto" class="collapse down">
+            <CardHeader title={title} subheader={full && type}
+              style={{paddingLeft: 16, height: full || 28}}
               avatar={
-                <Avatar src={url(`projects/${title}/logo.png`)}/>
+                full && <Avatar src={url(`projects/${title}/logo.png`)}/>
               }
               action={
                 <IconButton onClick={() => this.setState({text: !text})}>
@@ -27,7 +28,7 @@ export default class ProjectCard extends Component {
             <Typography style={{padding: '0 16px 16px'}}>{desc}</Typography>
           </Collapse>
         </ClickAwayListener>
-        <CardMedia style={{paddingTop: '60%', marginTop: 80, position: 'relative'}}
+        <CardMedia style={{paddingTop: '60%', marginTop: full ? 80 : 64, position: 'relative'}}
           image={url(`projects/${title}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <i class="fas fa-images fa-lg"
             style={{position: 'absolute', bottom: 20, left: 16, color: '#757575'}}/>

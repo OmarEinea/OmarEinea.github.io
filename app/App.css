@@ -101,6 +101,13 @@ b {
   top: 0;
 }
 
+.card [class*="MuiCardHeader-title"] {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-top: 4px;
+}
+
 .card .image-button {
   border-radius: 0;
   top: 0;

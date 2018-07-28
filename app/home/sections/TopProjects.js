@@ -15,7 +15,7 @@ export default class Certificates extends Component {
       <Grid container>
         {this.state.projects.map((project) =>
           <Grid item md={4} sm={6} xs={12}>
-            <ProjectCard project={project}/>
+            <ProjectCard project={project} full/>
           </Grid>
         )}
       </Grid>
