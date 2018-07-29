@@ -3,6 +3,7 @@ import { ClickAwayListener, Collapse, CardActions, CardHeader, Tooltip } from 'm
 import { Card, CardMedia, Button, IconButton, Avatar, Typography } from 'material-ui';
 import { url, logo } from 'db';
 import Gallery from 'gallery';
+import './Card.css';
 
 export default class ProjectCard extends Component {
   state = {text: false, image: false};
@@ -13,14 +14,15 @@ export default class ProjectCard extends Component {
     return (
       <Card class="card">
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
-          <Collapse in={text} collapsedHeight={`${full ? 80 : 64}px`} timeout="auto" class="collapse down">
-            <CardHeader title={title} subheader={full && type}
-              style={{paddingLeft: 16, height: full || 28}}
+          <Collapse in={text} collapsedHeight={`${full ? 80 : 60}px`} timeout="auto" class="collapse down">
+            <CardHeader title={<b style={{fontSize: 19, verticalAlign: 'bottom'}}>{title}</b>}
+              subheader={full && type} style={{paddingLeft: 20, height: full || 28}}
               avatar={
                 full && <Avatar src={url(`projects/${title}/logo.png`)}/>
               }
               action={
-                <IconButton onClick={() => this.setState({text: !text})}>
+                <IconButton onClick={() => this.setState({text: !text})}
+                  style={{width: 40, height: 40, margin: '2px 4px'}}>
                   <i style={{fontSize: 14}} class={'fas fa-chevron-' + (text ? 'up' : 'down')}/>
                 </IconButton>
               }
@@ -28,10 +30,10 @@ export default class ProjectCard extends Component {
             <Typography style={{padding: '0 16px 16px'}}>{desc}</Typography>
           </Collapse>
         </ClickAwayListener>
-        <CardMedia style={{paddingTop: '60%', marginTop: full ? 80 : 64, position: 'relative'}}
+        <CardMedia style={{paddingTop: '60%', marginTop: full ? 80 : 60, position: 'relative'}}
           image={url(`projects/${title}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <i class="fas fa-images fa-lg"
-            style={{position: 'absolute', bottom: 20, right: 18, color: '#757575'}}/>
+            style={{position: 'absolute', bottom: 20, right: 20, color: '#757575'}}/>
           <Button class="image-button"/>
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="projects"
@@ -44,7 +46,7 @@ export default class ProjectCard extends Component {
               </Tooltip>
             )}
           </div>
-          <div style={{display: 'flex', flexDirection: 'column', margin: '-4px -2px'}}>
+          <div style={{display: 'flex', flexDirection: 'column', margin: '-4px 0'}}>
             <Tooltip title="code" placement="left">
               <IconButton href={'https://github.com/' + repo}
                 style={{width: 30, height: 30, fontSize: 22}}>

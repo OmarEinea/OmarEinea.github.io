@@ -3,6 +3,7 @@ import { ClickAwayListener, Typography, Collapse, CardActions } from 'material-u
 import { Card, CardMedia, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
+import './Card.css';
 
 export default class EventCard extends Component {
   state = {text: false, image: false};

@@ -7,11 +7,9 @@ import Cards from './sections/TopCards';
 
 export default class Home extends Component {
   sections = Object.entries({
-    Projects: <Cards type="Project"/>,
-    Skills: <Skills/>,
-    Events: <Cards type="Event"/>,
-    Profiles: <Profiles/>,
-    Certificates: <Cards type="Cert"/>
+    Projects: () => <Cards type="Project"/>, Skills,
+    Events: () => <Cards type="Event"/>, Profiles,
+    Certificates: () => <Cards type="Cert"/>
   });
 
   render() {
@@ -26,7 +24,7 @@ export default class Home extends Component {
                   {Section === Profiles ? 'Dev' : 'Top'} {title}
                 </Typography>
               </Grid>
-              {Section}
+              <Section/>
             </Grid>
           </Grid>
         )}

@@ -58,21 +58,12 @@ b {
   width: 100%;
 }
 
-.card {
-  position: relative;
-  margin: 8px;
-}
-
 #toolbar {
   justify-content: center;
   padding: 8px 0;
 }
 
 @media screen and (max-width: 600px) {
-  .card {
-    margin: 6px 8px;
-  }
-
   #toolbar {
     flex-flow: row wrap;
     margin-bottom: 16px;
@@ -81,40 +72,6 @@ b {
   #toolbar button {
     margin: 8px 2px;
   }
-}
-
-.card .image-button,
-.card .collapse {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.card .collapse {
-  max-height: 100%;
-  background-color: white;
-}
-
-.card .collapse.down {
-  z-index: 1;
-  bottom: unset;
-  top: 0;
-}
-
-.card [class*="MuiCardHeader-title"] {
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 20px;
-  padding-top: 4px;
-}
-
-.card .image-button {
-  border-radius: 0;
-  top: 0;
-}
-
-.card .image-button:hover {
-  background-color: rgba(0, 0, 0, .3);
 }
 
 #toolbar.not-home {

@@ -1,11 +1,7 @@
 import { Component } from 'react';
 import { Grid } from 'material-ui';
 import { get } from 'db';
-import ProjectCard from '~/projects/card/ProjectCard';
-import EventCard from '~/events/card/EventCard';
-import CertCard from '~/certs/card/CertCard';
-
-const types = {ProjectCard, EventCard, CertCard};
+import cardTypes from '~/utils/card';
 
 export default class Cards extends Component {
   state = {cards: []};
@@ -21,7 +17,7 @@ export default class Cards extends Component {
   }
 
   render() {
-    const Card = types[this.props.type + 'Card'];
+    const Card = cardTypes[this.props.type + 'Card'];
     return (
       <Grid container justify="center">
         {this.state.cards.map(cardData =>

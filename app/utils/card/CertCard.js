@@ -3,6 +3,7 @@ import { ClickAwayListener, Typography, Collapse } from 'material-ui';
 import { Card, CardMedia, CardContent, CardActions, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
+import './Card.css';
 
 export default class CertCard extends Component {
   state = {text: false, image: false};
