@@ -29,7 +29,7 @@ export default class Projects extends Component {
             <Typography variant="display1" class="category">{category}</Typography>
             {projects.map(project =>
               <Grid item md={4} sm={6} xs={12}>
-                <ProjectCard project={project}/>
+                <ProjectCard data={project}/>
               </Grid>
             )}
           </Grid>

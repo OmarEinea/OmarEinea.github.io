@@ -9,7 +9,7 @@ export default class CertCard extends Component {
 
   render() {
     const { text, image } = this.state,
-      [ title, { desc, auth } ] = this.props.cert;
+      [ title, { desc, auth } ] = this.props.data;
     return (
       <Card class="card">
         <CardMedia style={{paddingTop: '70%', marginBottom: 82, position: 'relative'}}

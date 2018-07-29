@@ -29,7 +29,7 @@ export default class Events extends Component {
             <Typography variant="display1" class="category">{category}</Typography>
             {events.map(event =>
               <Grid item md={4} sm={6} xs={12}>
-                <EventCard event={event}/>
+                <EventCard data={event}/>
               </Grid>
             )}
           </Grid>

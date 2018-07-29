@@ -29,7 +29,7 @@ export default class Certificates extends Component {
             <Typography variant="display1" class="category">{category}</Typography>
             {certs.map(cert =>
               <Grid item md={4} sm={6} xs={12}>
-                <CertCard cert={cert}/>
+                <CertCard data={cert}/>
               </Grid>
             )}
           </Grid>

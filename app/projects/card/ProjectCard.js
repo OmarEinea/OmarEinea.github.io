@@ -9,7 +9,7 @@ export default class ProjectCard extends Component {
 
   render() {
     let { text, image } = this.state, { full } = this.props,
-      [ title, { desc, type, images, skills, repo, demo } ] = this.props.project;
+      [ title, { desc, type, images, skills, repo, demo } ] = this.props.data;
     return (
       <Card class="card">
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
@@ -31,7 +31,7 @@ export default class ProjectCard extends Component {
         <CardMedia style={{paddingTop: '60%', marginTop: full ? 80 : 64, position: 'relative'}}
           image={url(`projects/${title}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <i class="fas fa-images fa-lg"
-            style={{position: 'absolute', bottom: 20, left: 16, color: '#757575'}}/>
+            style={{position: 'absolute', bottom: 20, right: 18, color: '#757575'}}/>
           <Button class="image-button"/>
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="projects"
@@ -45,13 +45,13 @@ export default class ProjectCard extends Component {
             )}
           </div>
           <div style={{display: 'flex', flexDirection: 'column', margin: '-4px -2px'}}>
-            <Tooltip title="code" placement="right">
+            <Tooltip title="code" placement="left">
               <IconButton href={'https://github.com/' + repo}
                 style={{width: 30, height: 30, fontSize: 22}}>
                 <i class="fab fa-github-alt fa-1x"/>
               </IconButton>
             </Tooltip>
-            <Tooltip title="demo" placement="right">
+            <Tooltip title="demo" placement="left">
               <IconButton href={demo}
                 style={{width: 30, height: 30, fontSize: 19}}>
                 <i class="fas fa-eye fa-1x"/>

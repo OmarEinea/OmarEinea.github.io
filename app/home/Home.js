@@ -2,13 +2,17 @@ import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
 import Intro from './intro/Intro';
 import Profiles from './profiles/Profiles';
-import Projects from './sections/TopProjects';
 import Skills from './sections/TopSkills';
-import Certificates from './sections/TopCerts';
-import Events from './sections/TopEvents';
+import Cards from './sections/TopCards';
 
 export default class Home extends Component {
-  sections = Object.entries({Projects, Skills, Events, Profiles, Certificates});
+  sections = Object.entries({
+    Projects: <Cards type="Project"/>,
+    Skills: <Skills/>,
+    Events: <Cards type="Event"/>,
+    Profiles: <Profiles/>,
+    Certificates: <Cards type="Cert"/>
+  });
 
   render() {
     return (
@@ -22,7 +26,7 @@ export default class Home extends Component {
                   {Section === Profiles ? 'Dev' : 'Top'} {title}
                 </Typography>
               </Grid>
-              <Section/>
+              {Section}
             </Grid>
           </Grid>
         )}

@@ -9,7 +9,7 @@ export default class EventCard extends Component {
 
   render() {
     const { text, image } = this.state,
-      [ title, { desc, place, images } ] = this.props.event;
+      [ title, { desc, place, images } ] = this.props.data;
     return (
       <Card class="card">
         <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
