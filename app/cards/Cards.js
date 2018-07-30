@@ -22,14 +22,14 @@ export default class Cards extends Component {
   }
 
   render() {
-    const Card = cardTypes[this.props.type + 'Card'];
+    const { type, wide } = this.props, Card = cardTypes[type + 'Card'];
     return (
       <Grid container class="container" style={{marginBottom: 24}}>
         {this.state.allCards.map(([category, cards]) =>
           <Grid container justify="center">
             <Typography variant="display1" class="category">{category}</Typography>
             {cards.map(cardData =>
-              <Grid item md={4} sm={6} xs={12}>
+              <Grid item md={wide ? 6 : 4} sm={6} xs={12}>
                 <Card data={cardData}/>
               </Grid>
             )}

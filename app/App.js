@@ -15,7 +15,7 @@ const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
     Home, Skills,
     Projects: () => <Cards type="Project"/>,
     Certificates: () => <Cards type="Cert"/>,
-    Courses: '',
+    Courses: () => <Cards type="Course" wide/>,
     Events: () => <Cards type="Event"/>,
     Story: ''
   };
@@ -43,7 +43,7 @@ class App extends Component {
         <Grid id="root" container direction="column">
           <Toolbar id="toolbar" class={'container' + (currentPage === 'Home' ? '' : ' not-home')}>
             <Hidden smDown>
-              <div style={{flexBasis: '36%'}}>
+              <div style={{flexBasis: '35.6%'}}>
                 <Grid container id="home-link">
                   <Avatar style={{border: '1px solid #757575', cursor: 'pointer'}}
                     onClick={() => this.goto('Home')} src={url('my/logo')}/>

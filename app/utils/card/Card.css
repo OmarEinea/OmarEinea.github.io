@@ -35,3 +35,11 @@
 .card .image-button:hover {
   background-color: rgba(0, 0, 0, .3);
 }
+
+.card .grade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAFAFA;
+  width: 25%;
+}
