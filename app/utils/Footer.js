@@ -7,8 +7,9 @@ export default class Footer extends Component {
   render() {
     const [ left, right ] = this.props.colors;
     return (
-      <Grid item style={{position: 'relative'}} id="footer" class="white-text">
-        <div style={{background: `linear-gradient(to top right, ${left}, ${right})`, zIndex: -2}}/>
+      <Grid item style={{position: 'relative'}} class="white-text">
+        <div id="footer-background"
+          style={{background: `linear-gradient(to top right, ${left}, ${right})`, zIndex: -2}}/>
         <Grid container class="container">
           <Grid item sm={6} xs={12} align="center" style={{paddingTop: 36}}>
             <Typography variant="headline" gutterBottom>About Me</Typography>

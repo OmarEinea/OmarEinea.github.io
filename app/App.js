@@ -6,7 +6,7 @@ import { url } from 'db';
 import Home from './home/Home';
 import Cards from './cards/Cards';
 import Skills from './skills/Skills';
-import Footer from './Footer';
+import Footer from './utils/Footer';
 import './App.css';
 
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),

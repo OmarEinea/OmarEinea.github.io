@@ -13,13 +13,13 @@ body {
 }
 
 #root::before {
-  background: url(app/pattern.jpg);
+  background: url(app/utils/pattern.jpg);
   opacity: .04;
   z-index: -1;
   content: "";
 }
 
-#root::before, #footer > :first-child {
+#root::before, #footer-background {
   position: absolute;
   bottom: 0;
   right: 0;
