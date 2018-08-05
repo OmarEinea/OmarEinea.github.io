@@ -20,8 +20,8 @@ export default class CertCard extends Component {
         <Gallery title={title} folder="certs" isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="82px" timeout="auto" class="collapse">
-            <CardContent style={{padding: 16}}>
-              <Typography variant="title" style={{fontSize: 19, marginBottom: 8}} noWrap>
+            <CardContent style={{padding: '16px 15.5px 16px 18px'}}>
+              <Typography variant="title" style={{fontSize: 19, marginBottom: 8, color: '#424242'}} noWrap>
                 {title}
               </Typography>
               <CardActions style={{padding: 0}}>
@@ -29,7 +29,7 @@ export default class CertCard extends Component {
                   <i class="fas fa-university" style={{marginRight: 4}}/> {auth}
                 </Typography>
                 <IconButton onClick={() => this.setState({text: !text})}
-                  style={{margin: '-8px -10px -12px', width: 40, height: 40}}>
+                  style={{margin: '-10px -10px -12px', width: 40, height: 40}}>
                   <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
                 </IconButton>
               </CardActions>

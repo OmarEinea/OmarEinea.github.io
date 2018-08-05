@@ -23,7 +23,7 @@ export default class Home extends Component {
             <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80}}>
               <Grid container justify="center">
                 <Typography variant="display2" style={{padding: 40}}>
-                  <i class={'fas fa-' + icon} style={{paddingRight: 16}}/>
+                  <i class={'fas fa-' + icon} style={{paddingRight: 16, verticalAlign: 'bottom'}}/>
                   {Section === Profiles ? 'Dev' : 'Top'} {title}
                 </Typography>
               </Grid>

@@ -16,14 +16,14 @@ export default class EventCard extends Component {
         <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
           image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}>
           <Button class="image-button"/>
-          <i class="fas fa-images fa-lg white-text" style={{position: 'absolute', bottom: 20, left: 16}}/>
+          <i class="fas fa-images white-text" style={{position: 'absolute', bottom: 18, left: 18, fontSize: 20}}/>
         </CardMedia>
         <Gallery title={title} images={images.split(',')} folder="events"
           isOpen={image} onClose={() => this.setState({image: false})}/>
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="54px" timeout="auto" class="collapse">
-            <CardActions style={{padding: 16}}>
-              <Typography variant="title" style={{fontSize: 19, flex: 1}} noWrap>
+            <CardActions style={{padding: '16px 18px'}}>
+              <Typography variant="title" style={{fontSize: 19, flex: 1, color: '#424242'}} noWrap>
                 {title}
               </Typography>
               <IconButton onClick={() => this.setState({text: !text})}

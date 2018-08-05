@@ -20,7 +20,7 @@ export default class CourseCard extends Component {
   render() {
     const [ title, grade, color, desc ] = this.props.data;
     return (
-      <Card class="card" style={{display: 'flex'}}>
+      <Card class="card" style={{display: 'flex', height: 'calc(100% - 16px)'}}>
         <CardContent style={{flex: 1}}>
           <Typography variant="title" gutterBottom>{title}</Typography>
           <Typography variant="subheading" color="textSecondary">{desc}</Typography>
