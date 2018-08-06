@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
 import { get } from 'db';
+import './Timeline.css';
 
 export default class Timeline extends Component {
   state = {years: []};
