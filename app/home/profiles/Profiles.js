@@ -47,7 +47,9 @@ export default class Profiles extends Component {
       <Grid container>
         <Grid container class="box">
           <Grid item md={3} xs={12} id="github">
-            <a href="my/github"><img height="50" src={logo('gh')}></img></a>
+            <a href="my/github" target="_blank">
+              <img height="50" src={logo('gh')}/>
+            </a>
             <Typography variant="subheading">
               <i class="fas fa-fw fa-hdd"/>
               <b>{this.state.github.repos}</b> Repositories
@@ -85,7 +87,9 @@ export default class Profiles extends Component {
         <Grid container>
           <Grid item sm={6} xs={12}>
             <div class="box flair">
-              <a href="my/stackoverflow"><img height="45" src={logo('so')}></img></a>
+              <a href="my/stackoverflow" target="_blank">
+                <img height="45" src={logo('so')}/>
+              </a>
               <Typography variant="title">
                 <i class="fas fa-fw fa-thumbs-up"/>
                 {this.state.stack.reputation} Up Votes
@@ -106,7 +110,9 @@ export default class Profiles extends Component {
           </Grid>
           <Grid item sm={6} xs={12}>
             <div class="box flair">
-              <a href="my/xda-developers"><img height="45" src={logo('xda')}></img></a>
+              <a href="my/xda-developers" target="_black">
+                <img height="45" src={logo('xda')}/>
+              </a>
               <Typography variant="title">
                 <i class="fas fa-fw fa-thumbs-up"/>
                 {this.state.xda.thanks} Thanks
