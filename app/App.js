@@ -6,6 +6,7 @@ import { url } from 'db';
 import Home from './home/Home';
 import Cards from './cards/Cards';
 import Skills from './skills/Skills';
+import Timeline from './timeline/Timeline';
 import Footer from './utils/Footer';
 import './App.css';
 
@@ -17,7 +18,7 @@ const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
     Certificates: () => <Cards type="Cert"/>,
     Courses: () => <Cards type="Course" wide/>,
     Events: () => <Cards type="Event"/>,
-    Story: ''
+    Timeline
   };
 
 class App extends Component {
@@ -37,7 +38,7 @@ class App extends Component {
   }
 
   render() {
-    const currentPage = this.state.page, CurrentPage = pages[currentPage] || (() => <p style={{flex: 1}}/>);
+    const currentPage = this.state.page, CurrentPage = pages[currentPage];
     return (
       <MuiThemeProvider theme={theme}>
         <Grid id="root" container direction="column">

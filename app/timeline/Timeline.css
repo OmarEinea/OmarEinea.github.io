@@ -1,12 +1,14 @@
 .year {
   display: flex;
   align-items: center;
-  background-color: white;
+  position: relative;
   min-height: 54px;
   width: 120px;
   padding: 8px 12px;
   border-right: 1px solid #DDD;
   border-left: 1px solid #DDD;
+  border-top: .5px solid #EEE;
+  background-color: white;
 }
 
 .year.start {
@@ -21,4 +23,47 @@
   border-bottom-right-radius: 10px;
   border-bottom: 1px solid #DDD;
   padding-bottom: 16px;
+}
+
+.year .state {
+  flex: 1;
+  color: #9E9E9E;
+}
+
+.year.start .state,
+.year.end .state {
+  color: #424242;
+}
+
+.year .number {
+  background-color: #37474F;
+  color: #FAFAFA;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  padding: 1px 8px 2px;
+  margin-right: 12px;
+  border-radius: 8px;
+}
+
+.year .number i {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #37474F;
+}
+
+.year .last.number i,
+.year .last.number {
+  top: unset;
+  bottom: 0;
+}
+
+.year .last.number i {
+  border-top: unset;
+  border-bottom: 8px solid #37474F;
 }
