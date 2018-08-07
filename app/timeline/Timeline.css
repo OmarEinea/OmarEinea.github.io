@@ -7,7 +7,7 @@
   padding: 8px 12px;
   border-right: 1px solid #DDD;
   border-left: 1px solid #DDD;
-  border-top: .5px solid #EEE;
+  box-shadow: 0px -.5px 0px #EEE inset;
   background-color: white;
 }
 
@@ -66,4 +66,30 @@
 .year .last.number i {
   border-top: unset;
   border-bottom: 8px solid #37474F;
+}
+
+.year .institute {
+  position: absolute;
+  margin-left: 12px;
+  left: 100%;
+  width: 5px;
+  height: 100%;
+  background-color: #37474F;
+}
+
+.year .institute.end {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: -8px;
+}
+
+.year .institute.start {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 8px;
+}
+
+.year .institute.start.end {
+  height: calc(100% - 16px);
+  margin-top: 4px;
 }

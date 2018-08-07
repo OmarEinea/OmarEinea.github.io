@@ -6,28 +6,37 @@ import './Timeline.css';
 export default class Timeline extends Component {
   state = {years: []};
 
+  structureItems(items) {
+    const structured = {};
+    Object.entries(items).map(([range, _]) => {
+      const [ a, b ] = range.split(',');
+      structured[a] = (b || a) - a;
+    });
+    return structured;
+  }
   componentWillMount() {
-    get('timeline').then(timeline => {
-      const { years, cities } = timeline, starts = [], ends = [];
-      Object.entries(cities).map(([range, _]) => {
-        const [ a, b ] = range.split(',');
-        starts.push(a);
-        ends.push(b || a);
+    get('timeline').then(({ years, cities, institutes }) => {
+      this.setState({
+        years: Object.entries(years).slice(1),
+        cities: this.structureItems(cities),
+        institutes: this.structureItems(institutes)
       });
-      this.setState({years: Object.entries(years).slice(1), starts, ends})  ;
     });
   }
 
   render() {
-    const { years, starts, ends } = this.state;
+    const { years, cities, institutes } = this.state;
+    let cityStart, cityCount, instStart, instCount;
     return (
       <Grid container direction="column" alignItems="center"
         class="container" style={{margin: '24px auto'}}>
         {years.map(([year, state], index) => {
-          const start = starts.includes(year);
+          if(cityStart = year in cities) cityCount = cities[year];
+          if(instStart = year in institutes) instCount = institutes[year];
           return (
-            <div class={'year' + (start && ' start' || '') + (ends.includes(year) && ' end' || '')}>
-              {start && <Typography class="number"><i/>{+year + 1994}</Typography>}
+            <div class={'year' + (cityStart && ' start' || '') + (cityCount-- === 0 && ' end' || '')}>
+              {cityStart && <Typography class="number"><i/>{+year + 1994}</Typography>}
+              {instCount >= 0 && <i class={'institute' + (instStart && ' start' || '') + (instCount-- === 0 && ' end' || '')}/>}
               <Typography align="center" class="state">{state}</Typography>
               {index === years.length - 1 &&
                 <Typography class="last number"><i/>{+year + 1995}</Typography>
