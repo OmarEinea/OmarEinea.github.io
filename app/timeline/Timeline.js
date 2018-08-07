@@ -8,9 +8,9 @@ export default class Timeline extends Component {
 
   structureItems(items) {
     const structured = {};
-    Object.entries(items).map(([range, _]) => {
+    Object.entries(items).map(([range, desc]) => {
       const [ a, b ] = range.split(',');
-      structured[a] = (b || a) - a;
+      structured[a] = [(b || a) - a, desc];
     });
     return structured;
   }
@@ -30,17 +30,21 @@ export default class Timeline extends Component {
     return (
       <Grid container direction="column" alignItems="center"
         class="container" style={{margin: '24px auto'}}>
-        {years.map(([year, state], index) => {
-          if(cityStart = year in cities) cityCount = cities[year];
-          if(instStart = year in institutes) instCount = institutes[year];
+        {years.map(([year, state]) => {
+          if(cityStart = year in cities) cityCount = cities[year][0];
+          if(instStart = year in institutes) instCount = institutes[year][0];
           return (
             <div class={'year' + (cityStart && ' start' || '') + (cityCount-- === 0 && ' end' || '')}>
-              {cityStart && <Typography class="number"><i/>{+year + 1994}</Typography>}
+              {cityStart && <span>
+                <Typography class="number"><i/>{+year + 1994}</Typography>
+                <i class="city-vline"><i/></i>
+                <Typography class="city" variant="subheading" noWrap>
+                  <i class="fas fa-map-marker-alt"/> {cities[year][1]}
+                </Typography>
+              </span>}
+              {+year === years.length && <Typography class="last number"><i/>{+year + 1995}</Typography>}
               {instCount >= 0 && <i class={'institute' + (instStart && ' start' || '') + (instCount-- === 0 && ' end' || '')}/>}
-              <Typography align="center" class="state">{state}</Typography>
-              {index === years.length - 1 &&
-                <Typography class="last number"><i/>{+year + 1995}</Typography>
-              }
+              <Typography align="center" class="state">{state || <i class="fas fa-child fa-lg"/>}</Typography>
             </div>
           );
         })}

@@ -11,7 +11,7 @@ export default class Line extends Component {
         </Typography>
         <Tooltip title={rate + '%'} placement="right">
           <div style={{backgroundColor: '#ECECEC', height: 16, width: '100%'}}>
-            <div style={{backgroundColor: '#3F51B5', height: '100%', width: rate + '%'}}></div>
+            <div style={{backgroundColor: '#3F51B5', height: '100%', width: rate + '%'}}/>
           </div>
         </Tooltip>
       </Grid>
