@@ -16,17 +16,16 @@ export default class Timeline extends Component {
   }
 
   componentWillMount() {
-    get('timeline').then(({ years, cities, institutes }) => {
-      this.setState({
-        years: Object.entries(years).slice(1),
-        cities: this.structureItems(cities),
-        institutes: this.structureItems(institutes)
-      });
-    });
+    get('timeline').then(({ years, cities, institutes, events }) => this.setState({
+      years: Object.entries(years).slice(1),
+      cities: this.structureItems(cities),
+      institutes: this.structureItems(institutes),
+      events
+    }));
   }
 
   render() {
-    const { years, cities, institutes } = this.state,
+    const { years, cities, institutes, events } = this.state,
       is = (string, type) => string.includes(type) && type.toLowerCase();
     let city, cityStart, cityCount, institute, instDesc, instStart, instCount;
     return (
@@ -55,7 +54,12 @@ export default class Timeline extends Component {
                 <Typography variant="caption">{instDesc}</Typography>
               </span>}
               {instCount >= 0 &&
-                <i class={'inst-sign' + (instStart && ' start' || '') + (instCount-- === 0 && ' end' || '')}/>
+                <i class={'inst-sign' + (instStart ? ' start' : '') + (instCount-- === 0 ? ' end' : '')}/>
+              }
+              {year in events &&
+                <Typography class={'white-text event' + (year - 1 in events ? ' up': '')}>
+                  <i/>{events[year]}
+                </Typography>
               }
               <Typography align="center" style={{flex: 1, color: '#616161'}}>
                 {state || <i class="fas fa-child fa-lg"/>}

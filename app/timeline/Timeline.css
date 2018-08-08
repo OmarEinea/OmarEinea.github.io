@@ -65,50 +65,80 @@
   font-weight: 500;
 }
 
-.year .inst-box,
-.year .inst-sign {
+.inst-box,
+.inst-sign,
+.event > i {
   background-color: #37474F;
   position: absolute;
   left: 100%;
   top: 0;
 }
 
-.year .inst-box {
+.inst-box {
   padding: 7px 12px 9px;
   margin: 8px 0 0 36px;
   border-radius: 8px;
 }
 
-.year .inst-box > i {
+.inst-box > i {
   position: absolute;
   top: 10px;
-  left: -10px;
+  right: 100%;
   border-right: 10px solid #37474F;
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
 }
 
-.year .inst-box i.fa-school {
+.inst-box i.fa-school {
   font-size: 13px;
 }
 
-.year .inst-sign {
+.inst-sign {
   margin-left: 12px;
   width: 5px;
   height: 100%;
 }
 
-.year .inst-sign.start {
+.inst-sign.start {
   border-radius: 0 0 8px 8px;
   margin-top: -8px;
 }
 
-.year .inst-sign.end {
+.inst-sign.end {
   border-radius: 8px 8px 0 0;
   margin-top: 8px;
 }
 
-.year .inst-sign.start.end {
+.inst-sign.start.end {
   height: calc(100% - 16px);
   border-radius: 8px;
+}
+
+.event {
+  background-color: #FA5E35;
+  position: absolute;
+  right: 170%;
+  top: 40%;
+  width: 116%;
+  padding: 8px 12px;
+  border-radius: 2px;
+}
+
+.event.up {
+  top: unset;
+  bottom: 40%;
+}
+
+.event > i {
+  margin-left: -4px;
+  border-left: 72px solid #FA5E35;
+  border-bottom: 16px solid transparent;
+  background-color: transparent;
+}
+
+.event.up > i {
+  border-top: 16px solid transparent;
+  border-bottom: unset;
+  top: unset;
+  bottom: 0;
 }
