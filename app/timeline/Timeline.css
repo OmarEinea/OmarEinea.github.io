@@ -3,8 +3,9 @@
   align-items: center;
   position: relative;
   min-height: 54px;
-  width: 120px;
-  padding: 8px 12px;
+  width: 94px;
+  margin: 0 8px;
+  padding: 8px;
   border-right: 1px solid #CFD8DC;
   border-left: 1px solid #CFD8DC;
   box-shadow: 0px -.5px 0px #EEE inset;
@@ -15,14 +16,14 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-top: 1px solid #CFD8DC;
-  padding: 12px;
+  padding: 12px 8px;
 }
 
 .year.start {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom: 1px solid #CFD8DC;
-  padding: 12px;
+  padding: 12px 8px;
 }
 
 .city, .city-vline, .city-vline i,
@@ -46,7 +47,6 @@
   bottom: 22px;
   width: 60%;
   height: 4px;
-  padding-left: 2px;
 }
 
 .city-vline i {
@@ -56,10 +56,11 @@
   height: 12px;
 }
 
-.year .number {
+.city-vline .number {
   position: absolute;
-  right: 115%;
-  bottom: 12px;
+  left: 46%;
+  transform: translateX(-50%);
+  bottom: -10px;
   padding: 1px 8px 2px;
   font-weight: 500;
 }
@@ -76,8 +77,9 @@
 }
 
 .inst-box {
+  max-width: 180%;
   padding: 7px 12px 9px;
-  margin: 8px 0 0 36px;
+  margin: 8px 0 0 32px;
 }
 
 .inst-box > i {
@@ -95,7 +97,7 @@
 
 .inst-sign {
   border-radius: unset;
-  margin-left: 12px;
+  margin-left: 10px;
   width: 5px;
   height: 100%;
 }
@@ -117,10 +119,11 @@
 
 .event {
   position: absolute;
-  right: 120%;
+  right: 100%;
   top: 40%;
-  width: 116%;
+  min-width: 168px;
   padding: 8px 12px;
+  margin-right: 28px !important;
 }
 
 .event, .ctrls .orange {
@@ -148,8 +151,12 @@
 }
 
 .ctrls {
-  margin: 0 0 42px 48px;
+  padding-bottom: 48px;
   max-width: 700px;
+}
+
+.ctrls.margin label {
+  margin: 12px;
 }
 
 .ctrls label * {
@@ -168,4 +175,19 @@
 
 .ctrls .orange, .ctrls .black {
   padding: 0 16px 0 1px;
+}
+
+@media screen and (min-width: 650px) {
+  .year {
+    width: 120px;
+    padding: 8px 12px;
+  }
+
+  .year.start, .year.end {
+    padding: 12px;
+  }
+
+  .ctrls {
+    padding-left: 42px;
+  }
 }
