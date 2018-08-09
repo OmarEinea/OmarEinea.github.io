@@ -26,8 +26,8 @@
   padding: 12px 8px;
 }
 
-.city, .city-vline, .city-vline i,
-.ctrls .white, .year .number {
+.city-vline, .city-vline i,
+.city, .year .number {
   position: absolute;
   border: 1px solid #CFD8DC;
   background-color: white;
@@ -152,11 +152,10 @@
 
 .ctrls {
   padding-bottom: 48px;
-  max-width: 700px;
-}
-
-.ctrls.margin label {
-  margin: 12px;
+  justify-content: space-evenly;
+  flex-direction: row !important;
+  display: flex;
+  width: 100%;
 }
 
 .ctrls label * {
@@ -164,17 +163,9 @@
   font-size: 1.1em;
 }
 
-.ctrls label.white * {
-  color: #616161;
-}
-
-.ctrls .white {
-  padding: 0 20px 0 4px;
-  position: relative;
-}
-
 .ctrls .orange, .ctrls .black {
   padding: 0 16px 0 1px;
+  margin: 0;
 }
 
 @media screen and (min-width: 650px) {
@@ -188,6 +179,6 @@
   }
 
   .ctrls {
-    padding-left: 42px;
+    padding-left: 48px;
   }
 }
