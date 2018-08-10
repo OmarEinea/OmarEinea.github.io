@@ -74,12 +74,21 @@ b {
   }
 }
 
-#toolbar.not-home {
+#toolbar.divider {
   border-bottom: solid 1.5px;
   border-image: linear-gradient(to right, #9E125E, #FE7131);
   border-image-slice: 1;
 }
 
-#toolbar:not(.not-home) #home-link {
+#toolbar:not(.divider) #home-link {
   display: none;
+}
+
+#home-link {
+  text-decoration: none;
+}
+
+#home-link > * {
+  display: inline-block;
+  vertical-align: top;
 }

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme, Hidden } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
 import { url } from 'db';
@@ -13,28 +13,39 @@ import './App.css';
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
   colors = ['#9E125E', '#DB236B', '#E32f4C', '#F24354', '#FA5E35', '#FE7131'],
   pages = {
-    Home, Skills,
-    Projects: () => <Cards type="Project"/>,
-    Certificates: () => <Cards type="Cert"/>,
-    Courses: () => <Cards type="Course" wide/>,
-    Events: () => <Cards type="Event"/>,
-    Timeline
+    home: Home, skills: Skills,
+    projects: () => <Cards type="Project"/>,
+    certificates: () => <Cards type="Cert"/>,
+    courses: () => <Cards type="Course" wide/>,
+    events: () => <Cards type="Event"/>,
+    timeline: Timeline
   };
 
 class App extends Component {
-  state = {page: 'Home'};
+  state = {page: 'home'};
+  buttonColor = (page, index) => ({
+    color: colors[index], boxShadow: this.state.page === page ?
+      'inset 0px 0px 0px 1px ' + colors[index] : 'unset'
+  });
 
-  goto(page) {
+  goto(page, event) {
+    if(event) {
+      event.preventDefault();
+      history.pushState(null, '', page === 'home' ? '/' : '/my/' + page);
+    }
     this.setState({page});
-    document.title = 'Omar Einea | ' + page;
+    document.title = 'Omar Einea | ' + page[0].toUpperCase() + page.slice(1);
   }
 
-  buttonColor(page, index) {
-    return {
-      color: colors[index],
-      boxShadow: this.state.page === page ?
-        'inset 0px 0px 0px 1px ' + colors[index] : 'unset'
-    };
+  componentWillMount() {
+    const [ page ] = location.hash.split('#my/').slice(-1);
+    if(page in pages && page !== 'home') {
+      history.replaceState(null, '', '/my/' + page);
+      this.goto(page);
+    }
+    window.addEventListener('popstate', () => {
+      this.goto(location.pathname.slice(4) || 'home');
+    });
   }
 
   render() {
@@ -42,22 +53,20 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <Grid id="root" container direction="column">
-          <Toolbar id="toolbar" class={'container' + (currentPage === 'Home' ? '' : ' not-home')}>
+          <Toolbar id="toolbar" class={'container' + (currentPage === 'home' ? '' : ' divider')}>
             <Hidden smDown>
               <div style={{flexBasis: '35.6%'}}>
-                <Grid container id="home-link">
-                  <Avatar style={{border: '1px solid #757575', cursor: 'pointer'}}
-                    onClick={() => this.goto('Home')} src={url('my/logo')}/>
-                  <Typography variant="headline" onClick={() => this.goto('Home')}
-                    style={{lineHeight: '42px', marginLeft: 12, color: '#616161', cursor: 'pointer'}}>
+                <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
+                  <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
+                  <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
                     Omar Einea
                   </Typography>
-                </Grid>
+                </a>
               </div>
             </Hidden>
             {Object.keys(pages).slice(1).map((page, index) =>
-              <Button style={this.buttonColor(page, index)}
-                onClick={() => this.goto(page)}>{page}</Button>
+              <Button href={page} style={this.buttonColor(page, index)}
+                onClick={(event) => this.goto(page, event)}>{page}</Button>
             )}
           </Toolbar>
           <CurrentPage/>
@@ -68,4 +77,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App/>, document.body);
+render(<App/>, document.body);
