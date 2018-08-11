@@ -16,7 +16,11 @@ module.exports = (_, { mode }) => {
           exclude: /node_modules/,
           query: {
             presets: ['env', 'react'],
-            plugins: ['react-html-attrs', 'transform-class-properties']
+            plugins: [
+              'react-html-attrs',
+              'transform-class-properties',
+              'transform-object-rest-spread'
+            ]
           }
         }, {
           test: /\.css$/,

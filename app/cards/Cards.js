@@ -7,12 +7,12 @@ export default class Cards extends Component {
   state = {allCards: []};
 
   componentWillMount() {
-    get(this.props.type.toLowerCase() + 's').then(cards => {
-      const { top } = cards;
-      delete cards.top;
-      for(let key in cards) {
-        let category = cards[key];
-        for(let card in category)
+    const { type } = this.props;
+    this.props.Card = cardTypes[type + 'Card'];
+    get(type.toLowerCase() + 's').then(({ top, ...cards }) => {
+      for(const key in cards) {
+        const category = cards[key];
+        for(const card in category)
           if(category[card] === -1)
             category[card] = top[card];
         cards[key] = Object.entries(category);
@@ -22,7 +22,7 @@ export default class Cards extends Component {
   }
 
   render() {
-    const { type, wide } = this.props, Card = cardTypes[type + 'Card'];
+    const { Card, wide } = this.props;
     return (
       <Grid container class="container" style={{marginBottom: 24}}>
         {this.state.allCards.map(([category, cards]) =>

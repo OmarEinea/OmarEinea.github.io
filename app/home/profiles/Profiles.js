@@ -22,18 +22,17 @@ export default class Profiles extends Component {
         });
     }
     fetch('https://api.github.com/users/OmarEinea')
-      .then(json).then(github => this.setState({github: {
+      .then(json).then(github => this.setState(prev => ({github: {
         followers: github.followers,
         repos: github.public_repos,
-        stars: this.state.github.stars
-      }}));
-    get('home/profiles').then(profiles => this.setState({
+        ...prev.github
+      }})));
+    get('home/profiles').then(profiles => this.setState(prev => ({
         xda: profiles.xda, github: {
           stars: profiles.github.stars,
-          repos: this.state.github.repos,
-          followers: this.state.github.followers
+          ...prev.github
         }
-      }));
+      })));
     fetch('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow')
       .then(json).then(stack => {
         const { reputation } = stack.items[0];

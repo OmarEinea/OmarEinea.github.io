@@ -8,23 +8,25 @@ import './Skills.css';
 export default class Skills extends Component {
   state = {circles: [], lines: []};
 
-  processData(type) {
-    return skills => {
-      const { order } = skills, orderedSkills = [];
-      delete skills.order;
-      for(let category in skills)
-        skills[category] = Object.entries(skills[category]).sort((a, b) => b[1] - a[1]);
-      skills = Object.entries(skills);
-      order.split(',').map(index => orderedSkills.push(skills[index - 1]));
-      this.setState({[type]: orderedSkills});
-    };
+  processData({ order, ...skills }, top) {
+    const orderedSkills = [];
+    for(const key in skills) {
+      const category = skills[key];
+      for(const skill in category)
+        if(category[skill] === -1)
+          category[skill] = top[skill];
+      skills[key] = Object.entries(category).sort((a, b) => b[1] - a[1]);
+    }
+    skills = Object.entries(skills);
+    order.split(',').map(index => orderedSkills.push(skills[index - 1]));
+    return orderedSkills;
   }
 
   componentWillMount() {
-    get('skills/circles').then(skills => {
-      this.processData('circles')(skills);
-      get('skills/lines').then(this.processData('lines'));
-    });
+    get('skills').then(({ top, circles, lines }) => this.setState({
+      circles: this.processData(circles, top.circles),
+      lines: this.processData(lines, top.lines)
+    }));
   }
 
   render() {

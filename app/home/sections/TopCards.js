@@ -7,9 +7,10 @@ export default class Cards extends Component {
   state = {cards: []};
 
   componentWillMount() {
-    get(this.props.type.toLowerCase() + 's/top').then(cards => {
-      const { order } = cards, orderedCards = [];
-      delete cards.order;
+    const { type } = this.props;
+    this.props.Card = cardTypes[type + 'Card']
+    get(type.toLowerCase() + 's/top').then(({ order, ...cards }) => {
+      const orderedCards = [];
       cards = Object.entries(cards);
       order.split(',').map(index => orderedCards.push(cards[index - 1]));
       this.setState({cards: orderedCards});
@@ -17,7 +18,7 @@ export default class Cards extends Component {
   }
 
   render() {
-    const Card = cardTypes[this.props.type + 'Card'];
+    const { Card } = this.props;
     return (
       <Grid container justify="center">
         {this.state.cards.map(cardData =>
