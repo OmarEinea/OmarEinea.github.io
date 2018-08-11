@@ -58,6 +58,11 @@ b {
   width: 100%;
 }
 
+button.mini, a.mini {
+  width: 40px;
+  height: 40px;
+}
+
 #toolbar {
   justify-content: center;
   padding: 8px 0;

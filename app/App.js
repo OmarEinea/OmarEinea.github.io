@@ -12,17 +12,19 @@ import './App.css';
 
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
   colors = ['#9E125E', '#DB236B', '#E32f4C', '#F24354', '#FA5E35', '#FE7131'],
+  my = page => '/my/' + page;
+
+class App extends Component {
+  state = {page: 'home'};
   pages = {
-    home: Home, skills: Skills,
+    home: () => <Home goto={this.goto.bind(this)}/>,
+    skills: () => <Skills/>,
     projects: () => <Cards type="Project"/>,
     certificates: () => <Cards type="Cert"/>,
     courses: () => <Cards type="Course" wide/>,
     events: () => <Cards type="Event"/>,
-    timeline: Timeline
+    timeline: () => <Timeline/>
   };
-
-class App extends Component {
-  state = {page: 'home'};
   buttonColor = (page, index) => ({
     color: colors[index], boxShadow: this.state.page === page ?
       'inset 0px 0px 0px 1px ' + colors[index] : 'unset'
@@ -31,7 +33,7 @@ class App extends Component {
   goto(page, event) {
     if(event) {
       event.preventDefault();
-      history.pushState(null, '', page === 'home' ? '/' : '/my/' + page);
+      history.pushState(null, '', page === 'home' ? '/' : my(page));
     }
     this.setState({page});
     document.title = 'Omar Einea | ' + page[0].toUpperCase() + page.slice(1);
@@ -39,8 +41,8 @@ class App extends Component {
 
   componentWillMount() {
     const [ page ] = location.hash.split('#my/').slice(-1);
-    if(page in pages && page !== 'home') {
-      history.replaceState(null, '', '/my/' + page);
+    if(page in this.pages && page !== 'home') {
+      history.replaceState(null, '', my(page));
       this.goto(page);
     }
     window.addEventListener('popstate', () => {
@@ -49,7 +51,7 @@ class App extends Component {
   }
 
   render() {
-    const currentPage = this.state.page, CurrentPage = pages[currentPage];
+    const currentPage = this.state.page, CurrentPage = this.pages[currentPage];
     return (
       <MuiThemeProvider theme={theme}>
         <Grid id="root" container direction="column">
@@ -62,8 +64,8 @@ class App extends Component {
                 </Typography>
               </a>
             </div>
-            {Object.keys(pages).slice(1).map((page, index) =>
-              <Button href={page} style={this.buttonColor(page, index)}
+            {Object.keys(this.pages).slice(1).map((page, index) =>
+              <Button href={my(page)} style={this.buttonColor(page, index)}
                 onClick={(event) => this.goto(page, event)}>{page}</Button>
             )}
           </Toolbar>

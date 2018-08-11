@@ -24,7 +24,7 @@ export default class ProjectCard extends Component {
               }
               action={
                 <IconButton onClick={() => this.setState({text: !text})}
-                  style={{width: 40, height: 40, margin: '2px 5px'}}>
+                  style={{margin: '2px 5px'}} class="mini">
                   <i style={{fontSize: 14}} class={'fas fa-chevron-' + (text ? 'up' : 'down')}/>
                 </IconButton>
               }

@@ -29,7 +29,7 @@ export default class CertCard extends Component {
                   <i class="fas fa-university" style={{marginRight: 4}}/> {auth}
                 </Typography>
                 <IconButton onClick={() => this.setState({text: !text})}
-                  style={{margin: '-10px -10px -12px', width: 40, height: 40}}>
+                  style={{margin: '-10px -10px -12px'}} class="mini">
                   <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
                 </IconButton>
               </CardActions>
