@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { render } from 'react-dom';
-import { MuiThemeProvider, createMuiTheme, Hidden } from 'material-ui';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
 import { url } from 'db';
 import Home from './home/Home';
@@ -54,16 +54,14 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Grid id="root" container direction="column">
           <Toolbar id="toolbar" class={'container' + (currentPage === 'home' ? '' : ' divider')}>
-            <Hidden smDown>
-              <div style={{flexBasis: '35.6%'}}>
-                <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
-                  <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
-                  <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
-                    Omar Einea
-                  </Typography>
-                </a>
-              </div>
-            </Hidden>
+            <div style={{width: '34.5%', marginLeft: 12}}>
+              <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
+                <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
+                <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
+                  Omar Einea
+                </Typography>
+              </a>
+            </div>
             {Object.keys(pages).slice(1).map((page, index) =>
               <Button href={page} style={this.buttonColor(page, index)}
                 onClick={(event) => this.goto(page, event)}>{page}</Button>

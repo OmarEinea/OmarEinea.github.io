@@ -63,14 +63,21 @@ b {
   padding: 8px 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
   #toolbar {
     flex-flow: row wrap;
     margin-bottom: 16px;
   }
 
-  #toolbar button {
-    margin: 8px 2px;
+  #toolbar a {
+    margin: 8px 4px;
+  }
+
+  #toolbar > div {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 0 12px 12px;
   }
 }
 
