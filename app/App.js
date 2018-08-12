@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
-import { url } from 'db';
+import { url, colors } from 'db';
 import Home from './home/Home';
 import Cards from './cards/Cards';
 import Skills from './skills/Skills';
@@ -11,7 +11,6 @@ import Footer from './utils/Footer';
 import './App.css';
 
 const theme = createMuiTheme({typography: {fontFamily: 'Quicksand'}}),
-  colors = ['#9E125E', '#DB236B', '#E32f4C', '#F24354', '#FA5E35', '#FE7131'],
   my = page => '/my/' + page;
 
 class App extends Component {
@@ -70,7 +69,7 @@ class App extends Component {
             )}
           </Toolbar>
           <CurrentPage/>
-          <Footer colors={[colors[0], colors[4]]}/>
+          <Footer/>
         </Grid>
       </MuiThemeProvider>
     );

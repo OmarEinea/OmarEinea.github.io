@@ -1,11 +1,10 @@
 import { Component } from 'react';
 import { Grid, Typography } from 'material-ui';
 import { get } from 'db';
+import Loading from '~/utils/Loading';
 import cardTypes from '~/utils/card';
 
 export default class Cards extends Component {
-  state = {allCards: []};
-
   componentWillMount() {
     const { type } = this.props;
     this.props.Card = cardTypes[type + 'Card'];
@@ -22,8 +21,8 @@ export default class Cards extends Component {
   }
 
   render() {
-    const { Card, wide } = this.props;
-    return (
+    const { state, props: { Card, wide }} = this;
+    return state ? (
       <Grid container class="container" style={{marginBottom: 24}}>
         {this.state.allCards.map(([category, cards]) =>
           <Grid container justify="center">
@@ -36,6 +35,6 @@ export default class Cards extends Component {
           </Grid>
         )}
       </Grid>
-    );
+    ) : <Loading/>;
   }
 }

@@ -1,15 +1,15 @@
 import { Component } from 'react';
 import { Grid, IconButton, Typography } from 'material-ui';
+import { colors } from 'db';
 
 export default class Footer extends Component {
   age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 
   render() {
-    const [ left, right ] = this.props.colors;
     return (
       <Grid item style={{position: 'relative'}} class="white-text">
         <div id="footer-background"
-          style={{background: `linear-gradient(to top right, ${left}, ${right})`, zIndex: -2}}/>
+          style={{background: `linear-gradient(to top right, ${colors[0]}, ${colors[4]})`, zIndex: -2}}/>
         <Grid container class="container">
           <Grid item sm={6} xs={12} align="center" style={{paddingTop: 36}}>
             <Typography variant="headline" gutterBottom>About Me</Typography>

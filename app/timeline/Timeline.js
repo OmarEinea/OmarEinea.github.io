@@ -1,11 +1,10 @@
 import { Component } from 'react';
 import { Grid, Typography, FormControlLabel, RadioGroup, Radio, Tooltip } from 'material-ui';
 import { get } from 'db';
+import Loading from '~/utils/Loading';
 import './Timeline.css';
 
 export default class Timeline extends Component {
-  state = {years: [], showEvents: true};
-
   structureItems(items) {
     const structured = {};
     Object.entries(items).map(([range, desc]) => {
@@ -21,7 +20,7 @@ export default class Timeline extends Component {
       years: Object.entries(years).slice(1),
       cities: this.structureItems(cities),
       institutes: this.structureItems(institutes),
-      events
+      events, showEvents: true
     }));
   }
 
@@ -29,7 +28,7 @@ export default class Timeline extends Component {
     const { years, cities, institutes, events, showEvents, pc } = this.state,
       is = (string, type) => string.includes(type) && type.toLowerCase();
     let city, cityStart, cityCount, institute, instDesc, instStart, instCount;
-    return (
+    return years ? (
       <Grid container direction="column-reverse"
         alignItems={pc ? 'center': showEvents ? 'flex-end' : 'flex-start'}
         class="container" style={{margin: '48px auto 36px', overflow: 'hidden'}}>
@@ -80,7 +79,7 @@ export default class Timeline extends Component {
           <FormControlLabel value={false} control={<Radio/>} label="Phases" class="black"/>
         </RadioGroup>}
       </Grid>
-    );
+    ) : <Loading/>;
   }
 
   componentDidMount() {
