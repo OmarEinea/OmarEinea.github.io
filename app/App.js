@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { render } from 'react-dom';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui';
-import { Grid, Toolbar, Button, Avatar, Typography } from 'material-ui';
+import { MuiThemeProvider, createMuiTheme, Grow, Zoom, Slide } from 'material-ui';
+import { Grid, Toolbar, Button, Avatar, Typography, Hidden } from 'material-ui';
 import { url, colors } from 'db';
 import Home from './home/Home';
 import Cards from './cards/Cards';
@@ -11,7 +11,7 @@ import Footer from './utils/Footer';
 import './App.css';
 
 class App extends Component {
-  state = {page: 'home'};
+  state = {page: 'home', mounted: true};
   pages = {
     home: () => <Home goto={this.goto.bind(this)}/>,
     skills: () => <Skills/>,
@@ -26,21 +26,27 @@ class App extends Component {
       'inset 0px 0px 0px 1px ' + colors[index] : 'unset'
   });
 
-  goto(page, event) {
-    if(event) {
-      event.preventDefault();
-      if(page === this.state.page) return;
-      history.pushState(null, '', page === 'home' ? '/' : page);
+  goto(page, event, now) {
+    if(event) event.preventDefault();
+    if(page === this.state.page) return;
+    const switchPage = () => {
+      if(event)
+        history.pushState(null, '', page === 'home' ? '/' : page);
+      this.setState({page, mounted: true});
+      document.title = 'Omar Einea | ' + page[0].toUpperCase() + page.slice(1);
+    };
+    if(now) switchPage();
+    else {
+      this.setState({mounted: false});
+      setTimeout(switchPage, 500);
     }
-    this.setState({page});
-    document.title = 'Omar Einea | ' + page[0].toUpperCase() + page.slice(1);
   }
 
   componentWillMount() {
     const page = location.hash.slice(1);
     if(page in this.pages && page !== 'home') {
       history.replaceState(null, '', page);
-      this.goto(page);
+      this.goto(page, null, true);
     }
     window.addEventListener('popstate', () => {
       this.goto(location.pathname.slice(1) || 'home');
@@ -48,24 +54,35 @@ class App extends Component {
   }
 
   render() {
-    const currentPage = this.state.page, CurrentPage = this.pages[currentPage];
+    const { state, pages } = this, CurrentPage = pages[state.page], notHome = state.page !== 'home';
     return (
       <Grid id="root" container direction="column">
-        <Toolbar id="toolbar" class={'container' + (currentPage === 'home' ? '' : ' divider')}>
-          <div style={{width: '34.5%', marginLeft: 12}}>
-            <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
-              <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
-              <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
-                Omar Einea
-              </Typography>
-            </a>
-          </div>
-          {Object.keys(this.pages).slice(1).map((page, index) =>
-            <Button href={page} style={this.buttonColor(page, index)}
-              onClick={(event) => this.goto(page, event)}>{page}</Button>
+        <Toolbar id="toolbar" class="container">
+          <Hidden smDown={!notHome}>
+            <div style={{width: '34.5%', marginLeft: 12}} class={!notHome && 'hide'}>
+              <Grow in={notHome} timeout={400} direction="left" unmountOnExit>
+                <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
+                  <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
+                  <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
+                    Omar Einea
+                  </Typography>
+                </a>
+              </Grow>
+            </div>
+          </Hidden>
+          {Object.keys(pages).slice(1).map((page, index) =>
+            <Slide in timeout={(6 - index) * 150} direction="down">
+              <Button href={page} style={this.buttonColor(page, index)}
+                onClick={(event) => this.goto(page, event)}>{page}</Button>
+            </Slide>
           )}
+          <Zoom in={notHome} timeout={300}>
+            <div class="divider"/>
+          </Zoom>
         </Toolbar>
-        <CurrentPage/>
+        <Grow in={state.mounted} timeout={500}>
+          <CurrentPage/>
+        </Grow>
         <Footer/>
       </Grid>
     );

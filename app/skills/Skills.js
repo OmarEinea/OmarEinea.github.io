@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid, Typography, Paper } from 'material-ui';
+import { Grid, Typography, Paper, Grow, Fade } from 'material-ui';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
 import Circle from './widgets/Circle';
@@ -34,15 +34,19 @@ export default class Skills extends Component {
       <Grid container class="container" style={{marginBottom: 24}}>
         {state.circles.map(([category, skills]) =>
           <Grid container justify="center">
-            <Typography variant="display1" class="category">{category}</Typography>
-            {skills.map(skill =>
-              <Paper style={{margin: 8}}><Circle skill={skill}/></Paper>
+            <Fade in>
+              <Typography variant="display1" class="category">{category}</Typography>
+            </Fade>
+            {skills.map((skill, index) =>
+              <Grow in timeout={(index + 1) * 200}>
+                <Paper style={{margin: 8}}><Circle skill={skill}/></Paper>
+              </Grow>
             )}
           </Grid>
         )}
         <div style={{width: '100%'}}>
           {state.lines.map(([category, skills]) =>
-            <div id="lines-list">
+            <div class="lines-list">
               <Typography variant="display1" class="category">{category}</Typography>
               <Paper style={{margin: 8, padding: '12px 8px 16px'}}>
                 {skills.map(skill => <Line skill={skill}/>)}

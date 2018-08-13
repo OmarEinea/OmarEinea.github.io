@@ -1,10 +1,10 @@
-#lines-list {
+.lines-list {
   float: left;
   width: 50%;
 }
 
 @media screen and (max-width: 750px) {
-  #lines-list {
+  .lines-list {
     width: 100%;
   }
 }

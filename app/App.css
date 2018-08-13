@@ -71,6 +71,7 @@ button.mini, a.mini {
 }
 
 #toolbar {
+  position: relative;
   justify-content: center;
   padding: 8px 0;
 }
@@ -85,7 +86,7 @@ button.mini, a.mini {
     margin: 8px 4px;
   }
 
-  #toolbar > div {
+  #toolbar > div:not(.divider) {
     display: flex;
     flex-basis: 100%;
     justify-content: center;
@@ -93,14 +94,12 @@ button.mini, a.mini {
   }
 }
 
-#toolbar.divider {
-  border-bottom: solid 1.5px;
-  border-image: linear-gradient(to right, #9E125E, #FE7131);
-  border-image-slice: 1;
-}
-
-#toolbar:not(.divider) #home-link {
-  display: none;
+#toolbar .divider {
+  position: absolute;
+  height: 1.5px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(to right, #9E125E, #FE7131);
 }
 
 #home-link {

@@ -8,7 +8,7 @@ export default class Cards extends Component {
 
   componentWillMount() {
     const { type } = this.props;
-    this.props.Card = cardTypes[type + 'Card']
+    this.Card = cardTypes[type + 'Card'];
     get(type.toLowerCase() + 's/top').then(({ order, ...cards }) => {
       const orderedCards = [];
       cards = Object.entries(cards);
@@ -18,10 +18,10 @@ export default class Cards extends Component {
   }
 
   render() {
-    const { Card } = this.props;
+    const { Card, state } = this;
     return (
       <Grid container justify="center">
-        {this.state.cards.map(cardData =>
+        {state.cards.map(cardData =>
           <Grid item md={4} sm={6} xs={12}>
             <Card data={cardData} full/>
           </Grid>

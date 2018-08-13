@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import { Grid, Typography, FormControlLabel, RadioGroup, Radio, Tooltip } from 'material-ui';
+import { Grid, Typography, Tooltip, Grow } from 'material-ui';
+import { FormControlLabel, RadioGroup, Radio } from 'material-ui';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
 import './Timeline.css';
@@ -38,39 +39,41 @@ export default class Timeline extends Component {
           if(instStart = year in institutes)
             [[ institute, instDesc], instCount ] = institutes[year];
           return (
-            <div class={'year' + (cityStart && ' start' || '') + (cityCount-- === 0 && ' end' || '')}>
-              {showEvents && cityStart && <span>
-                <b class="city-vline"><i/>
-                  <Typography class="number">{+year + 1994}</Typography>
-                </b>
-                <Typography class="city" variant="subheading" noWrap>
-                  <i class="fas fa-map-marker-alt"/> {city[0]}
-                </Typography>
-              </span>}
-              {(pc || !showEvents) && <span>
-                {instCount === 0 && <span class="inst-box white-text"><i/>
-                  <Typography variant="subheading" style={instDesc && {marginBottom: 6}} noWrap>
-                    <i style={{marginRight: 8}}
-                      class={'fas fa-' + (is(institute, 'School') || is(institute, 'University') || '')}/>
-                    <b>{institute}</b>
+            <Grow in timeout={(years.length - index) * 300}>
+              <div class={'year' + (cityStart && ' start' || '') + (cityCount-- === 0 && ' end' || '')}>
+                {showEvents && cityStart && <span>
+                  <b class="city-vline"><i/>
+                    <Typography class="number">{+year + 1994}</Typography>
+                  </b>
+                  <Typography class="city" variant="subheading" noWrap>
+                    <i class="fas fa-map-marker-alt"/> {city[0]}
                   </Typography>
-                  <Typography variant="caption">{instDesc}</Typography>
                 </span>}
-                {instCount >= 0 &&
-                  <i class={'inst-sign' + (instStart ? ' start' : '') + (instCount-- === 0 ? ' end' : '')}/>
+                {(pc || !showEvents) && <span>
+                  {instCount === 0 && <span class="inst-box white-text"><i/>
+                    <Typography variant="subheading" style={instDesc && {marginBottom: 6}} noWrap>
+                      <i style={{marginRight: 8}}
+                        class={'fas fa-' + (is(institute, 'School') || is(institute, 'University') || '')}/>
+                      <b>{institute}</b>
+                    </Typography>
+                    <Typography variant="caption">{instDesc}</Typography>
+                  </span>}
+                  {instCount >= 0 &&
+                    <i class={'inst-sign' + (instStart ? ' start' : '') + (instCount-- === 0 ? ' end' : '')}/>
+                  }
+                </span>}
+                {(pc || showEvents) && year in events &&
+                  <Typography class={'white-text event' + (year - 1 in events ? ' up': '')}>
+                    <i/>{events[year]}
+                  </Typography>
                 }
-              </span>}
-              {(pc || showEvents) && year in events &&
-                <Typography class={'white-text event' + (year - 1 in events ? ' up': '')}>
-                  <i/>{events[year]}
+                <Typography align="center" style={{flex: 1, color: '#616161'}}>
+                  <Tooltip title={year + ' years old' + (index === years.length - 1 ? ' (NOW)' : '')}>
+                    {state ? <span>{state}</span> : <i class="fas fa-child fa-lg"/>}
+                  </Tooltip>
                 </Typography>
-              }
-              <Typography align="center" style={{flex: 1, color: '#616161'}}>
-                <Tooltip title={year + ' years old' + (index === years.length - 1 ? ' (NOW)' : '')}>
-                  {state ? <span>{state}</span> : <i class="fas fa-child fa-lg"/>}
-                </Tooltip>
-              </Typography>
-            </div>
+              </div>
+            </Grow>
           );
         })}
         {!pc && <RadioGroup value={showEvents} class="ctrls"
