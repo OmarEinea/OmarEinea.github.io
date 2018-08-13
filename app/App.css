@@ -4,7 +4,6 @@ html, body {
 
 body {
   background-color: #ECEFF1;
-  overflow-y: scroll;
   margin: 0;
 }
 
@@ -13,19 +12,26 @@ body {
   position: relative;
 }
 
-#root::before {
+#root::before, #footer::before {
   background: url(app/utils/pattern.jpg);
   opacity: .04;
   z-index: -1;
   content: "";
 }
 
-#root::before, #footer-background {
+#root::before, #footer::before,
+#footer > div:first-child {
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
   top: 0;
+}
+
+#footer {
+  width: 100%;
+  position: absolute;
+  top: 100%;
 }
 
 .white-text, .white-text * {

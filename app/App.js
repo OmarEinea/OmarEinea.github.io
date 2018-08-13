@@ -29,6 +29,7 @@ class App extends Component {
   goto(page, event) {
     if(event) {
       event.preventDefault();
+      if(page === this.state.page) return;
       history.pushState(null, '', page === 'home' ? '/' : page);
     }
     this.setState({page});

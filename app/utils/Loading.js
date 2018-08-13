@@ -7,7 +7,7 @@ export default class Loading extends Component {
 
   componentWillMount() {
     let direction = -1;
-    setInterval(() => this.setState(prev => {
+    this.colorChanger = setInterval(() => this.setState(prev => {
       if(prev.index + direction === colors.length)
         direction = -1;
       else if(prev.index + direction === 0)
@@ -18,10 +18,13 @@ export default class Loading extends Component {
 
   render() {
     return (
-      <Grid container justify="center" alignItems="center"
-        style={{flex: 1, minHeight: 100, marginBottom: 16}}>
+      <Grid container justify="center" alignItems="center" style={{flex: 1, marginBottom: 16}}>
         <CircularProgress size={64} style={{color: colors[this.state.index]}}/>
       </Grid>
     );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.colorChanger);
   }
 }
