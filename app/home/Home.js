@@ -27,7 +27,7 @@ export default class Home extends Component {
                   {Section === Profiles ? 'dev ' + title : <span>top {title}
                     <Tooltip title="View All" placement="right" enterDelay={100}>
                       <IconButton onClick={(event) => this.props.goto(title, event)}
-                        href={'/my/' + title} style={{marginLeft: 8}} class="mini">
+                        href={title} style={{marginLeft: 8}} class="mini">
                         <i class="fas fa-link" style={{fontSize: 17, opacity: .7}}/>
                       </IconButton>
                     </Tooltip>
