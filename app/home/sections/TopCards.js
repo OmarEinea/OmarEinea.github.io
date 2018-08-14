@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid } from 'material-ui';
+import { Grid, Zoom } from 'material-ui';
 import { get } from 'db';
 import cardTypes from '~/utils/card';
 
@@ -18,13 +18,15 @@ export default class Cards extends Component {
   }
 
   render() {
-    const { Card, state } = this;
+    const { Card, state: { cards }, props: { visible }} = this;
     return (
       <Grid container justify="center">
-        {state.cards.map(cardData =>
-          <Grid item md={4} sm={6} xs={12}>
-            <Card data={cardData} full/>
-          </Grid>
+        {cards.map((cardData, index) =>
+          <Zoom in={visible} timeout={(index + 1) * 400}>
+            <Grid item md={4} sm={6} xs={12}>
+              <Card data={cardData} full/>
+            </Grid>
+          </Zoom>
         )}
       </Grid>
     );

@@ -30,6 +30,7 @@ class App extends Component {
     if(event) event.preventDefault();
     if(page === this.state.page) return;
     const switchPage = () => {
+      window.scroll({top: 0, left: 0});
       if(event)
         history.pushState(null, '', page === 'home' ? '/' : page);
       this.setState({page, mounted: true});

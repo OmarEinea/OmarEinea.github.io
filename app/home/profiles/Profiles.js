@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Grid, Typography, Hidden } from 'material-ui';
+import { Grid, Typography, Hidden, Grow } from 'material-ui';
 import { get, logo, json } from 'db';
 import 'fetch';
 import './Profiles.css';
@@ -42,87 +42,94 @@ export default class Profiles extends Component {
   }
 
   render() {
+    const { state: { graph, github, stack, xda }, props: { visible }} = this;
     return (
       <Grid container>
-        <Grid container class="box">
-          <Grid item md={3} xs={12} id="github">
-            <a href="my/github" target="_blank">
-              <img height="50" src={logo('gh')}/>
-            </a>
-            <Typography variant="subheading">
-              <i class="fas fa-fw fa-hdd"/>
-              <b>{this.state.github.repos}</b> Repositories
-            </Typography>
-            <Typography variant="subheading">
-              <i class="fas fa-fw fa-user-friends"/>
-              <b>{this.state.github.followers}</b> Followers
-            </Typography>
-            <Typography variant="subheading">
-              <i class="fas fa-fw fa-star"/>
-              <b>{this.state.github.stars}</b> Stars
-            </Typography>
-          </Grid>
-          <Grid item md={9} xs={12} align="center">
-            <Grid item style={{maxWidth: 685}}>
-              <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
-                {this.state.graph.commits} contributions last year
+        <Grow in={visible} timeout={500}>
+          <Grid container class="box">
+            <Grid item md={3} xs={12} id="github">
+              <a href="my/github" target="_blank">
+                <img height="50" src={logo('gh')}/>
+              </a>
+              <Typography variant="subheading">
+                <i class="fas fa-fw fa-hdd"/>
+                <b>{github.repos}</b> Repositories
               </Typography>
-              <div id="graph" dangerouslySetInnerHTML={{__html: this.state.graph.html}}/>
-              <Typography variant="caption" align="left" id="legend">
-                Commits made by me
-                <div style={{float: 'right'}}>
-                  Less
-                  <ul>
-                    {['#eee', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-                      .map(color => <li style={{backgroundColor: color}}></li>)}
-                  </ul>
-                  More
-                </div>
+              <Typography variant="subheading">
+                <i class="fas fa-fw fa-user-friends"/>
+                <b>{github.followers}</b> Followers
+              </Typography>
+              <Typography variant="subheading">
+                <i class="fas fa-fw fa-star"/>
+                <b>{github.stars}</b> Stars
               </Typography>
             </Grid>
+            <Grid item md={9} xs={12} align="center">
+              <Grid item style={{maxWidth: 685}}>
+                <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
+                  {graph.commits} contributions last year
+                </Typography>
+                <div id="graph" dangerouslySetInnerHTML={{__html: graph.html}}/>
+                <Typography variant="caption" align="left" id="legend">
+                  Commits made by me
+                  <div style={{float: 'right'}}>
+                    Less
+                    <ul>
+                      {['#eee', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+                        .map(color => <li style={{backgroundColor: color}}></li>)}
+                    </ul>
+                    More
+                  </div>
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
+        </Grow>
         <Hidden xsDown><Grid container style={{height: 4}}/></Hidden>
         <Grid container>
-          <Grid item sm={6} xs={12}>
-            <div class="box flair">
-              <a href="my/stackoverflow" target="_blank">
-                <img height="45" src={logo('so')}/>
-              </a>
-              <Typography variant="title">
-                <i class="fas fa-fw fa-thumbs-up"/>
-                {this.state.stack.reputation} Up Votes
-              </Typography>
-              <Typography variant="subheading">
-                <i class="fas fa-fw fa-trophy" style={{marginLeft: 2}}/> Badges
-                <b style={{color: '#c38b5f'}}>
-                  <i class="fas fa-fw fa-certificate"/> {this.state.stack.bronze}
-                </b>
-                <b style={{color: '#8c9298'}}>
-                  <i class="fas fa-fw fa-certificate"/> {this.state.stack.silver}
-                </b>
-                <b style={{color: '#cda400'}}>
-                  <i class="fas fa-fw fa-certificate"/> {this.state.stack.gold}
-                </b>
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item sm={6} xs={12}>
-            <div class="box flair">
-              <a href="my/xda-developers" target="_black">
-                <img height="45" src={logo('xda')}/>
-              </a>
-              <Typography variant="title">
-                <i class="fas fa-fw fa-thumbs-up"/>
-                {this.state.xda.thanks} Thanks
-              </Typography>
-              <Typography variant="subheading">
-                <i class="fas fa-fw fa-user-edit" style={{margin: '0 3px'}}/>
-                <b>{this.state.xda.posts}</b> Posts
-                in <b>{this.state.xda.threads}</b> Threads
-              </Typography>
-            </div>
-          </Grid>
+          <Grow in={visible} timeout={700}>
+            <Grid item sm={6} xs={12}>
+              <div class="box flair">
+                <a href="my/stackoverflow" target="_blank">
+                  <img height="45" src={logo('so')}/>
+                </a>
+                <Typography variant="title">
+                  <i class="fas fa-fw fa-thumbs-up"/>
+                  {stack.reputation} Up Votes
+                </Typography>
+                <Typography variant="subheading">
+                  <i class="fas fa-fw fa-trophy" style={{marginLeft: 2}}/> Badges
+                  <b style={{color: '#c38b5f'}}>
+                    <i class="fas fa-fw fa-certificate"/> {stack.bronze}
+                  </b>
+                  <b style={{color: '#8c9298'}}>
+                    <i class="fas fa-fw fa-certificate"/> {stack.silver}
+                  </b>
+                  <b style={{color: '#cda400'}}>
+                    <i class="fas fa-fw fa-certificate"/> {stack.gold}
+                  </b>
+                </Typography>
+              </div>
+            </Grid>
+          </Grow>
+          <Grow in={visible} timeout={900}>
+            <Grid item sm={6} xs={12}>
+              <div class="box flair">
+                <a href="my/xda-developers" target="_black">
+                  <img height="45" src={logo('xda')}/>
+                </a>
+                <Typography variant="title">
+                  <i class="fas fa-fw fa-thumbs-up"/>
+                  {xda.thanks} Thanks
+                </Typography>
+                <Typography variant="subheading">
+                  <i class="fas fa-fw fa-user-edit" style={{margin: '0 3px'}}/>
+                  <b>{xda.posts}</b> Posts
+                  in <b>{xda.threads}</b> Threads
+                </Typography>
+              </div>
+            </Grid>
+          </Grow>
         </Grid>
       </Grid>
     );
