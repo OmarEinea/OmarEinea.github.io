@@ -102,11 +102,9 @@ button.mini, a.mini {
   background: linear-gradient(to right, #9E125E, #FE7131);
 }
 
+#home-link > *,
 #home-link {
   text-decoration: none;
-}
-
-#home-link > * {
   display: inline-block;
   vertical-align: top;
 }

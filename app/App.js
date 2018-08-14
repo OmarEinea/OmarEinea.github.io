@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { MuiThemeProvider, createMuiTheme, Grow, Zoom, Slide } from 'material-ui';
 import { Grid, Toolbar, Button, Avatar, Typography, Hidden } from 'material-ui';
 import { url, colors } from 'db';
+import Optimize from './utils/Optimize';
 import Home from './home/Home';
 import Cards from './cards/Cards';
 import Skills from './skills/Skills';
@@ -82,7 +83,7 @@ class App extends Component {
           </Zoom>
         </Toolbar>
         <Grow in={state.mounted} timeout={500}>
-          <CurrentPage/>
+          <Optimize><CurrentPage/></Optimize>
         </Grow>
         <Footer/>
       </Grid>
