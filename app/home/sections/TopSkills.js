@@ -25,7 +25,7 @@ export default class Skills extends PureComponent {
             </Grid>
           </Grid>
         </Grow>
-        <Grow in={visible} timeout={600}>
+        <Grow in={visible} timeout={700}>
           <Grid container md={5} xs={12}>
             <Grid container direction="column" class="box">
               {lines.map(skill => <Line skill={skill}/>)}

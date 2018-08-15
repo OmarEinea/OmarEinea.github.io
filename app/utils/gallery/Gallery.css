@@ -7,8 +7,13 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.gallery.closing > div:first-child {
+  opacity: 0 !important;
+}
+
 .gallery .content {
   outline: 0;
+  position: relative;
   align-items: center;
   display: inline-flex;
   max-width: calc(100% - 16px);

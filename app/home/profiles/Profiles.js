@@ -87,7 +87,7 @@ export default class Profiles extends PureComponent {
         </Grow>
         <Hidden xsDown><Grid container style={{height: 4}}/></Hidden>
         <Grid container>
-          <Grow in={visible} timeout={700}>
+          <Grow in={visible} timeout={800}>
             <Grid item sm={6} xs={12}>
               <div class="box flair">
                 <a href="my/stackoverflow" target="_blank">
@@ -112,7 +112,7 @@ export default class Profiles extends PureComponent {
               </div>
             </Grid>
           </Grow>
-          <Grow in={visible} timeout={900}>
+          <Grow in={visible} timeout={1000}>
             <Grid item sm={6} xs={12}>
               <div class="box flair">
                 <a href="my/xda-developers" target="_black">

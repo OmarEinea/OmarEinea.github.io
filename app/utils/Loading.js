@@ -18,7 +18,8 @@ export default class Loading extends Component {
 
   render() {
     return (
-      <Grid container justify="center" alignItems="center" style={{flex: 1, marginBottom: 16}}>
+      <Grid container justify="center" alignItems="center"
+        style={{flex: 1, marginBottom: 16, ...this.props.style}}>
         <CircularProgress size={64} style={{color: colors[this.state.index]}}/>
       </Grid>
     );

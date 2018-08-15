@@ -1,10 +1,19 @@
 import { Component } from 'react';
-import { Typography, Modal } from 'material-ui';
+import { Typography, Modal, Zoom } from 'material-ui';
 import { url } from 'db';
+import Loading from '~/utils/Loading';
 import './Gallery.css';
 
 export default class Gallery extends Component {
   state = {loaded: false, index: 0};
+  gotoImage = index => () => {
+    this.setState({loaded: false});
+    setTimeout(() => this.setState({index}), 100);
+  };
+  onClose = () => {
+    this.setState({loaded: false, closing: true});
+    setTimeout(this.props.onClose, 250);
+  }
 
   componentWillMount() {
     let { title, images, folder, format = 'jpg' } = this.props;
@@ -19,36 +28,34 @@ export default class Gallery extends Component {
     this.images = images;
   }
 
-  gotoImage(index) {
-    return () => this.setState({index, loaded: false});
-  }
-
   render() {
-    const { images, state: { loaded, index }, props: { onClose }} = this;
+    const { images, state: { loaded, index, closing }} = this;
     return (
-      <Modal open onBackdropClick={onClose} class="gallery">
-        <div class="content white-text">
-          <div class="main">
-            {loaded && <div>
-              <Typography variant="subheading" style={{flex: 1}} noWrap>
-                {images[index]}
-              </Typography>
-              <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
-                ({index + 1} of {images.length})
-                <i class="fas fa-times" onClick={onClose}/>
-              </Typography>
-            </div> || <div/>}
-            <img src={url(this.urls[index])}
-              style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
-              onLoad={() => this.setState({loaded: true})}/>
-          </div>
+      <Modal open onClose={this.onClose} class={'gallery' + (closing ? ' closing' : '')}>
+        <div class="content">
+          {!loaded && !closing && <Loading style={{position: 'absolute'}}/>}
+          <Zoom in={loaded} timeout={{enter: 400, exit: 250}}>
+            <div class="main">
+              <div class="white-text">
+                <Typography variant="subheading" style={{flex: 1}} noWrap>
+                  {images[index]}
+                </Typography>
+                <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
+                  ({index + 1} of {images.length})
+                  <i class="fas fa-times" onClick={this.onClose}/>
+                </Typography>
+              </div>
+              <img style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
+                src={url(this.urls[index])} onLoad={() => this.setState({loaded: true})}/>
+            </div>
+          </Zoom>
           {index > 0 &&
-            <div class="nav" style={{left: 0}}>
+            <div class="nav white-text" style={{left: 0}}>
               <i onClick={this.gotoImage(index - 1)} class="fas fa-chevron-left"/>
             </div>
           }
           {images.length > 1 && index + 1 < images.length &&
-            <div class="nav" style={{right: 0}}>
+            <div class="nav white-text" style={{right: 0}}>
               <i onClick={this.gotoImage(index + 1)} class="fas fa-chevron-right"/>
             </div>
           }
