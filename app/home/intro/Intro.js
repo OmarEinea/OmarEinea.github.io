@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
 import { url, get } from 'db';
 import './Intro.css';
 
-export default class Intro extends Component {
+export default class Intro extends PureComponent {
   state = {bio: ''};
 
   componentWillMount() {

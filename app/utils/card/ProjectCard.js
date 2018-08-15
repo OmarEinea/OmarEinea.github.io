@@ -1,16 +1,16 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { ClickAwayListener, Collapse, CardActions, CardHeader, Tooltip } from 'material-ui';
 import { Card, CardMedia, Button, IconButton, Avatar, Typography } from 'material-ui';
 import { url, logo } from 'db';
 import Gallery from 'gallery';
 import './Card.css';
 
-export default class ProjectCard extends Component {
+export default class ProjectCard extends PureComponent {
   state = {text: false, image: false};
 
   render() {
-    let { text, image } = this.state, { full } = this.props,
-      [ title, { desc, type, images, skills, repo, demo } ] = this.props.data;
+    const { state: { text, image }, props: { full }} = this,
+      [ title, { desc, type, images, skills, repo, demo }] = this.props.data;
     return (
       <Card class="card">
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
@@ -38,8 +38,8 @@ export default class ProjectCard extends Component {
             style={{position: 'absolute', bottom: 20, right: 20, color: '#757575', fontSize: 20}}/>
           <Button class="image-button"/>
         </CardMedia>
-        <Gallery title={title} images={images.split(',')} folder="projects"
-          isOpen={image} onClose={() => this.setState({image: false})} format="png"/>
+        {image && <Gallery title={title} images={images.split(',')} folder="projects"
+          onClose={() => this.setState({image: false})} format="png"/>}
         <CardActions style={{padding: 16}}>
           <div style={{flex: 1, height: 44}}>
             {skills.split(',').map(skill =>

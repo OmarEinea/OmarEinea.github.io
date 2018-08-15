@@ -6,6 +6,8 @@ import Loading from '~/utils/Loading';
 import './Timeline.css';
 
 export default class Timeline extends Component {
+  state = {showEvents: true};
+
   structureItems(items) {
     const structured = {};
     Object.entries(items).map(([range, desc]) => {
@@ -16,12 +18,16 @@ export default class Timeline extends Component {
   }
 
   componentWillMount() {
-    (this.onResize = () => this.setState({pc: window.innerWidth > 650}))();
+    (this.onResize = () => {
+      const pc = window.innerWidth > 650;
+      if(pc !== this.state.pc)
+        this.setState({pc});
+    })();
     get('timeline').then(({ years, cities, institutes, events }) => this.setState({
       years: Object.entries(years).slice(1),
       cities: this.structureItems(cities),
       institutes: this.structureItems(institutes),
-      events, showEvents: true
+      events
     }));
   }
 

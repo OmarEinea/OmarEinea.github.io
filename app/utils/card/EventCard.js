@@ -1,16 +1,16 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { ClickAwayListener, Typography, Collapse, CardActions } from 'material-ui';
 import { Card, CardMedia, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
 import './Card.css';
 
-export default class EventCard extends Component {
+export default class EventCard extends PureComponent {
   state = {text: false, image: false};
 
   render() {
     const { text, image } = this.state,
-      [ title, { desc, place, images } ] = this.props.data;
+      [ title, { desc, place, images }] = this.props.data;
     return (
       <Card class="card">
         <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
@@ -18,8 +18,8 @@ export default class EventCard extends Component {
           <Button class="image-button"/>
           <i class="fas fa-images white-text" style={{position: 'absolute', bottom: 18, left: 18, fontSize: 20}}/>
         </CardMedia>
-        <Gallery title={title} images={images.split(',')} folder="events"
-          isOpen={image} onClose={() => this.setState({image: false})}/>
+        {image && <Gallery title={title} images={images.split(',')}
+          folder="events" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="54px" timeout="auto" class="collapse">
             <CardActions style={{padding: '16px 18px'}}>

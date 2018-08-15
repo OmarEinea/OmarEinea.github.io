@@ -49,12 +49,24 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.tags = Array.from(document.getElementsByClassName('section'));
-    window.addEventListener('scroll', () => {
+    let prevScroll = 0;
+    window.addEventListener('scroll', this.onScroll = () => {
       const scroll = window.pageYOffset + window.innerHeight - 100;
-      this.tags.map((section, index) => {
-        if(scroll > section.offsetTop + section.scrollHeight && index >= this.state.entered)
-          this.setState({entered: index + 1});
-      });
+      if(scroll - prevScroll > 50) {
+        prevScroll = scroll;
+        this.tags.map((section, index) => {
+          if(scroll > section.offsetTop + section.scrollHeight && index >= this.state.entered)
+            this.setState({entered: index + 1});
+        });
+      }
     });
+  }
+
+  shouldComponentUpdate(_, nextState) {
+    return this.state.entered !== nextState.entered;
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
   }
 }

@@ -1,23 +1,23 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { ClickAwayListener, Typography, Collapse } from 'material-ui';
 import { Card, CardMedia, CardContent, CardActions, Button, IconButton } from 'material-ui';
 import { url } from 'db';
 import Gallery from 'gallery';
 import './Card.css';
 
-export default class CertCard extends Component {
+export default class CertCard extends PureComponent {
   state = {text: false, image: false};
 
   render() {
     const { text, image } = this.state,
-      [ title, { desc, auth } ] = this.props.data;
+      [ title, { desc, auth }] = this.props.data;
     return (
       <Card class="card">
         <CardMedia style={{paddingTop: '70%', marginBottom: 82, position: 'relative'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}>
           <Button class="image-button"/>
         </CardMedia>
-        <Gallery title={title} folder="certs" isOpen={image} onClose={() => this.setState({image: false})}/>
+        {image && <Gallery title={title} folder="certs" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="82px" timeout="auto" class="collapse">
             <CardContent style={{padding: '16px 15.5px 16px 18px'}}>

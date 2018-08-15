@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, Grow } from 'material-ui';
 import { get } from 'db';
 import Circle from '~/skills/widgets/Circle';
 import Line from '~/skills/widgets/Line';
 
-export default class Skills extends Component {
+export default class Skills extends PureComponent {
   state = {circles: [], lines: []};
 
   componentWillMount() {

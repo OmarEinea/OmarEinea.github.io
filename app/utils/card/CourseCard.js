@@ -1,8 +1,8 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Typography, Card, CardContent, Tooltip } from 'material-ui';
 import './Card.css';
 
-export default class CourseCard extends Component {
+export default class CourseCard extends PureComponent {
   colors = {
     'A': '#4CAF50',
     'B+': '#8BC34A', 'B': '#CDDC39',

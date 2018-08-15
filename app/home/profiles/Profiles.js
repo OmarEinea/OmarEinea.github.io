@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, Typography, Hidden, Grow } from 'material-ui';
 import { get, logo, json } from 'db';
 import 'fetch';
 import './Profiles.css';
 
-export default class Profiles extends Component {
+export default class Profiles extends PureComponent {
   state = {graph: {}, github: {}, stack: {}, xda: {}};
 
   componentWillMount() {

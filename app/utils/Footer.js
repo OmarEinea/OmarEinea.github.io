@@ -1,8 +1,8 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, IconButton, Typography } from 'material-ui';
 import { colors } from 'db';
 
-export default class Footer extends Component {
+export default class Footer extends PureComponent {
   age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 
   render() {

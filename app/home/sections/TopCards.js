@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, Zoom } from 'material-ui';
 import { get } from 'db';
 import cardTypes from '~/utils/card';
 
-export default class Cards extends Component {
+export default class Cards extends PureComponent {
   state = {cards: []};
 
   componentWillMount() {

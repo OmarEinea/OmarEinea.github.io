@@ -24,11 +24,9 @@ export default class Gallery extends Component {
   }
 
   render() {
-    const { images } = this,
-      { loaded, index } = this.state,
-      { isOpen, onClose } = this.props;
+    const { images, state: { loaded, index }, props: { onClose }} = this;
     return (
-      <Modal open={isOpen} onBackdropClick={onClose} class="gallery">
+      <Modal open onBackdropClick={onClose} class="gallery">
         <div class="content white-text">
           <div class="main">
             {loaded && <div>

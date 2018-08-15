@@ -1,8 +1,8 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { Grid, Typography, CircularProgress, Tooltip } from 'material-ui';
 import { logo } from 'db';
 
-export default class Circle extends Component {
+export default class Circle extends PureComponent {
   render() {
     const [ name, rate ] = this.props.skill;
     return (
