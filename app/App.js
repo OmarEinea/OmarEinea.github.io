@@ -40,7 +40,7 @@ class App extends Component {
     if(now) switchPage();
     else {
       this.setState({mounted: false});
-      setTimeout(switchPage, 500);
+      setTimeout(switchPage, 200);
     }
   }
 
@@ -78,11 +78,11 @@ class App extends Component {
                 onClick={(event) => this.goto(page, event)}>{page}</Button>
             </Slide>
           )}
-          <Zoom in={notHome} timeout={300}>
+          <Zoom in={notHome} timeout={{enter: 300, exit: 200}}>
             <div class="divider"/>
           </Zoom>
         </Toolbar>
-        <Grow in={state.mounted} timeout={500}>
+        <Grow in={state.mounted} timeout={{enter: 500, exit: 400}}>
           <Optimize><CurrentPage/></Optimize>
         </Grow>
         <Footer/>

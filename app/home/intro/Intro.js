@@ -6,6 +6,11 @@ import './Intro.css';
 export default class Intro extends PureComponent {
   state = {bio: ''};
 
+  myResume(event) {
+    event.preventDefault();
+    window.open(url('my/resume.docx'), '_self');
+  }
+
   componentWillMount() {
     get('home/bio').then(bio => this.setState({bio}));
   }
@@ -24,7 +29,7 @@ export default class Intro extends PureComponent {
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
-          <Button variant="raised" href="my/resume">
+          <Button variant="raised" href="my/resume" onClick={this.myResume}>
             <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
             Resume
           </Button>

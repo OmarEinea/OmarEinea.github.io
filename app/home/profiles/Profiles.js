@@ -1,7 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Hidden, Grow } from 'material-ui';
-import { get, logo, json } from 'db';
-import 'fetch';
+import { get, logo, bring } from 'db';
 import './Profiles.css';
 
 export default class Profiles extends PureComponent {
@@ -9,9 +8,8 @@ export default class Profiles extends PureComponent {
 
   componentWillMount() {
     if(process.env.NODE_ENV === 'production') {
-      fetch('https://urlreq.appspot.com/req?method=GET&url=' +
-            'https://github.com/users/OmarEinea/contributions')
-        .then(data => data.text()).then(html => {
+      bring('https://urlreq.appspot.com/req?method=GET&url=' +
+            'https://github.com/users/OmarEinea/contributions', 'graph', 'text').then(html => {
           let regex = /data-count="([0-9]+)"/g, match, commits = 0;
           html = html.replace('translate(16, 20)', 'translate(20, 24)')
                      .replace('height="104"', 'height="108"')
@@ -21,8 +19,8 @@ export default class Profiles extends PureComponent {
           this.setState({graph: {html, commits}});
         });
     }
-    fetch('https://api.github.com/users/OmarEinea')
-      .then(json).then(github => this.setState(prev => ({github: {
+    bring('https://api.github.com/users/OmarEinea', 'github')
+      .then(github => this.setState(prev => ({github: {
         followers: github.followers,
         repos: github.public_repos,
         ...prev.github
@@ -33,10 +31,9 @@ export default class Profiles extends PureComponent {
           ...prev.github
         }
       })));
-    fetch('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow')
-      .then(json).then(stack => {
-        const { reputation } = stack.items[0];
-        const { gold, silver, bronze } = stack.items[0].badge_counts;
+    bring('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow', 'stack')
+      .then(stack => {
+        const { reputation, badge_counts: { gold, silver, bronze }} = stack.items[0];
         this.setState({stack: {reputation, gold, silver, bronze}});
       });
   }
