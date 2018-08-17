@@ -18,10 +18,11 @@ export default class Gallery extends Component {
   componentWillMount() {
     let { title, images, folder, format = 'jpg' } = this.props;
     this.urls = [];
-    if(images)
+    if(images) {
+      images = images.split(';');
       for(let i = 1; i <= images.length; i++)
         this.urls.push(`${folder}/${title}/${i}.${format}`);
-    else {
+    } else {
       this.urls.push(`${folder}/${title}.${format}`);
       images = [title];
     }

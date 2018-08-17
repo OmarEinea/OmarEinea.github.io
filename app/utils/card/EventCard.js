@@ -18,7 +18,7 @@ export default class EventCard extends PureComponent {
           <Button class="image-button"/>
           <i class="fas fa-images white-text" style={{position: 'absolute', bottom: 18, left: 18, fontSize: 20}}/>
         </CardMedia>
-        {image && <Gallery title={title} images={images.split(',')}
+        {image && <Gallery title={title} images={images}
           folder="events" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
           <Collapse in={text} collapsedHeight="54px" timeout="auto" class="collapse">

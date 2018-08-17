@@ -38,7 +38,7 @@ export default class ProjectCard extends PureComponent {
             style={{position: 'absolute', bottom: 20, right: 20, color: '#757575', fontSize: 20}}/>
           <Button class="image-button"/>
         </CardMedia>
-        {image && <Gallery title={title} images={images.split(',')} folder="projects"
+        {image && <Gallery title={title} images={images} folder="projects"
           onClose={() => this.setState({image: false})} format="png"/>}
         <CardActions style={{padding: 16}}>
           <div style={{flex: 1, height: 44}}>
