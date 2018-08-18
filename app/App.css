@@ -50,13 +50,6 @@ b {
   width: 100%;
 }
 
-.box {
-  border: 1px solid #DDDDDD;
-  border-radius: 2px;
-  margin: 6px 8px;
-  padding: 8px;
-}
-
 .category {
   text-align: center;
   padding-top: 42px;

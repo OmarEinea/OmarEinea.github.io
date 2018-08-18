@@ -4,6 +4,7 @@ import Intro from './intro/Intro';
 import Profiles from './profiles/Profiles';
 import Skills from './sections/TopSkills';
 import Cards from './sections/TopCards';
+import './Home.css'
 
 export default class Home extends Component {
   state = {entered: 0};
@@ -28,7 +29,8 @@ export default class Home extends Component {
             <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80}}>
               <Fade in={index < this.state.entered} timeout={800}>
                 <Grid container justify="center" class="section">
-                  <Typography variant="display2" style={{padding: '40px 0', textTransform: 'capitalize'}} noWrap>
+                  <Typography variant="display2" class="headline" noWrap
+                    style={{padding: '40px 0', textTransform: 'capitalize'}}>
                     <i class={'fas fa-' + icon} style={{paddingRight: 16, verticalAlign: 'bottom'}}/>
                     {Section === Profiles ? 'dev ' + title : <span>top {title}
                       <Tooltip title="View All" placement="right" enterDelay={100}>
