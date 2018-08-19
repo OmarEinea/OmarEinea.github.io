@@ -6,6 +6,7 @@ import './Gallery.css';
 
 export default class Gallery extends Component {
   state = {loaded: false, index: 0};
+  loaded = () => this.setState({loaded: true});
   gotoImage = index => () => {
     this.setState({loaded: false});
     setTimeout(() => this.setState({index}), 100);
@@ -13,7 +14,13 @@ export default class Gallery extends Component {
   onClose = () => {
     this.setState({loaded: false, closing: true});
     setTimeout(this.props.onClose, 250);
-  }
+  };
+  frameStyle = () => {
+    if(window.innerWidth / window.innerHeight > 16 / 9)
+      return {height: 'calc(100vh - 52px)', width: '162vh'};
+    else
+      return {width: 'calc(100vw - 16px)', height: '53.75vw'};
+  };
 
   componentWillMount() {
     let { title, images, folder, format = 'jpg' } = this.props;
@@ -30,7 +37,8 @@ export default class Gallery extends Component {
   }
 
   render() {
-    const { images, state: { loaded, index, closing }} = this;
+    const { images, state: { loaded, index, closing }} = this,
+      youtube = images[index].split('https://www.youtube.com/watch?v=')[1];
     return (
       <Modal open onClose={this.onClose} class={'gallery' + (closing ? ' closing' : '')}>
         <div class="content">
@@ -39,15 +47,19 @@ export default class Gallery extends Component {
             <div class="main">
               <div class="white-text">
                 <Typography variant="subheading" style={{flex: 1}} noWrap>
-                  {images[index]}
+                  {youtube ? 'Youtube demo video' : images[index]}
                 </Typography>
                 <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
                   ({index + 1} of {images.length})
                   <i class="fas fa-times" onClick={this.onClose}/>
                 </Typography>
               </div>
-              <img style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
-                src={url(this.urls[index])} onLoad={() => this.setState({loaded: true})}/>
+              {youtube
+                ? <iframe style={this.frameStyle()} onLoad={this.loaded} allow="autoplay; encrypted-media"
+                  src={`https://www.youtube-nocookie.com/embed/${youtube}?rel=0`} frameborder="0" allowfullscreen/>
+                : <img style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
+                  src={url(this.urls[index])} onLoad={this.loaded}/>
+              }
             </div>
           </Zoom>
           {index > 0 &&
