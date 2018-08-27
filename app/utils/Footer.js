@@ -8,7 +8,7 @@ export default class Footer extends PureComponent {
   render() {
     return (
       <Grid item id="footer" class="white-text">
-        <div style={{background: `linear-gradient(to top right, ${colors[0]}, ${colors[4]})`, zIndex: -2}}/>
+        <div style={{background: `linear-gradient(to top right, ${colors[0]}, ${colors[5]})`, zIndex: -2}}/>
         <Grid container class="container">
           <Grid item sm={6} xs={12} align="center" style={{paddingTop: 36}}>
             <Typography variant="headline" gutterBottom>About Me</Typography>

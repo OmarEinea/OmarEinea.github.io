@@ -12,7 +12,7 @@ const projectId = 'eineao-website',
     handle(result);
   }});
 
-export const colors = ['#9E125E', '#DB236B', '#E32f4C', '#F24354', '#FA5E35', '#FE7131'];
+export const colors = ['#C4086E', '#Cf1D61', '#DB3255', '#E64749', '#F25C3D', '#FE7131'];
 export const url = image => databaseURL + image.replace(/\//g, '%2F') + '?alt=media';
 export const logo = name => url(`logos/${name.replace(' ', '%20')}.png`);
 export const bring = (link, key, type) => getCache(key) || fetch(link).then(type === 'text' ? text : json).then(setCache(key));
