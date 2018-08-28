@@ -74,8 +74,10 @@ class App extends Component {
           </Hidden>
           {Object.keys(pages).slice(1).map((page, index) =>
             <Slide in timeout={(6 - index) * 150} direction="down">
-              <Button href={page} style={this.buttonColor(page, index)}
-                onClick={(event) => this.goto(page, event)}>{page}</Button>
+              <span>
+                <Button href={page} style={this.buttonColor(page, index)}
+                  onClick={(event) => this.goto(page, event)}>{page}</Button>
+              </span>
             </Slide>
           )}
           <Zoom in={notHome} timeout={{enter: 300, exit: 200}}>
