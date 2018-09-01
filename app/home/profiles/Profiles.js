@@ -10,11 +10,12 @@ export default class Profiles extends PureComponent {
     if(process.env.NODE_ENV === 'production') {
       bring('https://urlreq.appspot.com/req?method=GET&url=' +
             'https://github.com/users/OmarEinea/contributions', 'graph', 'text').then(html => {
-          let regex = /data-count="([0-9]+)"/g, match, commits = 0;
-          html = html.replace('translate(16, 20)', 'translate(20, 24)')
+          let count = /data-count="([0-9]+)"/g, match, commits = 0;
+          html = html.match(/<svg([\s\S]*?)<\/svg>/)[0]
+                     .replace('translate(16, 20)', 'translate(20, 24)')
                      .replace('height="104"', 'height="108"')
                      .replace(/dx="-14"/g, 'dx="-20"');
-          while(match = regex.exec(html))
+          while(match = count.exec(html))
             commits += Number(match[1]);
           this.setState({graph: {html, commits}});
         });
