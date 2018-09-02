@@ -9,12 +9,13 @@ export default class ProjectCard extends PureComponent {
   state = {text: false, image: false};
 
   render() {
-    const { state: { text, image }, props: { full }} = this,
+    const { state: { text, image, scroll }, props: { full }} = this,
       [ title, { desc, type, images, skills, repo, demo }] = this.props.data;
     return (
       <Card class="card">
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: !text})}}>
-          <Collapse in={text} collapsedHeight={`${full ? 80 : 60}px`} timeout="auto" class="collapse down">
+          <Collapse collapsedHeight={`${full ? 80 : 60}px`} timeout="auto" class={'collapse down' + (scroll ? ' scroll' : '')}
+            in={text} onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
             <CardHeader subheader={full && type} style={{paddingLeft: 20, height: full || 28}}
               title={
                 <b style={{fontSize: 19, verticalAlign: 'bottom', color: '#424242'}}>{title}</b>

@@ -3,7 +3,7 @@
   "author": "Omar Einea",
   "description": "A website about Omar Einea",
   "license": "MIT",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "main": "webpack.config.js",
   "devDependencies": {
     "@material-ui/core": "^3.0.1",

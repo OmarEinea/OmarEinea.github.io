@@ -9,7 +9,7 @@ export default class EventCard extends PureComponent {
   state = {text: false, image: false};
 
   render() {
-    const { text, image } = this.state,
+    const { text, image, scroll } = this.state,
       [ title, { desc, place, images }] = this.props.data;
     return (
       <Card class="card">
@@ -21,7 +21,8 @@ export default class EventCard extends PureComponent {
         {image && <Gallery title={title} images={images}
           folder="events" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="54px" timeout="auto" class="collapse">
+          <Collapse in={text} collapsedHeight="54px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
+            onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
             <CardActions style={{padding: '16px 18px'}}>
               <Typography variant="title" style={{fontSize: 19, flex: 1, color: '#424242'}} noWrap>
                 {title}
@@ -31,7 +32,7 @@ export default class EventCard extends PureComponent {
                 <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
               </IconButton>
             </CardActions>
-            <Typography style={{padding: '0 16px 16px'}}>
+            <Typography style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 16 : 8}}>
               <Typography style={{color: '#616161', marginBottom: 12}} noWrap>
                 <i class="fas fa-map-marker-alt" style={{margin: '0 4px 0 1px'}}/> {place}
               </Typography>

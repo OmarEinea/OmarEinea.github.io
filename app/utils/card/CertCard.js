@@ -6,10 +6,10 @@ import Gallery from 'gallery';
 import './Card.css';
 
 export default class CertCard extends PureComponent {
-  state = {text: false, image: false};
+  state = {text: false, image: false, scroll: false};
 
   render() {
-    const { text, image } = this.state,
+    const { text, image, scroll } = this.state,
       [ title, { desc, auth }] = this.props.data;
     return (
       <Card class="card">
@@ -19,7 +19,8 @@ export default class CertCard extends PureComponent {
         </CardMedia>
         {image && <Gallery title={title} folder="certs" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="82px" timeout="auto" class="collapse">
+          <Collapse in={text} collapsedHeight="82px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
+            onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
             <CardContent style={{padding: '16px 15.5px 16px 18px'}}>
               <Typography variant="title" style={{fontSize: 19, marginBottom: 8, color: '#424242'}} noWrap>
                 {title}

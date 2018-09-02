@@ -19,12 +19,18 @@
 .card .collapse {
   max-height: 100%;
   background-color: white;
+  overflow: visible;
 }
 
 .card .collapse.down {
-  z-index: 1;
+  overflow-y: hidden;
   bottom: unset;
+  z-index: 1;
   top: 0;
+}
+
+.card .collapse.scroll {
+  overflow-y: auto;
 }
 
 .card .image-button {
