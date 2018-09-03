@@ -30,7 +30,7 @@ export default class ProjectCard extends PureComponent {
                 </IconButton>
               }
             />
-            <Typography style={{padding: '0 16px 16px'}}>{desc}</Typography>
+            <Typography style={{padding: '0 16px 14px'}}>{desc}</Typography>
           </Collapse>
         </ClickAwayListener>
         <CardMedia style={{paddingTop: '60%', marginTop: full ? 80 : 60, position: 'relative'}}

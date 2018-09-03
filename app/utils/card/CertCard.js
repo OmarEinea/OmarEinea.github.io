@@ -35,7 +35,7 @@ export default class CertCard extends PureComponent {
                 </IconButton>
               </CardActions>
             </CardContent>
-            <Typography style={{padding: '0 16px 16px'}}>{desc}</Typography>
+            <Typography style={{padding: '0 16px 14px'}}>{desc}</Typography>
           </Collapse>
         </ClickAwayListener>
       </Card>

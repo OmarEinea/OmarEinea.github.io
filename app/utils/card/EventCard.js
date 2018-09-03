@@ -32,7 +32,7 @@ export default class EventCard extends PureComponent {
                 <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
               </IconButton>
             </CardActions>
-            <Typography style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 16 : 8}}>
+            <Typography style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 14 : 6}}>
               <Typography style={{color: '#616161', marginBottom: 12}} noWrap>
                 <i class="fas fa-map-marker-alt" style={{margin: '0 4px 0 1px'}}/> {place}
               </Typography>
