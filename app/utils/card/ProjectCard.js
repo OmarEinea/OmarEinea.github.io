@@ -37,7 +37,7 @@ export default class ProjectCard extends PureComponent {
           image={url(`projects/${title}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <i class="fas fa-images"
             style={{position: 'absolute', bottom: 20, right: 20, color: '#757575', fontSize: 20}}/>
-          <Button class="image-button"/>
+          <Button class="image-button"><i/></Button>
         </CardMedia>
         {image && <Gallery title={title} images={images} folder="projects"
           onClose={() => this.setState({image: false})} format="png"/>}

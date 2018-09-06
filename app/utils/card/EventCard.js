@@ -15,7 +15,7 @@ export default class EventCard extends PureComponent {
       <Card class="card">
         <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
           image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}>
-          <Button class="image-button"/>
+          <Button class="image-button"><i/></Button>
           <i class="fas fa-images white-text" style={{position: 'absolute', bottom: 18, left: 18, fontSize: 20}}/>
         </CardMedia>
         {image && <Gallery title={title} images={images}
@@ -32,12 +32,12 @@ export default class EventCard extends PureComponent {
                 <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
               </IconButton>
             </CardActions>
-            <Typography style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 14 : 6}}>
+            <div style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 14 : 6}}>
               <Typography style={{color: '#616161', marginBottom: 12}} noWrap>
                 <i class="fas fa-map-marker-alt" style={{margin: '0 4px 0 1px'}}/> {place}
               </Typography>
-              {desc}
-            </Typography>
+              <Typography>{desc}</Typography>
+            </div>
           </Collapse>
         </ClickAwayListener>
       </Card>

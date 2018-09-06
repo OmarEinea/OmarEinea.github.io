@@ -15,7 +15,7 @@ export default class CertCard extends PureComponent {
       <Card class="card">
         <CardMedia style={{paddingTop: '70%', marginBottom: 82, position: 'relative'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}>
-          <Button class="image-button"/>
+          <Button class="image-button"><i/></Button>
         </CardMedia>
         {image && <Gallery title={title} folder="certs" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>

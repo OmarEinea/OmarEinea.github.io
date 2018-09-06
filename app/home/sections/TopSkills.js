@@ -19,14 +19,14 @@ export default class Skills extends PureComponent {
     return (
       <Grid container>
         <Grow in={visible} timeout={400}>
-          <Grid container md={7} xs={12}>
+          <Grid container item md={7} xs={12}>
             <Grid container justify="center" class="box">
               {circles.map(skill => <Circle skill={skill}/>)}
             </Grid>
           </Grid>
         </Grow>
         <Grow in={visible} timeout={700}>
-          <Grid container md={5} xs={12}>
+          <Grid container item md={5} xs={12}>
             <Grid container direction="column" class="box">
               {lines.map(skill => <Line skill={skill}/>)}
             </Grid>
