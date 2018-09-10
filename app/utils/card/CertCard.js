@@ -27,7 +27,7 @@ export default class CertCard extends PureComponent {
               </Typography>
               <CardActions style={{padding: 0}}>
                 <Typography style={{flex: 1, color: '#616161'}} noWrap>
-                  <i class="fas fa-university" style={{marginRight: 4}}/> {auth}
+                  <i class="fas fa-landmark" style={{marginRight: 4}}/> {auth}
                 </Typography>
                 <IconButton onClick={() => this.setState({text: !text})}
                   style={{margin: '-10px -10px -12px'}} class="mini">

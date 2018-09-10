@@ -47,7 +47,7 @@ export default class Gallery extends Component {
             <div class="main">
               <div class="white-text">
                 <Typography variant="subheading" style={{flex: 1}} noWrap>
-                  {youtube && images[index]}
+                  {!youtube && images[index]}
                 </Typography>
                 <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
                   ({index + 1} of {images.length})

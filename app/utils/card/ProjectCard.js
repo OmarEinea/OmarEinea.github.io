@@ -6,7 +6,7 @@ import Gallery from 'gallery';
 import './Card.css';
 
 export default class ProjectCard extends PureComponent {
-  state = {text: false, image: false};
+  state = {text: false, image: false, scroll: false};
 
   render() {
     const { state: { text, image, scroll }, props: { full }} = this,
