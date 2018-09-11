@@ -6,15 +6,16 @@ import Gallery from 'gallery';
 import './Card.css';
 
 export default class EventCard extends PureComponent {
-  state = {text: false, image: false};
+  state = {text: false, image: false, scroll: false};
 
   render() {
     const { text, image, scroll } = this.state,
-      [ title, { desc, place, images }] = this.props.data;
+      [ title, { desc, place, images, preview }] = this.props.data;
     return (
       <Card class="card">
-        <CardMedia style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
-          image={url(`events/${title}/1.jpg`)} onClick={() => this.setState({image: true})}>
+        <CardMedia onClick={() => this.setState({image: true})}
+          style={{paddingTop: '50%', marginBottom: 54, position: 'relative'}}
+          image={url(`events/${title}/${preview ? 'preview' : 1}.jpg`)}>
           <Button class="image-button"><i/></Button>
           <i class="fas fa-images white-text" style={{position: 'absolute', bottom: 18, left: 18, fontSize: 20}}/>
         </CardMedia>
