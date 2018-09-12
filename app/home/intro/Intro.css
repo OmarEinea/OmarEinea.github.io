@@ -1,10 +1,10 @@
 #photo, #logo {
-  border: solid #757575 2px;
-  background-color: #757575;
+  border: solid #4F4D4E 2px;
+  background-color: #4F4D4E;
 }
 
 #photo {
-  box-shadow: 0 0 0 1px #757575 inset;
+  box-shadow: 0 0 0 1px #4F4D4E inset;
   box-sizing: border-box;
   height: 100%;
   width: 100%;

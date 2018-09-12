@@ -64,8 +64,8 @@ class App extends Component {
             <div style={{width: '34.5%', marginLeft: 12}} class={!notHome && 'hide'}>
               <Grow in={notHome} timeout={400} direction="left" unmountOnExit>
                 <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
-                  <Avatar style={{border: '1px solid #757575', marginRight: 12}} src={url('my/logo')}/>
-                  <Typography variant="headline" style={{lineHeight: '42px', color: '#616161'}}>
+                  <Avatar style={{border: '1px solid #616161', marginRight: 12}} src={url('my/logo')}/>
+                  <Typography variant="headline" style={{lineHeight: '42px', color: '#4F4D4E'}}>
                     Omar Einea
                   </Typography>
                 </a>

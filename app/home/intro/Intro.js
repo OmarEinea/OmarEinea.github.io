@@ -23,7 +23,7 @@ export default class Intro extends PureComponent {
             <Avatar id="photo" src={url('my/photo')}/>
             <Avatar id="logo" src={url('my/logo')}/>
           </div>
-          <Typography variant="display1" style={{margin: '12px 0'}}>
+          <Typography variant="display1" style={{color: '#4F4D4E', margin: '12px 0'}}>
             Omar Einea
           </Typography>
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
