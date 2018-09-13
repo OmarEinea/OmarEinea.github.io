@@ -17,10 +17,11 @@ export default class Loading extends Component {
   }
 
   render() {
+    const { prop: { style }, state: { index }} = this;
     return (
       <Grid container justify="center" alignItems="center"
-        style={{flex: 1, marginBottom: 16, ...this.props.style}}>
-        <CircularProgress size={64} style={{color: colors[this.state.index]}}/>
+        style={{flex: 1, marginBottom: 16, ...style}}>
+        <CircularProgress size={64} style={{color: colors[index]}}/>
       </Grid>
     );
   }

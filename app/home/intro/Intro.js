@@ -16,6 +16,7 @@ export default class Intro extends PureComponent {
   }
 
   render() {
+    const { myResume, state: { bio }} = this;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -29,7 +30,7 @@ export default class Intro extends PureComponent {
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
-          <Button variant="raised" href="my/resume" onClick={this.myResume}>
+          <Button variant="raised" href="my/resume" onClick={myResume}>
             <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
             Resume
           </Button>
@@ -49,7 +50,7 @@ export default class Intro extends PureComponent {
         <Grid item md={8} xs={12}>
           <Paper id="bio">
             <Typography variant="subheading" style={{padding: 16}}
-              dangerouslySetInnerHTML={{__html: this.state.bio}}/>
+              dangerouslySetInnerHTML={{__html: bio}}/>
           </Paper>
         </Grid>
       </Grid>
