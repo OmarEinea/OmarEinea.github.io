@@ -26,7 +26,7 @@ export default class ProjectCard extends PureComponent {
               action={
                 <IconButton onClick={() => this.setState({text: !text})}
                   style={{margin: '2px 5px'}} class="mini">
-                  <i style={{fontSize: 14}} class={'fas fa-chevron-' + (text ? 'up' : 'down')}/>
+                  <i style={{fontSize: 14}} class={'fas fa-chevron-down' + (text ? ' rotate' : '')}/>
                 </IconButton>
               }
             />

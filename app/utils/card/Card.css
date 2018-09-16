@@ -49,3 +49,13 @@
   color: #FAFAFA;
   width: 25%;
 }
+
+.card .fa-chevron-down,
+.card .fa-chevron-up {
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+  transform: rotate(0deg);
+}
+
+.card .rotate {
+  transform: rotate(180deg);
+}

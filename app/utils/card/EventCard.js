@@ -30,7 +30,7 @@ export default class EventCard extends PureComponent {
               </Typography>
               <IconButton onClick={() => this.setState({text: !text})}
                 style={{margin: -10}} class="mini">
-                <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
+                <i style={{fontSize: 12}} class={'fas fa-chevron-up' + (text ? ' rotate' : '')}/>
               </IconButton>
             </CardActions>
             <div style={{margin: 16, marginTop: text ? -8 : 0, marginBottom: text ? 14 : 6}}>

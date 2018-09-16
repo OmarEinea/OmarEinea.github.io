@@ -31,7 +31,7 @@ export default class CertCard extends PureComponent {
                 </Typography>
                 <IconButton onClick={() => this.setState({text: !text})}
                   style={{margin: '-10px -10px -12px'}} class="mini">
-                  <i style={{fontSize: 12}} class={'fas fa-chevron-' + (text ? 'down' : 'up')}/>
+                  <i style={{fontSize: 12}} class={'fas fa-chevron-up' + (text ? ' rotate' : '')}/>
                 </IconButton>
               </CardActions>
             </CardContent>
