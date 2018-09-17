@@ -17,7 +17,7 @@ export default class Loading extends Component {
   }
 
   render() {
-    const { prop: { style }, state: { index }} = this;
+    const { props: { style }, state: { index }} = this;
     return (
       <Grid container justify="center" alignItems="center"
         style={{flex: 1, marginBottom: 16, ...style}}>

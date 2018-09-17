@@ -58,10 +58,10 @@ class App extends Component {
   render() {
     const { state, pages } = this, CurrentPage = pages[state.page], notHome = state.page !== 'home';
     return (
-      <Grid container direction="column">
+      <Grid id="root" container direction="column">
         <Toolbar id="toolbar" class="container">
           <Hidden smDown={!notHome}>
-            <div style={{width: '34.5%', marginLeft: 12}} class={!notHome && 'hide'}>
+            <div style={{width: '34.5%', marginLeft: 12}} class={notHome ? 'show' : 'hide'}>
               <Grow in={notHome} timeout={400} direction="left" unmountOnExit>
                 <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
                   <Avatar style={{border: '1px solid #616161', marginRight: 12}} src={url('my/logo')}/>
@@ -97,5 +97,5 @@ render(
   <MuiThemeProvider theme={createMuiTheme({typography: {fontFamily: 'Quicksand'}})}>
     <App/>
   </MuiThemeProvider>,
-  document.getElementById('root')
+  document.getElementById('app')
 );
