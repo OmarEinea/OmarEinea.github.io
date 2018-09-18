@@ -32,7 +32,7 @@ export default class Home extends Component {
                 <Grid container justify="center" class="section">
                   <Typography variant="display2" class="headline" noWrap
                     style={{padding: '40px 0', textTransform: 'capitalize'}}>
-                    <i class={'fas fa-' + icon} style={{paddingRight: 16, verticalAlign: 'bottom'}}/>
+                    <i class={'fas fa-' + icon} style={{paddingRight: 16}}/>
                     {Section === Profiles ? 'dev ' + title : <span>top {title}
                       <Tooltip title="View All" placement="right" enterDelay={100}>
                         <IconButton onClick={(event) => goto(title, event)}
