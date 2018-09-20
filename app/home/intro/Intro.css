@@ -30,24 +30,7 @@
   width: 36px;
 }
 
-#bio {
-  margin: 0 8px;
-}
-
-#bio ul {
-  padding-left: 26px;
-}
-
-#bio ul ul {
-  padding-left: 16px;
-}
-
 @media screen and (min-width: 960px) {
-  #bio {
-    margin-left: 32px;
-    height: 100%;
-  }
-
   #intro a {
     margin-bottom: 0;
   }

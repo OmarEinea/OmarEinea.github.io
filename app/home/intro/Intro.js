@@ -11,10 +11,6 @@ export default class Intro extends PureComponent {
     window.open(url('my/resume.docx'), '_self');
   }
 
-  componentWillMount() {
-    get('home/bio').then(bio => this.setState({bio}));
-  }
-
   render() {
     const { myResume, state: { bio }} = this;
     return (
@@ -48,10 +44,6 @@ export default class Intro extends PureComponent {
           </Button>
         </Grid>
         <Grid item md={8} xs={12}>
-          <Paper id="bio">
-            <Typography variant="subheading" style={{padding: 16}}
-              dangerouslySetInnerHTML={{__html: bio}}/>
-          </Paper>
         </Grid>
       </Grid>
     );
