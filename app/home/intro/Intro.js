@@ -44,6 +44,23 @@ export default class Intro extends PureComponent {
           </Button>
         </Grid>
         <Grid item md={8} xs={12}>
+          <Grid container id="bio">
+            <Grid item md={4}>
+              <div/>
+              <Paper/>
+              <Paper/>
+            </Grid>
+            <Grid item md={4}>
+              <Paper/>
+              <div/>
+              <Paper/>
+            </Grid>
+            <Grid item md={4}>
+              <Paper/>
+              <Paper/>
+              <div/>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     );

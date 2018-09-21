@@ -30,6 +30,16 @@
   width: 36px;
 }
 
+#bio {
+  height: calc(100% - 16px);
+  padding: 0 4px 0 36px;
+}
+
+#bio > div > div {
+  height: 33.33%;
+  margin: 0 4px 8px;
+}
+
 @media screen and (min-width: 960px) {
   #intro a {
     margin-bottom: 0;
