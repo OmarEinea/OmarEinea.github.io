@@ -45,3 +45,23 @@
     margin-bottom: 0;
   }
 }
+
+.paper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.paper p {
+  color: #424242;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.paper i {
+  width: 100%;
+  color: #424242;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 8px;
+}
