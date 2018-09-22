@@ -47,17 +47,47 @@ export default class Intro extends PureComponent {
           <Grid container id="bio">
             <Grid item md={4}>
               <div/>
-              <Paper/>
-              <Paper/>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-globe-africa"/>
+                  <Typography>Origin</Typography>
+                </div>
+              </Paper>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-pencil-ruler"/>
+                  <Typography>Discipline</Typography>
+                </div>
+              </Paper>
             </Grid>
             <Grid item md={4}>
-              <Paper/>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-graduation-cap"/>
+                  <Typography>Education</Typography>
+                </div>
+              </Paper>
               <div/>
-              <Paper/>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-check-double"/>
+                  <Typography>Goals</Typography>
+                </div>
+              </Paper>
             </Grid>
             <Grid item md={4}>
-              <Paper/>
-              <Paper/>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-briefcase"/>
+                  <Typography>Experience</Typography>
+                </div>
+              </Paper>
+              <Paper class="paper">
+                <div>
+                  <i class="fas fa-clipboard"/>
+                  <Typography>Publications</Typography>
+                </div>
+              </Paper>
               <div/>
             </Grid>
           </Grid>
