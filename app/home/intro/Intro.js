@@ -43,53 +43,44 @@ export default class Intro extends PureComponent {
             <i class="fab fa-lg fa-stack-overflow"/>
           </Button>
         </Grid>
-        <Grid item md={8} xs={12}>
-          <Grid container id="bio">
-            <Grid item md={4}>
-              <div/>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-globe-africa"/>
-                  <Typography>Origin</Typography>
-                </div>
-              </Paper>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-pencil-ruler"/>
-                  <Typography>Discipline</Typography>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item md={4}>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-graduation-cap"/>
-                  <Typography>Education</Typography>
-                </div>
-              </Paper>
-              <div/>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-check-double"/>
-                  <Typography>Goals</Typography>
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item md={4}>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-briefcase"/>
-                  <Typography>Experience</Typography>
-                </div>
-              </Paper>
-              <Paper class="paper">
-                <div>
-                  <i class="fas fa-clipboard"/>
-                  <Typography>Publications</Typography>
-                </div>
-              </Paper>
-              <div/>
-            </Grid>
+        <Grid item md={8} xs={12} id="bio">
+          <Grid container>
+            <Paper class="paper" style={{left: 0, bottom: '33.3%'}}>
+              <div>
+                <i class="fas fa-globe-africa"/>
+                <Typography>Origin</Typography>
+              </div>
+            </Paper>
+            <Paper class="paper" style={{left: 0, bottom: 0}}>
+              <div>
+                <i class="fas fa-pencil-ruler"/>
+                <Typography>Discipline</Typography>
+              </div>
+            </Paper>
+            <Paper class="paper" style={{left: '33.3%', bottom: 0}}>
+              <div>
+                <i class="fas fa-check-double"/>
+                <Typography>Goals</Typography>
+              </div>
+            </Paper>
+            <Paper class="paper" style={{right: '33.3%', top: 0}}>
+              <div>
+                <i class="fas fa-graduation-cap"/>
+                <Typography>Education</Typography>
+              </div>
+            </Paper>
+            <Paper class="paper" style={{right: 0, top: 0}}>
+              <div>
+                <i class="fas fa-briefcase"/>
+                <Typography>Experience</Typography>
+              </div>
+            </Paper>
+            <Paper class="paper" style={{right: 0, top: '33.3%'}}>
+              <div>
+                <i class="fas fa-clipboard"/>
+                <Typography>Publications</Typography>
+              </div>
+            </Paper>
           </Grid>
         </Grid>
       </Grid>

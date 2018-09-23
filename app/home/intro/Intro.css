@@ -31,36 +31,48 @@
 }
 
 #bio {
-  height: calc(100% - 16px);
-  padding: 0 4px 0 36px;
-}
-
-#bio > div > div {
-  height: 33.33%;
-  margin: 0 4px 8px;
+  height: 50vh;
+  padding: 0 8px;
 }
 
 @media screen and (min-width: 960px) {
   #intro a {
     margin-bottom: 0;
   }
+
+  #bio {
+    height: 100%;
+    padding-left: 36px;
+  }
+}
+
+#bio > div {
+  position: relative;
+  height: 100%;
 }
 
 .paper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  position: absolute;
+  width: calc(33.3% - 8px);
+  height: calc(33.3% - 8px);
+}
+
+.paper > div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .paper p {
-  color: #424242;
+  color: #616161;
   font-size: 20px;
   font-weight: 500;
 }
 
 .paper i {
   width: 100%;
-  color: #424242;
+  color: #616161;
   font-size: 48px;
   text-align: center;
   margin-bottom: 8px;
