@@ -4,7 +4,14 @@ import { url, get } from 'db';
 import './Intro.css';
 
 export default class Intro extends PureComponent {
-  state = {bio: ''};
+  papers = Object.entries({
+    Origin: {style: {left: 0, bottom: '33.3%'}, icon: 'globe-africa'},
+    Discipline: {style: {left: 0, bottom: 0}, icon: 'pencil-ruler'},
+    Goals: {style: {left: '33.3%', bottom: 0}, icon: 'check-double'},
+    Education: {style: {right: '33.3%', top: 0}, icon: 'graduation-cap'},
+    Experience: {style: {right: 0, top: 0}, icon: 'briefcase'},
+    Publications: {style: {right: 0, top: '33.3%'}, icon: 'clipboard'}
+  })
 
   myResume(event) {
     event.preventDefault();
@@ -12,7 +19,7 @@ export default class Intro extends PureComponent {
   }
 
   render() {
-    const { myResume, state: { bio }} = this;
+    const { myResume, papers} = this;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -45,42 +52,14 @@ export default class Intro extends PureComponent {
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
-            <Paper class="paper" style={{left: 0, bottom: '33.3%'}}>
-              <div>
-                <i class="fas fa-globe-africa"/>
-                <Typography>Origin</Typography>
-              </div>
-            </Paper>
-            <Paper class="paper" style={{left: 0, bottom: 0}}>
-              <div>
-                <i class="fas fa-pencil-ruler"/>
-                <Typography>Discipline</Typography>
-              </div>
-            </Paper>
-            <Paper class="paper" style={{left: '33.3%', bottom: 0}}>
-              <div>
-                <i class="fas fa-check-double"/>
-                <Typography>Goals</Typography>
-              </div>
-            </Paper>
-            <Paper class="paper" style={{right: '33.3%', top: 0}}>
-              <div>
-                <i class="fas fa-graduation-cap"/>
-                <Typography>Education</Typography>
-              </div>
-            </Paper>
-            <Paper class="paper" style={{right: 0, top: 0}}>
-              <div>
-                <i class="fas fa-briefcase"/>
-                <Typography>Experience</Typography>
-              </div>
-            </Paper>
-            <Paper class="paper" style={{right: 0, top: '33.3%'}}>
-              <div>
-                <i class="fas fa-clipboard"/>
-                <Typography>Publications</Typography>
-              </div>
-            </Paper>
+            {papers.map(([title, paper]) =>
+              <Paper class="paper" style={paper.style}>
+                <div>
+                  <i class={'fas fa-' + paper.icon}/>
+                  <Typography>{title}</Typography>
+                </div>
+              </Paper>
+            )}
           </Grid>
         </Grid>
       </Grid>
