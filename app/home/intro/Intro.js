@@ -3,14 +3,17 @@ import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
 import { url, get } from 'db';
 import './Intro.css';
 
+const third = 33.333;
+
 export default class Intro extends PureComponent {
+  state = {expand: null};
   papers = Object.entries({
-    Origin: {style: {left: 0, bottom: '33.3%'}, icon: 'globe-africa'},
-    Discipline: {style: {left: 0, bottom: 0}, icon: 'pencil-ruler'},
-    Goals: {style: {left: '33.3%', bottom: 0}, icon: 'check-double'},
-    Education: {style: {right: '33.3%', top: 0}, icon: 'graduation-cap'},
-    Experience: {style: {right: 0, top: 0}, icon: 'briefcase'},
-    Publications: {style: {right: 0, top: '33.3%'}, icon: 'clipboard'}
+    Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
+    Discipline: {style: {top: `${2*third}%`}, icon: 'pencil-ruler'},
+    Goals: {style: {left: `${third}%`, top: `${2*third}%`}, icon: 'check-double'},
+    Education: {style: {left: `${third}%`}, icon: 'graduation-cap'},
+    Experience: {style: {left: `${2*third}%`}, icon: 'briefcase'},
+    Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
   })
 
   myResume(event) {
@@ -19,7 +22,7 @@ export default class Intro extends PureComponent {
   }
 
   render() {
-    const { myResume, papers} = this;
+    const { myResume, papers, state: { expand }} = this;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -53,7 +56,10 @@ export default class Intro extends PureComponent {
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
             {papers.map(([title, paper]) =>
-              <Paper class="paper" style={paper.style}>
+              <Paper style={paper.style}
+                class={'paper' + (expand === title ? ' expand' : '')}
+                onMouseEnter={() => this.setState({expand: title})}
+                onMouseLeave={() => this.setState({expand: null})}>
                 <div>
                   <i class={'fas fa-' + paper.icon}/>
                   <Typography>{title}</Typography>

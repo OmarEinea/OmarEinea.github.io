@@ -31,7 +31,7 @@
 }
 
 #bio {
-  height: 50vh;
+  height: 100vw;
   padding: 0 8px;
 }
 
@@ -52,9 +52,21 @@
 }
 
 .paper {
+  margin: 4px;
+  width: calc(33.333% - 8px);
+  height: calc(33.333% - 8px);
+  transition: all 1s;
   position: absolute;
-  width: calc(33.3% - 8px);
-  height: calc(33.3% - 8px);
+  z-index: 0;
+}
+
+.paper.expand {
+  left: 0 !important;
+  top: 0 !important;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  margin: 0;
 }
 
 .paper > div {
