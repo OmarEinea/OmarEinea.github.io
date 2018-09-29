@@ -70,16 +70,33 @@
 }
 
 .paper > div {
+  width: 48px;
+  transition: all 1s;
+  transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.paper.expand > div {
+  transform: translate(0, 0);
+  left: 28px;
+  top: 24px;
 }
 
 .paper p {
+  transition: all 1s;
   color: #616161;
   font-size: 20px;
   font-weight: 500;
+}
+
+.paper.expand p {
+  font-size: 28px;
+  transform: translate(
+    calc(50% + 40px),
+    calc(-50% - 34px)
+  );
 }
 
 .paper i {

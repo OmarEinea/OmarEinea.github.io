@@ -11,7 +11,7 @@ export default class Intro extends PureComponent {
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
     Discipline: {style: {top: `${2*third}%`}, icon: 'pencil-ruler'},
     Goals: {style: {left: `${third}%`, top: `${2*third}%`}, icon: 'check-double'},
-    Education: {style: {left: `${third}%`}, icon: 'graduation-cap'},
+    Education: {style: {left: `${third}%`}, icon: 'user-graduate'},
     Experience: {style: {left: `${2*third}%`}, icon: 'briefcase'},
     Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
   })
@@ -56,14 +56,14 @@ export default class Intro extends PureComponent {
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
             {papers.map(([title, paper]) =>
-              <Paper style={paper.style}
+              <Paper style={paper.style} elevation={expand === title ? 4 : 2}
                 class={'paper' + (expand === title ? ' expand' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>
-                <div>
-                  <i class={'fas fa-' + paper.icon}/>
+                <Grid container layout="column" justify="center">
+                  <i class={'fas fa-fw fa-' + paper.icon}/>
                   <Typography>{title}</Typography>
-                </div>
+                </Grid>
               </Paper>
             )}
           </Grid>
