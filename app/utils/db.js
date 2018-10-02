@@ -12,6 +12,7 @@ const projectId = 'eineao-website',
     handle(result);
   }});
 
+export const age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 export const colors = ['#C4086E', '#Cf1D61', '#DB3255', '#E64749', '#F25C3D', '#FE7131'];
 export const url = image => databaseURL + image.replace(/\//g, '%2F') + '?alt=media';
 export const logo = name => url(`logos/${name.replace(' ', '%20')}.png`);

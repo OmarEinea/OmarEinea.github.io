@@ -3,10 +3,10 @@
   "author": "Omar Einea",
   "description": "A website about Omar Einea",
   "license": "MIT",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "webpack.config.js",
   "devDependencies": {
-    "@material-ui/core": "^3.1.1",
+    "@material-ui/core": "^3.1.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-react-html-attrs": "^2.1.0",
@@ -20,7 +20,7 @@
     "react-dom": "^16.5.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1",
+    "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9",
     "whatwg-fetch": "^2.0.4"
   },

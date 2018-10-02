@@ -1,10 +1,8 @@
 import { PureComponent } from 'react';
 import { Grid, IconButton, Typography } from 'material-ui';
-import { colors } from 'db';
+import { colors, age } from 'db';
 
 export default class Footer extends PureComponent {
-  age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
-
   render() {
     return (
       <Grid item id="footer" class="white-text">
@@ -13,7 +11,7 @@ export default class Footer extends PureComponent {
           <Grid item sm={6} xs={12} align="center" style={{paddingTop: 36}}>
             <Typography variant="headline" gutterBottom>About Me</Typography>
             <Typography variant="subheading" gutterBottom>
-              I'm a passionate {this.age} years old,<br/>
+              I'm a passionate {age} years old,<br/>
               self-taught Application Developer.
             </Typography>
           </Grid>
