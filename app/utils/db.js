@@ -16,5 +16,5 @@ export const age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 export const colors = ['#C4086E', '#Cf1D61', '#DB3255', '#E64749', '#F25C3D', '#FE7131'];
 export const url = image => databaseURL + image.replace(/\//g, '%2F') + '?alt=media';
 export const logo = name => url(`logos/${name.replace(' ', '%20')}.png`);
-export const bring = (link, key, type) => getCache(key) || fetch(link).then(type === 'text' ? text : json).then(setCache(key));
 export const get = query => getCache(query) || fetch(storageURL + query + '.json').then(json).then(setCache(query));
+export const fetch = (link, key, type) => getCache(key) || fetch(link).then(type === 'text' ? text : json).then(setCache(key));

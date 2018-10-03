@@ -8,14 +8,14 @@ const third = 33.333;
 export default class Intro extends PureComponent {
   state = {expand: null};
   papers = Object.entries({
-    Basics: {icon: 'address-book'},
+    Current: {icon: 'address-card'},
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
     Discipline: {style: {top: `${2*third}%`}, icon: 'pencil-ruler'},
     Goals: {style: {left: `${third}%`, top: `${2*third}%`}, icon: 'check-double'},
     Education: {style: {left: `${third}%`}, icon: 'user-graduate'},
     Experience: {style: {left: `${2*third}%`}, icon: 'briefcase'},
     Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
-  })
+  });
 
   myResume(event) {
     event.preventDefault();
