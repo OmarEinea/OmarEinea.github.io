@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Hidden, Grow } from 'material-ui';
-import { get, logo, fetch } from 'db';
+import { get, logo, bring } from 'db';
 import './Profiles.css';
 
 export default class Profiles extends PureComponent {
@@ -8,7 +8,7 @@ export default class Profiles extends PureComponent {
 
   componentWillMount() {
     if(process.env.NODE_ENV === 'production') {
-      fetch('https://urlreq.appspot.com/req?method=GET&url=' +
+      bring('https://urlreq.appspot.com/req?method=GET&url=' +
             'https://github.com/users/OmarEinea/contributions', 'graph', 'text').then(html => {
           let count = /data-count="([0-9]+)"/g, match, commits = 0;
           html = html.match(/<svg([\s\S]*?)<\/svg>/)[0]
@@ -20,7 +20,7 @@ export default class Profiles extends PureComponent {
           this.setState({graph: {html, commits}});
         });
     }
-    fetch('https://api.github.com/users/OmarEinea', 'github')
+    bring('https://api.github.com/users/OmarEinea', 'github')
       .then(github => this.setState(prev => ({github: {
         followers: github.followers,
         repos: github.public_repos,
@@ -32,7 +32,7 @@ export default class Profiles extends PureComponent {
           ...prev.github
         }
       })));
-    fetch('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow', 'stack')
+    bring('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow', 'stack')
       .then(stack => {
         const { reputation, badge_counts: { gold, silver, bronze }} = stack.items[0];
         this.setState({stack: {reputation, gold, silver, bronze}});
