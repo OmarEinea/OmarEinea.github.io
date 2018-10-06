@@ -8,7 +8,7 @@ const third = 33.333;
 export default class Intro extends PureComponent {
   state = {expand: null};
   papers = Object.entries({
-    Basics: {icon: 'address-book'},
+    Current: {icon: 'address-card'},
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
     Discipline: {style: {top: `${2*third}%`}, icon: 'pencil-ruler'},
     Goals: {style: {left: `${third}%`, top: `${2*third}%`}, icon: 'check-double'},
@@ -56,19 +56,19 @@ export default class Intro extends PureComponent {
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
-            {papers.map(([title, paper]) =>
+            {papers.map(([title, paper], index) =>
               <Paper style={paper.style} elevation={expand === title ? 4 : 2}
-                class={'paper' + (expand === title ? ' expand' : '') + ('Basics' === title ? ' small' : '')}
+                class={'paper' + (expand === title ? ' expand' : '') + (index === 0 ? ' small' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>
-                <Grid container layout="column" justify="center">
+                <Grid container class="title" layout="column" justify="center">
                   <i class={'fas fa-fw fa-' + paper.icon}/>
                   <Typography>{title}</Typography>
                 </Grid>
               </Paper>
             )}
             <div class="paper" style={{left: `${2*third}%`, top: `${2*third}%`}}>
-              <Grid container layout="column" justify="center">
+              <Grid container class="title" layout="column" justify="center">
                 <i class="fas fa-fw fa-arrow-down"/>
                 <Typography>More&nbsp;Below</Typography>
               </Grid>
