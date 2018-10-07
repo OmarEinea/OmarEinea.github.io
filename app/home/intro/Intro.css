@@ -112,3 +112,19 @@
   text-align: center;
   margin-bottom: 8px;
 }
+
+.paper .content {
+  opacity: 0;
+  transition: opacity .2s;
+  border-top: 96px solid #FFEB3B;
+  padding: 0 24px;
+}
+
+.paper.expand .content {
+  transition: opacity .5s linear .5s;
+  opacity: 1;
+}
+
+.paper .content .line {
+  margin: 24px 0;
+}
