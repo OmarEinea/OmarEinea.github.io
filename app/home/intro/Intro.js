@@ -1,12 +1,12 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
-import { url, get } from 'db';
+import { url, get, colors } from 'db';
 import './Intro.css';
 
 const third = 33.333;
 
 export default class Intro extends PureComponent {
-  state = {expand: null};
+  state = {content: {}, expand: null};
   papers = Object.entries({
     Current: {icon: 'address-card'},
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
@@ -17,13 +17,33 @@ export default class Intro extends PureComponent {
     Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
   });
 
+  componentWillMount() {
+    get('home/intro').then(papers => {
+      const content = {};
+      Object.entries(papers).map(([title, data], index) => {
+        if(index < 3)
+          content[title] = <div style={{borderTopColor: colors[index]}} class="content">
+            {data.slice(1).map((line, index) => {
+              const [ icon, text ] = line.split(';'), [ head, body ] = text.split(':');
+              return <Typography class="line" variant="subheading"
+                style={{fontSize: index == 0 ? 22 : 17}}>
+                <i class={'fas fa-' + icon} style={{marginRight: 8}}/>
+                <b>{head}:</b> {body}
+              </Typography>
+            })}
+          </div>;
+      });
+      this.setState({content});
+    });
+  }
+
   myResume(event) {
     event.preventDefault();
     window.open(url('my/resume.docx'), '_self');
   }
 
   render() {
-    const { myResume, papers, state: { expand }} = this;
+    const { myResume, papers, state: { content, expand }} = this;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -61,6 +81,7 @@ export default class Intro extends PureComponent {
                 class={'paper' + (expand === title ? ' expand' : '') + (index === 0 ? ' small' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>
+                {content[title]}
                 <Grid container class="title" layout="column" justify="center">
                   <i class={'fas fa-fw fa-' + paper.icon}/>
                   <Typography>{title}</Typography>
