@@ -24,11 +24,12 @@ export default class Intro extends PureComponent {
         if(index < 3)
           content[title] = <div style={{borderTopColor: colors[index]}} class="content">
             {data.slice(1).map((line, index) => {
-              const [ icon, text ] = line.split(';'), [ head, body ] = text.split(':');
+              const [ text, icon ] = line.split(';').reverse();
+              const [ body, head ] = text.split(':').reverse();
               return <Typography class="line" variant="subheading"
-                style={{fontSize: index == 0 ? 22 : 17}}>
-                <i class={'fas fa-' + icon} style={{marginRight: 8}}/>
-                <b>{head}:</b> {body}
+                style={{fontSize: index == 0 ? 22 : 18}}>
+                {icon && <i class={'fas fa-' + icon} style={{marginRight: 8}}/>}
+                {head && <b>{head}:</b> }{body}
               </Typography>
             })}
           </div>;
