@@ -35,7 +35,7 @@ export default class Skills extends Component {
         {state.circles.map(([category, skills]) =>
           <Grid container justify="center">
             <Fade in>
-              <Typography variant="display1" class="category">{category}</Typography>
+              <Typography variant="h4" class="category">{category}</Typography>
             </Fade>
             {skills.map((skill, index) =>
               <Grow in timeout={(index + 1) * 200}>
@@ -47,7 +47,7 @@ export default class Skills extends Component {
         <div style={{width: '100%'}}>
           {state.lines.map(([category, skills]) =>
             <div class="lines-list">
-              <Typography variant="display1" class="category">{category}</Typography>
+              <Typography variant="h4" class="category">{category}</Typography>
               <Paper style={{margin: 8, padding: '12px 8px 16px'}}>
                 {skills.map(skill => <Line skill={skill}/>)}
               </Paper>

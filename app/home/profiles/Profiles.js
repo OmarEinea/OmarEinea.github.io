@@ -49,22 +49,22 @@ export default class Profiles extends PureComponent {
               <a href="my/github" target="_blank">
                 <img height="50" src={logo('gh')}/>
               </a>
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 <i class="fas fa-fw fa-hdd"/>
                 <b>{github.repos}</b> Repositories
               </Typography>
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 <i class="fas fa-fw fa-user-friends"/>
                 <b>{github.followers}</b> Followers
               </Typography>
-              <Typography variant="subheading">
+              <Typography variant="subtitle1">
                 <i class="fas fa-fw fa-star"/>
                 <b>{github.stars}</b> Stars
               </Typography>
             </Grid>
             <Grid item md={9} xs={12} align="center">
               <Grid item style={{maxWidth: 685}}>
-                <Typography variant="headline" align="center" style={{padding: '8px 0 16px'}}>
+                <Typography variant="h5" align="center" style={{padding: '8px 0 16px'}}>
                   {graph.commits} contributions last year
                 </Typography>
                 <div id="graph" dangerouslySetInnerHTML={{__html: graph.html}}/>
@@ -91,11 +91,11 @@ export default class Profiles extends PureComponent {
                 <a href="my/stackoverflow" target="_blank">
                   <img height="45" src={logo('so')}/>
                 </a>
-                <Typography variant="title">
+                <Typography variant="h6">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {stack.reputation} Up Votes
                 </Typography>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   <i class="fas fa-fw fa-trophy" style={{marginLeft: 2}}/> Badges
                   <b style={{color: '#c38b5f'}}>
                     <i class="fas fa-fw fa-certificate"/> {stack.bronze}
@@ -116,11 +116,11 @@ export default class Profiles extends PureComponent {
                 <a href="my/xda-developers" target="_black">
                   <img height="45" src={logo('xda')}/>
                 </a>
-                <Typography variant="title">
+                <Typography variant="h6">
                   <i class="fas fa-fw fa-thumbs-up"/>
                   {xda.thanks} Thanks
                 </Typography>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                   <i class="fas fa-fw fa-user-edit" style={{margin: '0 3px'}}/>
                   <b>{xda.posts}</b> Posts
                   in <b>{xda.threads}</b> Threads

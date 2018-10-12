@@ -26,7 +26,7 @@ export default class Intro extends PureComponent {
             {data.slice(1).map((line, index) => {
               const [ text, icon ] = line.split(';').reverse();
               const [ body, head ] = text.split(':').reverse();
-              return <Typography class="line" variant="subheading"
+              return <Typography class="line" variant="subtitle1"
                 style={{fontSize: index == 0 ? 22 : 18}}>
                 {icon && <i class={'fas fa-' + icon} style={{marginRight: 8}}/>}
                 {head && <b>{head}:</b> }{body}
@@ -52,26 +52,26 @@ export default class Intro extends PureComponent {
             <Avatar id="photo" src={url('my/photo')}/>
             <Avatar id="logo" src={url('my/logo')}/>
           </div>
-          <Typography variant="display1" style={{color: '#4F4D4E', margin: '12px 0'}}>
+          <Typography variant="h4" style={{color: '#4F4D4E', margin: '12px 0'}}>
             Omar Einea
           </Typography>
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
-          <Button variant="raised" href="my/resume" onClick={myResume}>
+          <Button variant="contained" href="my/resume" onClick={myResume}>
             <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
             Resume
           </Button>
-          <Button variant="raised" target="_self" href="mailto:hello@omareinea.com">
+          <Button variant="contained" target="_self" href="mailto:hello@omareinea.com">
             <i class="fas fa-lg fa-envelope"/>
           </Button>
-          <Button variant="raised" target="_blank" href="my/linkedin">
+          <Button variant="contained" target="_blank" href="my/linkedin">
             <i class="fab fa-lg fa-linkedin"/>
           </Button>
-          <Button variant="raised" target="_blank" href="my/github">
+          <Button variant="contained" target="_blank" href="my/github">
             <i class="fab fa-lg fa-github"/>
           </Button>
-          <Button variant="raised" target="_blank" href="my/stackoverflow">
+          <Button variant="contained" target="_blank" href="my/stackoverflow">
             <i class="fab fa-lg fa-stack-overflow"/>
           </Button>
         </Grid>

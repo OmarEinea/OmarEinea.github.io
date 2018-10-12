@@ -22,10 +22,10 @@ export default class CourseCard extends PureComponent {
     return (
       <Card class="card" style={{display: 'flex', height: 'calc(100% - 16px)'}}>
         <CardContent style={{flex: 1}}>
-          <Typography variant="title" gutterBottom>{title}</Typography>
-          <Typography variant="subheading" color="textSecondary">{desc}</Typography>
+          <Typography variant="h6" gutterBottom>{title}</Typography>
+          <Typography variant="subtitle1" color="textSecondary">{desc}</Typography>
         </CardContent>
-        <Typography variant="display1" class="grade"
+        <Typography variant="h4" class="grade"
           style={{backgroundColor: color}}>
           <Tooltip title="Course Grade">
             <b style={{padding: '0 36px'}}>{grade}</b>

@@ -65,7 +65,7 @@ class App extends Component {
               <Grow in={notHome} timeout={400} direction="left" unmountOnExit>
                 <a href="/" onClick={(event) => this.goto('home', event)} id="home-link">
                   <Avatar style={{border: '1px solid #616161', marginRight: 12}} src={url('my/logo')}/>
-                  <Typography variant="headline" style={{lineHeight: '42px', color: '#4F4D4E'}}>
+                  <Typography variant="h5" style={{lineHeight: '42px', color: '#4F4D4E'}}>
                     Omar Einea
                   </Typography>
                 </a>
@@ -94,7 +94,9 @@ class App extends Component {
 }
 
 render(
-  <MuiThemeProvider theme={createMuiTheme({typography: {fontFamily: 'Quicksand'}})}>
+  <MuiThemeProvider theme={createMuiTheme({typography: {
+    fontFamily: 'Quicksand', suppressDeprecationWarnings: true
+  }})}>
     <App/>
   </MuiThemeProvider>,
   document.getElementById('app')

@@ -46,10 +46,10 @@ export default class Gallery extends Component {
           <Zoom in={loaded} timeout={{enter: 400, exit: 250}}>
             <div class="main">
               <div class="white-text">
-                <Typography variant="subheading" style={{flex: 1}} noWrap>
+                <Typography variant="subtitle1" style={{flex: 1}} noWrap>
                   {!youtube && images[index]}
                 </Typography>
-                <Typography variant="subheading" style={{marginLeft: 8, marginRight: -8}}>
+                <Typography variant="subtitle1" style={{marginLeft: 8, marginRight: -8}}>
                   ({index + 1} of {images.length})
                   <i class="fas fa-times" onClick={this.onClose}/>
                 </Typography>

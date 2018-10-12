@@ -15,7 +15,7 @@ export default class Circle extends PureComponent {
             <img width="60" src={logo(name.replace(/\+/g, '%2B'))} style={{position: 'absolute', left: 45, top: 45}}/>
           </div>
         </Tooltip>
-        <Typography variant="title" style={{color: '#424242', maxWidth: 150}} noWrap>
+        <Typography variant="h6" style={{color: '#424242', maxWidth: 150}} noWrap>
           {name}
         </Typography>
       </Grid>

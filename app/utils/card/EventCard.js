@@ -25,7 +25,7 @@ export default class EventCard extends PureComponent {
           <Collapse in={text} collapsedHeight="54px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
             onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
             <CardActions style={{padding: '16px 18px'}}>
-              <Typography variant="title" style={{fontSize: 19, flex: 1, color: '#424242'}} noWrap>
+              <Typography variant="h6" style={{fontSize: 19, flex: 1, color: '#424242'}} noWrap>
                 {title}
               </Typography>
               <IconButton onClick={() => this.setState({text: !text})}

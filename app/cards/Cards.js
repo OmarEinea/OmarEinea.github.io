@@ -27,7 +27,7 @@ export default class Cards extends Component {
         {state.allCards.map(([category, cards]) =>
           <Grid container justify="center">
             <Fade in>
-              <Typography variant="display1" class="category">{category}</Typography>
+              <Typography variant="h4" class="category">{category}</Typography>
             </Fade>
             {cards.map((cardData, index) =>
               <Grow in timeout={(index + 1) * 400}>

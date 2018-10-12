@@ -51,13 +51,13 @@ export default class Timeline extends Component {
                   <b class="city-vline"><i/>
                     <Typography class="number">{+year + 1994}</Typography>
                   </b>
-                  <Typography class="city" variant="subheading" noWrap>
+                  <Typography class="city" variant="subtitle1" noWrap>
                     <i class="fas fa-map-marker-alt"/> {city[0]}
                   </Typography>
                 </span>}
                 {(pc || !showEvents) && <span>
                   {instCount === 0 && <span class="inst-box white-text"><i/>
-                    <Typography variant="subheading" style={instDesc && {marginBottom: 6}} noWrap>
+                    <Typography variant="subtitle1" style={instDesc && {marginBottom: 6}} noWrap>
                       <i style={{marginRight: 8}}
                         class={'fas fa-' + (is(institute, 'School') || is(institute, 'University') || '')}/>
                       <b>{institute}</b>

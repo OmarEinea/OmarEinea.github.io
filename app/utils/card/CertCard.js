@@ -22,7 +22,7 @@ export default class CertCard extends PureComponent {
           <Collapse in={text} collapsedHeight="82px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
             onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
             <CardContent style={{padding: '16px 15.5px 16px 18px'}}>
-              <Typography variant="title" style={{fontSize: 19, marginBottom: 8, color: '#424242'}} noWrap>
+              <Typography variant="h6" style={{fontSize: 19, marginBottom: 8, color: '#424242'}} noWrap>
                 {title}
               </Typography>
               <CardActions style={{padding: 0}}>
