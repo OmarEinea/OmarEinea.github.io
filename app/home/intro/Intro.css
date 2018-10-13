@@ -74,7 +74,7 @@
   margin: 0;
 }
 
-.paper.expand.small {
+.paper.expand:first-child {
   height: 66.666%;
   width: 66.666%;
 }
@@ -127,5 +127,12 @@
 }
 
 .paper .content .line {
+  margin: 16px 0;
+  font-size: 18px;
+}
+
+.paper:not(:first-child) .content .line:first-child {
   margin: 24px 0;
+  font-size: 21px;
+  font-weight: 500;
 }

@@ -8,7 +8,7 @@ const third = 33.333;
 export default class Intro extends PureComponent {
   state = {content: {}, expand: null};
   papers = Object.entries({
-    Current: {icon: 'address-card'},
+    Occupation: {icon: 'address-card'},
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
     Discipline: {style: {top: `${2*third}%`}, icon: 'pencil-ruler'},
     Goals: {style: {left: `${third}%`, top: `${2*third}%`}, icon: 'check-double'},
@@ -21,18 +21,17 @@ export default class Intro extends PureComponent {
     get('home/intro').then(papers => {
       const content = {};
       Object.entries(papers).map(([title, data], index) => {
-        if(index < 3)
-          content[title] = <div style={{borderTopColor: colors[index]}} class="content">
-            {data.slice(1).map((line, index) => {
-              const [ text, icon ] = line.split(';').reverse();
-              const [ body, head ] = text.split(':').reverse();
-              return <Typography class="line" variant="subtitle1"
-                style={{fontSize: index == 0 ? 22 : 18}}>
-                {icon && <i class={'fas fa-' + icon} style={{marginRight: 8}}/>}
-                {head && <b>{head}:</b> }{body}
-              </Typography>
-            })}
-          </div>;
+        content[title] = <div style={{borderTopColor: colors[index]}} class="content">
+          {data.slice(1).map(line => {
+            if(!line) return;
+            const [ text, icon ] = line.split(';').reverse();
+            const [ body, head ] = text.split(':').reverse();
+            return <Typography class="line" variant="subtitle1">
+              {icon && <i class={'fas fa-' + icon} style={{marginRight: 8}}/>}
+              {head && <b>{head}:</b> }{body}
+            </Typography>;
+          })}
+        </div>;
       });
       this.setState({content});
     });
@@ -77,9 +76,9 @@ export default class Intro extends PureComponent {
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
-            {papers.map(([title, paper], index) =>
+            {papers.map(([title, paper]) =>
               <Paper style={paper.style} elevation={expand === title ? 4 : 2}
-                class={'paper' + (expand === title ? ' expand' : '') + (index === 0 ? ' small' : '')}
+                class={'paper' + (expand === title ? ' expand' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>
                 {content[title]}
