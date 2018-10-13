@@ -27,7 +27,7 @@ export default class Intro extends PureComponent {
             const [ text, icon ] = line.split(';').reverse();
             const [ body, head ] = text.split(':').reverse();
             return <Typography class="line" variant="subtitle1">
-              {icon && <i class={'fas fa-' + icon} style={{marginRight: 8}}/>}
+              {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
               {head && <b>{head}:</b> }{body}
             </Typography>;
           })}
@@ -84,7 +84,7 @@ export default class Intro extends PureComponent {
                 {content[title]}
                 <Grid container class="title" layout="column" justify="center">
                   <i class={'fas fa-fw fa-' + paper.icon}/>
-                  <Typography>{title}</Typography>
+                  <Typography><span>{title}</span></Typography>
                 </Grid>
               </Paper>
             )}
