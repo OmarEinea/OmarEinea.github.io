@@ -67,7 +67,7 @@ button.mini, a.mini {
 #toolbar {
   position: relative;
   justify-content: center;
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 @media screen and (max-width: 800px) {

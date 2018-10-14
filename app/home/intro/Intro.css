@@ -32,18 +32,7 @@
 
 #bio {
   height: 100vw;
-  padding: 0 8px;
-}
-
-@media screen and (min-width: 960px) {
-  #intro a {
-    margin-bottom: 0;
-  }
-
-  #bio {
-    height: 100%;
-    padding-left: 36px;
-  }
+  padding: 16px 8px 0;
 }
 
 #bio > div {
@@ -74,11 +63,6 @@
   margin: 0;
 }
 
-.paper.expand:first-child {
-  height: 66.666%;
-  width: 66.666%;
-}
-
 .paper .title {
   width: 48px;
   transform: translate(-50%, -50%);
@@ -95,7 +79,7 @@
 
 .paper .title p {
   color: #616161;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -127,7 +111,9 @@
 
 .paper .content {
   opacity: 0;
+  overflow-y: auto;
   transition: opacity .2s;
+  max-height: calc(100% - 96px);
   border-top: 96px solid #FFEB3B;
   padding: 0 24px;
 }
@@ -138,11 +124,31 @@
 }
 
 .paper .content .line {
-  margin: 16px 0;
+  margin: 16px 0 4px;
   font-size: 18px;
 }
 
 .paper:not(:first-child) .content .line:first-child {
   font-size: 22px;
   font-weight: 500;
+}
+
+@media screen and (min-width: 960px) {
+  #intro a {
+    margin-bottom: 0;
+  }
+
+  #bio {
+    height: 100%;
+    padding: 0 8px 0 36px;
+  }
+
+  .paper .title p {
+    font-size: 20px;
+  }
+
+  .paper.expand:first-child {
+    height: 66.666%;
+    width: 66.666%;
+  }
 }
