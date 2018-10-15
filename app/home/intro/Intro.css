@@ -105,7 +105,7 @@
 
 .paper.expand .title span,
 .paper.expand .title i {
-  color: #FAFAFA;
+  color: #FAFAFA !important;
   transition: color .2s linear .5s;
 }
 

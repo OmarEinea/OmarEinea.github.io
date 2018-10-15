@@ -20,18 +20,16 @@ export default class Intro extends PureComponent {
   componentWillMount() {
     get('home/intro').then(papers => {
       const content = {};
-      Object.entries(papers).map(([title, data], index) => {
-        content[title] = <div style={{borderTopColor: colors[index]}} class="content">
-          {data.slice(1).map(line => {
-            if(!line) return;
-            const [ text, icon ] = line.split(';').reverse();
-            const [ body, head ] = text.split(':').reverse();
-            return <Typography class="line" variant="subtitle1">
-              {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
-              {head && <b>{head}:</b> }{body}
-            </Typography>;
-          })}
-        </div>;
+      Object.entries(papers).map(([title, data]) => {
+        content[title] = data.slice(1).map(line => {
+          if(!line) return;
+          const [ text, icon ] = line.split(';').reverse();
+          const [ body, head ] = text.split(':').reverse();
+          return <Typography class="line" variant="subtitle1">
+            {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
+            {head && <b>{head}:</b> }{body}
+          </Typography>;
+        });
       });
       this.setState({content});
     });
@@ -76,15 +74,15 @@ export default class Intro extends PureComponent {
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
-            {papers.map(([title, paper]) =>
+            {papers.map(([title, paper], index) =>
               <Paper style={paper.style} elevation={expand === title ? 4 : 2}
                 class={'paper' + (expand === title ? ' expand' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>
-                {content[title]}
+                <div style={{borderTopColor: colors[index]}} class="content">{content[title]}</div>
                 <Grid container class="title" layout="column" justify="center">
-                  <i class={'fas fa-fw fa-' + paper.icon}/>
-                  <Typography><span>{title}</span></Typography>
+                  <i class={'fas fa-fw fa-' + paper.icon} style={{color: colors[index]}}/>
+                  <Typography><span style={{color: colors[index]}}>{title}</span></Typography>
                 </Grid>
               </Paper>
             )}
