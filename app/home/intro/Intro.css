@@ -115,7 +115,7 @@
   transition: opacity .2s;
   max-height: calc(100% - 96px);
   border-top: 96px solid #FFEB3B;
-  padding: 0 24px;
+  padding: 0 16px;
 }
 
 .paper.expand .content {
@@ -124,7 +124,7 @@
 }
 
 .paper .content .line {
-  margin: 16px 0 4px;
+  margin: 16px 8px 4px;
   font-size: 18px;
 }
 

@@ -1,5 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
+import { Table, TableBody, TableRow, TableCell } from 'material-ui';
 import { url, get, colors } from 'db';
 import './Intro.css';
 
@@ -20,16 +21,22 @@ export default class Intro extends PureComponent {
   componentWillMount() {
     get('home/intro').then(papers => {
       const content = {};
-      Object.entries(papers).map(([title, data]) => {
-        content[title] = data.slice(1).map(line => {
-          if(!line) return;
-          const [ text, icon ] = line.split(';').reverse();
-          const [ body, head ] = text.split(':').reverse();
-          return <Typography class="line" variant="subtitle1">
-            {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
-            {head && <b>{head}:</b> }{body}
-          </Typography>;
-        });
+      this.papers.map(([title, _], index) => {
+        if(index <= 3)
+          content[title] = papers[title].slice(1).map(line => {
+            const [ text, icon ] = line.split(';').reverse();
+            const [ body, head ] = text.split(':').reverse();
+            return <Typography class="line" variant="subtitle1">
+              {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
+              {head && <b>{head}:</b> }{body}
+            </Typography>;
+          });
+        else 
+          content[title] = <Table style={{marginTop: 8}}><TableBody>{papers[title].map(row =>
+            <TableRow>{row.split(',').map(cell =>
+              <TableCell style={{padding: '16px 12px', fontSize: '0.82rem'}} dangerouslySetInnerHTML={{__html: cell}}/>
+            )}</TableRow>
+          )}</TableBody></Table>;
       });
       this.setState({content});
     });
