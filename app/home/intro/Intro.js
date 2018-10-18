@@ -57,8 +57,10 @@ export default class Intro extends PureComponent {
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
           <div style={{position: 'relative', width: 324, height: 324}}>
-            <Avatar id="photo" src={url('my/photo')}/>
-            <Avatar id="logo" src={url('my/logo')}/>
+            <Avatar class={'avatar' + (expand !== 'logo' ? ' expand' : '')} style={{left: 0}}
+              src={url('my/photo')} onClick={() => this.setState({expand: null})}/>
+            <Avatar class={'avatar' + (expand === 'logo' ? ' expand' : '')} style={{right: 0}}
+              src={url('my/logo')} onClick={() => this.setState({expand: 'logo'})}/>
           </div>
           <Typography variant="h4" style={{color: '#4F4D4E', margin: '12px 0'}}>
             Omar Einea

@@ -3,7 +3,7 @@
   "author": "Omar Einea",
   "description": "A website about Omar Einea",
   "license": "MIT",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "webpack.config.js",
   "devDependencies": {
     "@material-ui/core": "^3.2.2",
@@ -19,7 +19,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "style-loader": "^0.21.0",
-    "webpack": "^4.20.2",
+    "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9",
     "whatwg-fetch": "^2.0.4"

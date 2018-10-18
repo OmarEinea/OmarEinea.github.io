@@ -1,21 +1,23 @@
-#photo, #logo {
+#intro .avatar {
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 0 0 1px #4F4D4E inset;
   border: solid #4F4D4E 2px;
   background-color: #4F4D4E;
+  box-sizing: border-box;
+  position: absolute;
+  height: 84px;
+  width: 84px;
+  margin: 4px;
+  z-index: 0;
+  bottom: 0;
 }
 
-#photo {
-  box-shadow: 0 0 0 1px #4F4D4E inset;
-  box-sizing: border-box;
+#intro .avatar.expand {
+  transition: all .5s cubic-bezier(.4, 0, .2, 1);
   height: 100%;
   width: 100%;
-}
-
-#logo {
-  position: absolute;
-  right: 4px;
-  bottom: 4px;
-  width: 80px;
-  height: 80px;
+  z-index: -1;
+  margin: 0;
 }
 
 #intro a {
