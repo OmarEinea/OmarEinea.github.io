@@ -40,12 +40,15 @@ export default class Intro extends PureComponent {
               {head && <b>{head}:</b> }{body}
             </Typography>;
           });
-        else 
-          content[title] = <Table style={{marginTop: 8}}><TableBody>{papers[title].map(row =>
-            <TableRow>{row.split(',').map(cell =>
-              <TableCell style={{padding: '16px 12px', fontSize: '0.82rem'}} dangerouslySetInnerHTML={{__html: cell}}/>
-            )}</TableRow>
-          )}</TableBody></Table>;
+        else
+          content[title] = <Table style={{marginTop: 8}}>
+            <TableBody>{papers[title].map(row =>
+              <TableRow>{row.split(',').map(cell =>
+                <TableCell dangerouslySetInnerHTML={{__html: cell}}
+                  style={{padding: '16px 12px', fontSize: '0.82rem'}}/>
+              )}</TableRow>
+            )}</TableBody>
+          </Table>;
       });
       this.setState({content});
     });
@@ -83,13 +86,15 @@ export default class Intro extends PureComponent {
                 onMouseLeave={() => this.setState({expand: null})}>
                 <div style={{borderTopColor: colors[index]}} class="content">{content[title]}</div>
                 <Grid container class="title" layout="column" justify="center">
-                  <i class={'fas fa-fw fa-' + paper.icon} style={{color: colors[index]}}/>
-                  <Typography><span style={{color: colors[index]}}>{title}</span></Typography>
+                  <i class={'fas fa-fw fa-' + paper.icon}/>
+                  <Typography><span>{title}</span></Typography>
                 </Grid>
               </Paper>
             )}
             <div class="paper" style={{left: `${2*third}%`, top: `${2*third}%`}}>
-              <Grid container class="title" layout="column" justify="center">
+              <Grid container class="title" layout="column" justify="center" onClick={() => window.scrollBy(
+                0, document.getElementById('bio').getBoundingClientRect().bottom + 100)
+              }>
                 <i class="fas fa-fw fa-arrow-down"/>
                 <Typography>More&nbsp;Below</Typography>
               </Grid>
