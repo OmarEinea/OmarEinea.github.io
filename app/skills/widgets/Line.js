@@ -6,7 +6,7 @@ export default class Line extends PureComponent {
     const [ name, rate ] = this.props.skill;
     return (
       <Grid item direction="column" style={{padding: '12px 16px'}}>
-        <Typography variant="h6" style={{color: '#424242', marginBottom: 6}}>
+        <Typography variant="h6" style={{color: '#424242', marginBottom: 6, lineHeight: 1.3}}>
           {name}
         </Typography>
         <Tooltip title={rate + '%'} placement="right">

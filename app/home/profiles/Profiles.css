@@ -36,9 +36,9 @@
   padding: 24px 28px 16px;
 }
 
-#github h3 {
+#github h6 {
   color: #424242;
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 #github i {
@@ -55,8 +55,8 @@
   padding: 28px 36px;
 }
 
-.flair h2, .flair h3 {
-  padding-top: 16px;
+.flair h6 {
+  padding-top: 12px;
   color: #424242;
 }
 

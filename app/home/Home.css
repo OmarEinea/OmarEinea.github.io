@@ -5,13 +5,17 @@
   padding: 8px;
 }
 
+h3.headline {
+  color: #616161;
+}
+
 @media screen and (max-width: 600px) {
-  h1.headline {
+  h3.headline {
     font-size: 32px;
     font-weight: 500;
   }
 
-  h1.headline > i {
+  h3.headline > i {
     vertical-align: middle !important;
   }
 }
