@@ -21,7 +21,6 @@
 }
 
 #intro a {
-  width: 36px;
   min-width: 0;
   color: #FAFAFA;
   margin: 20px 4px;
@@ -29,13 +28,8 @@
   background-color: #DB236B;
 }
 
-#intro a:first-of-type {
-  width: unset;
-}
-
-#intro a:first-of-type i {
-  margin-right: 8px;
-  font-size: 16px;
+#intro a[target] {
+  width: 36px;
 }
 
 #bio {

@@ -8,15 +8,6 @@ const third = 33.333;
 
 export default class Intro extends PureComponent {
   state = {content: {}, expand: null};
-  buttons = [{
-    text: 'Resume', icon: 'file-download fas', href: 'my/resume', onClick: event => {
-      event.preventDefault();
-      window.open(url('my/resume.docx'), '_self');
-    }}, {href: 'mailto:hello@omareinea.com', icon: 'envelope fas'},
-    {target:'_blank', href: 'my/linkedin', icon: 'linkedin fab'},
-    {target:'_blank', href: 'my/github', icon: 'github fab'},
-    {target:'_blank', href: 'my/stackoverflow', icon: 'stack-overflow fab'}
-  ];
   papers = Object.entries({
     Occupation: {icon: 'address-card'},
     Origin: {style: {top: `${third}%`}, icon: 'globe-africa'},
@@ -54,8 +45,13 @@ export default class Intro extends PureComponent {
     });
   }
 
+  myResume(event) {
+    event.preventDefault();
+    window.open(url('my/resume.docx'), '_self');
+  }
+
   render() {
-    const { buttons, papers, state: { content, expand }} = this;
+    const { myResume, papers, state: { content, expand }} = this;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -71,11 +67,22 @@ export default class Intro extends PureComponent {
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
             Application Developer. Web, Mobile & PC.
           </Typography>
-          {buttons.map(({ text, icon, ...props }) => 
-            <Button variant="contained" {...props}>
-              <i class={'fa-lg fa-' + icon}/>{text}
-            </Button>
-          )}
+          <Button variant="contained" href="my/resume" onClick={myResume}>
+            <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
+            Resume
+          </Button>
+          <Button variant="contained" target="_self" href="mailto:hello@omareinea.com">
+            <i class="fas fa-lg fa-envelope"/>
+          </Button>
+          <Button variant="contained" target="_blank" href="my/linkedin">
+            <i class="fab fa-lg fa-linkedin"/>
+          </Button>
+          <Button variant="contained" target="_blank" href="my/github">
+            <i class="fab fa-lg fa-github"/>
+          </Button>
+          <Button variant="contained" target="_blank" href="my/stackoverflow">
+            <i class="fab fa-lg fa-stack-overflow"/>
+          </Button>
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
