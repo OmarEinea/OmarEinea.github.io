@@ -8,7 +8,6 @@ import './Skills.css';
 
 export default class Skills extends Component {
   processData({ order, ...skills }, top) {
-    const orderedSkills = [];
     for(const key in skills) {
       const category = skills[key];
       for(const skill in category)
@@ -16,6 +15,7 @@ export default class Skills extends Component {
           category[skill] = top[skill];
       skills[key] = Object.entries(category).sort((a, b) => b[1] - a[1]);
     }
+    const orderedSkills = [];
     skills = Object.entries(skills);
     order.split(',').map(index => orderedSkills.push(skills[index - 1]));
     return orderedSkills;

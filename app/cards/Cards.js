@@ -8,7 +8,7 @@ export default class Cards extends Component {
   componentWillMount() {
     const { type } = this.props;
     this.Card = cardTypes[type + 'Card'];
-    get(type.toLowerCase() + 's').then(({ top, ...cards }) => {
+    get(type.toLowerCase() + 's').then(({ top, order, ...cards }) => {
       for(const key in cards) {
         const category = cards[key];
         for(const card in category)
@@ -16,7 +16,11 @@ export default class Cards extends Component {
             category[card] = top[card];
         cards[key] = Object.entries(category);
       }
-      this.setState({allCards: Object.entries(cards)});
+      const orderedCategories = [];
+      cards = Object.entries(cards);
+      if(order) order.split(',').map(index => orderedCategories.push(cards[index - 1]));
+      else orderedCategories.push(...cards);
+      this.setState({allCards: orderedCategories});
     });
   }
 
