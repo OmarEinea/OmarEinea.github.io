@@ -1,7 +1,7 @@
 {
   "name": "omareinea",
   "author": "Omar Einea",
-  "description": "A website about Omar Einea",
+  "description": "An Interactive Resume",
   "license": "MIT",
   "version": "1.2.6",
   "main": "webpack.config.js",
