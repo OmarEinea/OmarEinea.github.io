@@ -18,7 +18,6 @@ class App extends Component {
     skills: () => <Skills/>,
     projects: () => <Cards type="Project"/>,
     certificates: () => <Cards type="Cert"/>,
-    courses: () => <Cards type="Course" wide/>,
     events: () => <Cards type="Event"/>,
     timeline: () => <Timeline/>
   };
