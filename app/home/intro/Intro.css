@@ -29,6 +29,7 @@
 }
 
 #intro a[target] {
+  min-height: 36px;
   width: 36px;
 }
 

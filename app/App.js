@@ -94,7 +94,7 @@ class App extends Component {
 
 render(
   <MuiThemeProvider theme={createMuiTheme({typography: {
-    fontFamily: 'Quicksand', suppressDeprecationWarnings: true
+    fontFamily: 'Quicksand', useNextVariants: true
   }})}>
     <App/>
   </MuiThemeProvider>,

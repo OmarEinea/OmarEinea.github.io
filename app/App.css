@@ -71,14 +71,15 @@ button.mini, a.mini {
   padding: 4px 0;
 }
 
+#toolbar a {
+  margin: 8px 4px;
+  padding: 6px 12px;
+}
+
 @media screen and (max-width: 800px) {
   #toolbar {
     flex-flow: row wrap;
     margin-bottom: 16px;
-  }
-
-  #toolbar a {
-    margin: 8px 4px;
   }
 
   #toolbar > div:not(.divider) {
