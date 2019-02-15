@@ -15,11 +15,10 @@ export default class Gallery extends Component {
     this.setState({loaded: false, closing: true});
     setTimeout(this.props.onClose, 250);
   };
-  frameStyle = () => {
+  frameStyle = (tight) => {
     if(window.innerWidth / window.innerHeight > 16 / 9)
-      return {height: 'calc(100vh - 52px)', width: '162vh'};
-    else
-      return {width: 'calc(100vw - 16px)', height: '53.75vw'};
+      return {height: 'calc(100vh - 52px)', width: tight ? '52vh' : '161vh'};
+    return {width: 'calc(100vw - 16px)', height: tight ? '170vw' : '54vw'};
   };
 
   componentWillMount() {
@@ -55,8 +54,9 @@ export default class Gallery extends Component {
                 </Typography>
               </div>
               {youtube
-                ? <iframe style={this.frameStyle()} onLoad={this.loaded} allow="autoplay; encrypted-media"
-                  src={`https://www.youtube-nocookie.com/embed/${youtube}?rel=0`} frameborder="0" allowfullscreen/>
+                ? <iframe style={this.frameStyle(youtube.includes('tight'))} frameBorder="0"
+                  onLoad={this.loaded} allow="autoplay; encrypted-media" allowFullScreen
+                  src={`https://www.youtube-nocookie.com/embed/${youtube.split('&')[0]}?rel=0`}/>
                 : <img style={{maxHeight: 'calc(100vh - 52px)', maxWidth: '100%'}}
                   src={url(this.urls[index])} onLoad={this.loaded}/>
               }
