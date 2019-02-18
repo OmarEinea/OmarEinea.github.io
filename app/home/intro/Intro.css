@@ -155,3 +155,7 @@
     width: 66.666%;
   }
 }
+
+.paper table tr:first-child td {
+  font-weight: 500;
+}

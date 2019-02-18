@@ -14,6 +14,8 @@ export default class Cards extends Component {
         for(const card in category)
           if(category[card] === -1)
             category[card] = top[card];
+          else if(category[card].preload)
+            get(category[card].demo)
         cards[key] = Object.entries(category);
       }
       const orderedCategories = [];

@@ -51,13 +51,13 @@ export default class ProjectCard extends PureComponent {
           </div>
           <div style={{display: 'flex', flexDirection: 'column', margin: '-4px 0'}}>
             <Tooltip title="code" placement="left">
-              <IconButton href={'https://github.com/' + repo}
+              <IconButton href={'https://github.com/' + repo} target="_blank"
                 style={{fontSize: 22}} class="project-button">
                 <i class="fab fa-github-alt"/>
               </IconButton>
             </Tooltip>
             <Tooltip title="demo" placement="left">
-              <IconButton class="project-button"
+              <IconButton class="project-button" target="_blank"
                 style={{fontSize: 19}} href={demo}>
                 <i class="fas fa-eye"/>
               </IconButton>
