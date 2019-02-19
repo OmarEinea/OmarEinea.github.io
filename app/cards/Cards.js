@@ -3,6 +3,7 @@ import { Grid, Typography, Grow, Fade } from 'material-ui';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
 import cardTypes from '~/utils/card';
+import 'fetch';
 
 export default class Cards extends Component {
   componentWillMount() {
@@ -15,7 +16,7 @@ export default class Cards extends Component {
           if(category[card] === -1)
             category[card] = top[card];
           else if(category[card].preload)
-            get(category[card].demo)
+            fetch(category[card].demo);
         cards[key] = Object.entries(category);
       }
       const orderedCategories = [];
