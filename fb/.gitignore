@@ -1,0 +1,4 @@
+# Ignore my database folder and node modules
+database/
+node_modules/
+package-lock.json
