@@ -24,11 +24,12 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0",
+    "webpack-dev-server": "^3.2.1",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --inline --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "serve": "cd fb && node index.js"
   }
 }
