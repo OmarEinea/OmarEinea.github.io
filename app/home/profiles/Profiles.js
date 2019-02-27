@@ -1,46 +1,17 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Hidden, Grow } from 'material-ui';
-import { get, logo, bring } from 'db';
+import { get, logo } from 'db';
 import './Profiles.css';
 
 export default class Profiles extends PureComponent {
   state = {graph: {}, github: {}, stack: {}, xda: {}};
 
   componentWillMount() {
-    if(process.env.NODE_ENV === 'production') {
-      bring('https://urlreq.appspot.com/req?method=GET&url=' +
-            'https://github.com/users/OmarEinea/contributions', 'graph', 'text').then(html => {
-          let count = /data-count="([0-9]+)"/g, match, commits = 0;
-          html = html.match(/<svg([\s\S]*?)<\/svg>/)[0]
-                     .replace('translate(16, 20)', 'translate(20, 24)')
-                     .replace('height="104"', 'height="108"')
-                     .replace(/dx="-14"/g, 'dx="-20"');
-          while(match = count.exec(html))
-            commits += Number(match[1]);
-          this.setState({graph: {html, commits}});
-        });
-    }
-    bring('https://api.github.com/users/OmarEinea', 'github')
-      .then(github => this.setState(prev => ({github: {
-        followers: github.followers,
-        repos: github.public_repos,
-        ...prev.github
-      }})));
-    get('home/profiles').then(profiles => this.setState(prev => ({
-        xda: profiles.xda, github: {
-          stars: profiles.github.stars,
-          ...prev.github
-        }
-      })));
-    bring('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow', 'stack')
-      .then(stack => {
-        const { reputation, badge_counts: { gold, silver, bronze }} = stack.items[0];
-        this.setState({stack: {reputation, gold, silver, bronze}});
-      });
+    get('home/profiles').then(profiles => this.setState(profiles));
   }
 
   render() {
-    const { state: { graph, github, stack, xda }, props: { visible }} = this;
+    const { state: { github, stack, xda }, props: { visible }} = this;
     return (
       <Grid container>
         <Grow in={visible} timeout={500}>
@@ -65,9 +36,9 @@ export default class Profiles extends PureComponent {
             <Grid item md={9} xs={12} align="center">
               <Grid item style={{maxWidth: 685}}>
                 <Typography variant="h5" align="center" style={{padding: '8px 0 16px'}}>
-                  {graph.commits} contributions last year
+                  {github.commits} contributions last year
                 </Typography>
-                <div id="graph" dangerouslySetInnerHTML={{__html: graph.html}}/>
+                <div id="graph" dangerouslySetInnerHTML={{__html: github.graph}}/>
                 <Typography variant="caption" align="left" id="legend">
                   Commits made by me
                   <div style={{float: 'right'}}>
