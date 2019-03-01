@@ -1,19 +1,19 @@
 import { Component } from 'react';
 import { Grid, Typography, IconButton, Tooltip, Grow, Fade } from 'material-ui';
 import Intro from './intro/Intro';
-import Profiles from './profiles/Profiles';
-import Skills from './sections/TopSkills';
-import Cards from './sections/TopCards';
+import TopProfiles from './sections/TopProfiles';
+import TopSkills from './sections/TopSkills';
+import TopCards from './sections/TopCards';
 import './Home.css'
 
 export default class Home extends Component {
   state = {entered: 0};
   sections = Object.entries({
-    projects: [(props) => <Cards type="Project" {...props}/>, 'laptop-code'],
-    skills: [Skills, 'brain'],
-    events: [(props) => <Cards type="Event" {...props}/>, 'users'],
-    profiles: [Profiles, 'globe'],
-    certificates: [(props) => <Cards type="Cert" {...props}/>, 'award']
+    projects: [(props) => <TopCards type="Project" {...props}/>, 'laptop-code'],
+    skills: [TopSkills, 'brain'],
+    events: [(props) => <TopCards type="Event" {...props}/>, 'users'],
+    profiles: [TopProfiles, 'globe'],
+    certificates: [(props) => <TopCards type="Cert" {...props}/>, 'award']
   });
 
   render() {

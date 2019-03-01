@@ -3,7 +3,7 @@ import { Grid, Zoom } from 'material-ui';
 import { get } from 'db';
 import cardTypes from '~/utils/card';
 
-export default class Cards extends PureComponent {
+export default class TopCards extends PureComponent {
   state = {cards: []};
 
   componentWillMount() {

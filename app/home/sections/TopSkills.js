@@ -4,7 +4,7 @@ import { get } from 'db';
 import Circle from '~/skills/widgets/Circle';
 import Line from '~/skills/widgets/Line';
 
-export default class Skills extends PureComponent {
+export default class TopSkills extends PureComponent {
   state = {circles: [], lines: []};
 
   componentWillMount() {

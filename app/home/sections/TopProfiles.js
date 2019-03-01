@@ -2,9 +2,8 @@ import { PureComponent } from 'react';
 import { Grid, Hidden, Grow } from 'material-ui';
 import { GitHub, StackOverflow, XdaDevelopers } from '~/profiles/widgets';
 import { get } from 'db';
-import './Profiles.css';
 
-export default class Profiles extends PureComponent {
+export default class TopProfiles extends PureComponent {
   state = {github: {}, stack: {}, xda: {}};
 
   componentWillMount() {
@@ -24,14 +23,14 @@ export default class Profiles extends PureComponent {
         <Grid container>
           <Grow in={visible} timeout={800}>
             <Grid item sm={6} xs={12}>
-              <div class="box flair">
+              <div class="box">
                 <StackOverflow data={stack}/>
               </div>
             </Grid>
           </Grow>
           <Grow in={visible} timeout={1000}>
             <Grid item sm={6} xs={12}>
-              <div class="box flair">
+              <div class="box">
                 <XdaDevelopers data={xda}/>
               </div>
             </Grid>
