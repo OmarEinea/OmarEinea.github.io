@@ -1,12 +1,13 @@
 import { PureComponent } from 'react';
 import { Grid, Typography } from 'material-ui';
 import { logo } from 'db';
+import './Flair.css';
 
 export default class StackOverflow extends PureComponent {
   render() {
     const { reputation, gold, silver, bronze } = this.props.data;
     return (
-      <Grid item>
+      <Grid item class="flair">
         <a href="my/stackoverflow" target="_blank">
           <img height="45" src={logo('so')}/>
         </a>

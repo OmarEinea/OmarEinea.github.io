@@ -1,4 +1,4 @@
-.box.flair {
+.flair {
   padding: 28px 36px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  .box.flair {
+  .flair {
     padding: 20px 28px;
   }
 }
