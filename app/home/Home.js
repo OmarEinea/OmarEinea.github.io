@@ -33,14 +33,13 @@ export default class Home extends Component {
                   <Typography variant="h3" class="headline" noWrap
                     style={{padding: '40px 0', textTransform: 'capitalize'}}>
                     <i class={'fas fa-' + icon} style={{paddingRight: 16}}/>
-                    {Section === Profiles ? 'dev ' + title : <span>top {title}
-                      <Tooltip title="View All" placement="right" enterDelay={100}>
-                        <IconButton onClick={(event) => goto(title, event)}
-                          href={title} style={{marginLeft: 8}} class="mini">
-                          <i class="fas fa-link" style={{fontSize: 17, opacity: .7}}/>
-                        </IconButton>
-                      </Tooltip>
-                    </span>}
+                    top {title}
+                    <Tooltip title="View All" placement="right" enterDelay={100}>
+                      <IconButton onClick={(event) => goto(title, event)}
+                        href={title} style={{marginLeft: 8}} class="mini">
+                        <i class="fas fa-link" style={{fontSize: 17, opacity: .7}}/>
+                      </IconButton>
+                    </Tooltip>
                   </Typography>
                 </Grid>
               </Fade>

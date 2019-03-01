@@ -7,6 +7,7 @@ import Optimize from './utils/Optimize';
 import Home from './home/Home';
 import Cards from './cards/Cards';
 import Skills from './skills/Skills';
+import Profiles from './profiles/Profiles';
 import Timeline from './timeline/Timeline';
 import Footer from './utils/Footer';
 import './App.css';
@@ -15,10 +16,11 @@ class App extends Component {
   state = {page: 'home', mounted: true};
   pages = {
     home: () => <Home goto={this.goto.bind(this)}/>,
-    skills: () => <Skills/>,
     projects: () => <Cards type="Project"/>,
-    certificates: () => <Cards type="Cert"/>,
+    skills: () => <Skills/>,
     events: () => <Cards type="Event"/>,
+    profiles: () => <Profiles/>,
+    certificates: () => <Cards type="Cert"/>,
     timeline: () => <Timeline/>
   };
   buttonColor = (page, index) => ({
