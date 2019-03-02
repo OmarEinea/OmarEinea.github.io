@@ -6,33 +6,33 @@ import Loading from '~/utils/Loading';
 import ProfileCard from '~/utils/card/ProfileCard';
 
 export default class Profiles extends Component {
-  state = {};
+  state = {img: {}};
 
   componentWillMount() {
-    get('home/profiles').then(profiles => this.setState({developer: profiles}));
+    get('home/profiles').then(profiles => this.setState({top: profiles}));
   }
 
   render() {
-    const { developer, remaining } = this.state;
-    return developer ? (
+    const { top, img } = this.state;
+    return top ? (
       <Grid container class="container" style={{marginBottom: 24, marginTop: 8}}>
         <Grow in timeout={500}>
-          <ProfileCard name="GitHub" ratio={25}>
-            <GitHub data={developer.github}/>
+          <ProfileCard name="GitHub" images={img.GitHub} ratio={25}>
+            <GitHub data={top.GitHub}/>
           </ProfileCard>
         </Grow>
         <Grid container>
           <Grow in timeout={800}>
             <Grid item sm={6} xs={12} ratio={50}>
-              <ProfileCard name="StackOverflow">
-                <StackOverflow data={developer.stack}/>
+              <ProfileCard name="StackOverflow" images={img.StackOverflow}>
+                <StackOverflow data={top.StackOverflow}/>
               </ProfileCard>
             </Grid>
           </Grow>
           <Grow in timeout={1000}>
             <Grid item sm={6} xs={12} ratio={50}>
-              <ProfileCard name="Xda-Developers">
-                <XdaDevelopers data={developer.xda}/>
+              <ProfileCard name="XdaDevelopers" images={img.XdaDevelopers}>
+                <XdaDevelopers data={top.XdaDevelopers}/>
               </ProfileCard>
             </Grid>
           </Grow>

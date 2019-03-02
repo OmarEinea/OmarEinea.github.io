@@ -4,19 +4,19 @@ import { GitHub, StackOverflow, XdaDevelopers } from '~/profiles/widgets';
 import { get } from 'db';
 
 export default class TopProfiles extends PureComponent {
-  state = {github: {}, stack: {}, xda: {}};
+  state = {GitHub: {}, StackOverflow: {}, XdaDevelopers: {}};
 
   componentWillMount() {
     get('home/profiles').then(profiles => this.setState(profiles));
   }
 
   render() {
-    const { state: { github, stack, xda }, props: { visible }} = this;
+    const { state, props: { visible }} = this;
     return (
       <Grid container>
         <Grow in={visible} timeout={500}>
           <Grid container class="box">
-            <GitHub data={github}/>
+            <GitHub data={state.GitHub}/>
           </Grid>
         </Grow>
         <Hidden xsDown><Grid container style={{height: 4}}/></Hidden>
@@ -24,14 +24,14 @@ export default class TopProfiles extends PureComponent {
           <Grow in={visible} timeout={800}>
             <Grid item sm={6} xs={12}>
               <div class="box">
-                <StackOverflow data={stack}/>
+                <StackOverflow data={state.StackOverflow}/>
               </div>
             </Grid>
           </Grow>
           <Grow in={visible} timeout={1000}>
             <Grid item sm={6} xs={12}>
               <div class="box">
-                <XdaDevelopers data={xda}/>
+                <XdaDevelopers data={state.XdaDevelopers}/>
               </div>
             </Grid>
           </Grow>
