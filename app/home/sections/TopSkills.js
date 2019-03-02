@@ -20,7 +20,7 @@ export default class TopSkills extends PureComponent {
       <Grid container>
         <Grow in={visible} timeout={400}>
           <Grid container item md={7} xs={12}>
-            <Grid container justify="center" class="box">
+            <Grid container justify="space-around" class="box">
               {circles.map(skill => <Circle skill={skill}/>)}
             </Grid>
           </Grid>

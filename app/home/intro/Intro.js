@@ -87,7 +87,7 @@ export default class Intro extends PureComponent {
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
             {papers.map(([title, paper], index) =>
-              <Paper style={paper.style} elevation={expand === title ? 4 : 2}
+              <Paper style={paper.style} elevation={expand === title ? 3 : 1}
                 class={'paper' + (expand === title ? ' expand' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
                 onMouseLeave={() => this.setState({expand: null})}>

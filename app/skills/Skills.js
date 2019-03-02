@@ -39,7 +39,9 @@ export default class Skills extends Component {
             </Fade>
             {skills.map((skill, index) =>
               <Grow in timeout={(index + 1) * 200}>
-                <Paper style={{margin: 8}}><Circle skill={skill}/></Paper>
+                <Paper style={{margin: 8}} elevation={1}>
+                  <Circle skill={skill}/>
+                </Paper>
               </Grow>
             )}
           </Grid>
@@ -48,7 +50,7 @@ export default class Skills extends Component {
           {state.lines.map(([category, skills]) =>
             <div class="lines-list">
               <Typography variant="h4" class="category">{category}</Typography>
-              <Paper style={{margin: 8, padding: '12px 8px 16px'}}>
+              <Paper style={{margin: 8, padding: '12px 8px 16px'}} elevation={1}>
                 {skills.map(skill => <Line skill={skill}/>)}
               </Paper>
             </div>

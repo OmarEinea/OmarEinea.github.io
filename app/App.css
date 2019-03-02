@@ -86,7 +86,7 @@ button.mini, a.mini {
     display: flex;
     flex-basis: 100%;
     justify-content: center;
-    margin: 0 12px 12px;
+    margin: 4px 12px;
   }
 }
 
@@ -100,6 +100,7 @@ button.mini, a.mini {
 
 #home-link > *,
 #home-link {
+  padding: 0 !important;
   text-decoration: none;
   display: inline-block;
   vertical-align: top;
