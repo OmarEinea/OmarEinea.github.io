@@ -1,9 +1,10 @@
 .flair {
-  padding: 28px 36px;
+  padding: 16px;
 }
 
 .flair h6 {
-  padding-top: 12px;
+  padding-top: 14px;
+  line-height: 1.75 !important;
   color: #424242;
 }
 
@@ -16,10 +17,4 @@
   vertical-align: text-top;
   line-height: 20px;
   padding: 0 0 0 8px;
-}
-
-@media screen and (max-width: 960px) {
-  .flair {
-    padding: 20px 28px;
-  }
 }

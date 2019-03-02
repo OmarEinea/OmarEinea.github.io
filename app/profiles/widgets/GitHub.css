@@ -1,7 +1,7 @@
 #graph {
   position: relative;
   overflow: hidden;
-  margin-left: 8px;
+  margin: 16px 0 12px;
   height: 108px;
 }
 
@@ -16,7 +16,7 @@
 
 #legend {
   color: #424242;
-  padding: 12px 8px 12px 16px;
+  line-height: 1;
 }
 
 #legend ul {
@@ -33,12 +33,13 @@
 }
 
 #github {
-  padding: 24px 28px 16px;
+  padding: 0 8px;
 }
 
 #github h6 {
   color: #424242;
-  padding-top: 8px;
+  padding-top: 14px;
+  line-height: 1.75;
 }
 
 #github i {
@@ -53,6 +54,6 @@
 
 @media screen and (max-width: 960px) {
   #github {
-    padding: 20px;
+    padding-bottom: 16px;
   }
 }

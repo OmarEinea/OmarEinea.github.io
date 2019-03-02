@@ -7,7 +7,7 @@ export default class GitHub extends PureComponent {
   render() {
     const { repos, followers, stars, commits, graph } = this.props.data;
     return (
-      <Grid container>
+      <Grid container style={{padding: '16px 8px'}}>
         <Grid item md={3} xs={12} id="github">
           <a href="my/github" target="_blank">
             <img height="50" src={logo('gh')}/>
@@ -25,9 +25,9 @@ export default class GitHub extends PureComponent {
             <b>{stars}</b> Stars
           </Typography>
         </Grid>
-        <Grid item md={9} xs={12} align="center">
-          <Grid item style={{maxWidth: 685}}>
-            <Typography variant="h5" align="center" style={{padding: '8px 0 16px'}}>
+        <Grid item md={9} xs={12} align="right">
+          <Grid item style={{maxWidth: 685, padding: '0 8px'}}>
+            <Typography variant="h5" align="center">
               {commits} contributions last year
             </Typography>
             <div id="graph" dangerouslySetInnerHTML={{__html: graph}}/>
