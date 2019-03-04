@@ -17,6 +17,8 @@
     "css-loader": "^0.28.11",
     "firebase": "^5.8.5",
     "firebase-admin": "^7.0.0",
+    "firebase-functions": "^2.2.0",
+    "firebase-tools": "^6.4.0",
     "mini-css-extract-plugin": "^0.4.5",
     "node-fetch": "^2.3.0",
     "react": "^16.8.3",
@@ -29,7 +31,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --inline --hot",
-    "build": "webpack --mode production",
-    "serve": "cd fb && node index.js"
+    "build": "webpack --mode production"
   }
 }
