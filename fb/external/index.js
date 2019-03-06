@@ -7,7 +7,7 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
       projectId: 'eineao-website', privateKey: process.env.KEY.replace(/\\n/g, '\n'),
       clientEmail: 'firebase-adminsdk-xxoy3@eineao-website.iam.gserviceaccount.com'
     })
-  }).database().ref('home/profiles'), update = (profile, object) => {
+  }).database().ref('profiles/Development'), update = (profile, object) => {
     database.child(profile).update(object);
     console.log('Updated', profile, 'with:', JSON.stringify(object).slice(0, 84));
   };
@@ -46,6 +46,7 @@ app.get('/updateProfiles', (_, response) => {
   get('https://forum.xda-developers.com/search.php?do=finduser&u=4800636&starteronly=1', 'text').then(html => {
     update('XdaDevelopers', { threads: Number(html.match(/>Showing results \d+ to \d+ of (\d+)</)[1]) });
   });
+  setTimeout(() => fetch('https://europe-west1-eineao-website.cloudfunctions.net/update'), 10000);
   response.send('Updating Profiles...');
 });
 

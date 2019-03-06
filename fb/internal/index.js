@@ -27,3 +27,7 @@ exports.update = onRequest((request, response) => {
     });
   });
 });
+
+exports.get = onRequest((request, response) => {
+  database.child(request.url.replace('home', 'home/_')).once('value', data => response.send(data.val()));
+});

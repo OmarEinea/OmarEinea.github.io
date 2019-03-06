@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "8"
+  },
   "dependencies": {
     "firebase": "^5.8.4",
     "firebase-admin": "~7.0.0",
