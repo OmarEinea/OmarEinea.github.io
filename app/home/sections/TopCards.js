@@ -1,6 +1,5 @@
 import { PureComponent } from 'react';
 import { Grid, Zoom } from 'material-ui';
-import { get } from 'db';
 import cardTypes from '~/utils/card';
 
 export default class TopCards extends PureComponent {
@@ -9,12 +8,10 @@ export default class TopCards extends PureComponent {
   componentWillMount() {
     const { type } = this.props;
     this.Card = cardTypes[type + 'Card'];
-    get(type.toLowerCase() + 's/top').then(({ order, ...cards }) => {
-      const orderedCards = [];
-      cards = Object.entries(cards);
-      order.split(',').map(index => orderedCards.push(cards[index - 1]));
-      this.setState({cards: orderedCards});
-    });
+  }
+
+  componentWillReceiveProps(props) {
+    if(props.data) this.setState({cards: props.data});
   }
 
   render() {

@@ -1,13 +1,12 @@
 import { PureComponent } from 'react';
 import { Grid, Hidden, Grow } from 'material-ui';
 import { GitHub, StackOverflow, XdaDevelopers } from '~/profiles/widgets';
-import { get } from 'db';
 
 export default class TopProfiles extends PureComponent {
   state = {GitHub: {}, StackOverflow: {}, XdaDevelopers: {}};
 
-  componentWillMount() {
-    get('home/profiles').then(profiles => this.setState(profiles));
+  componentWillReceiveProps(props) {
+    if(props.data) this.setState(Object.assign({}, ...props.data.map(([k, v]) => ({[k]: v}))));
   }
 
   render() {

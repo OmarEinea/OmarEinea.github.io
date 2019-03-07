@@ -4,10 +4,11 @@ import Intro from './intro/Intro';
 import TopProfiles from './sections/TopProfiles';
 import TopSkills from './sections/TopSkills';
 import TopCards from './sections/TopCards';
+import { get } from 'db';
 import './Home.css'
 
 export default class Home extends Component {
-  state = {entered: 0};
+  state = {data: {}, entered: 0};
   sections = Object.entries({
     projects: [(props) => <TopCards type="Project" {...props}/>, 'laptop-code'],
     skills: [TopSkills, 'brain'],
@@ -16,13 +17,17 @@ export default class Home extends Component {
     certificates: [(props) => <TopCards type="Cert" {...props}/>, 'award']
   });
 
+  componentWillMount() {
+    get('home/default').then(data => this.setState({data}));
+  }
+
   render() {
-    const { sections, state: { entered }, props: { goto }} = this;
+    const { sections, state: { data, entered }, props: { goto }} = this;
     return (
       <Grid container>
         <Grow in>
           <Grid container>
-            <Intro/>
+            <Intro data={data.intro}/>
           </Grid>
         </Grow>
         {sections.map(([ title, [ Section, icon ]], index) =>
@@ -43,7 +48,7 @@ export default class Home extends Component {
                   </Typography>
                 </Grid>
               </Fade>
-              <Section visible={index < entered}/>
+              <Section visible={index < entered} data={data[title.replace('ificate', '')]}/>
             </Grid>
           </Grid>
         )}
@@ -64,10 +69,6 @@ export default class Home extends Component {
         });
       }
     });
-  }
-
-  shouldComponentUpdate(_, nextState) {
-    return this.state.entered !== nextState.entered;
   }
 
   componentWillUnmount() {

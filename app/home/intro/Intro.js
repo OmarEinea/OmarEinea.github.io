@@ -18,12 +18,12 @@ export default class Intro extends PureComponent {
     Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
   });
 
-  componentWillMount() {
-    get('home/intro').then(papers => {
-      const content = {};
+  componentWillReceiveProps(props) {
+    if(props.data) {
+      const content = {}, { data } = props;
       this.papers.map(([title, _], index) => {
         if(index <= 3)
-          content[title] = papers[title].slice(1).map(line => {
+          content[title] = data[title].slice(1).map(line => {
             const [ text, icon ] = line.split(';').reverse();
             const [ body, head ] = text.split(':').reverse();
             return <Typography class="line" variant="subtitle1">
@@ -33,7 +33,7 @@ export default class Intro extends PureComponent {
           });
         else
           content[title] = <Table style={{marginTop: 8}}>
-            <TableBody>{papers[title].map(row =>
+            <TableBody>{data[title].map(row =>
               <TableRow>{row.split(',').map(cell =>
                 <TableCell dangerouslySetInnerHTML={{__html: cell}}
                   style={{padding: '16px 12px', fontSize: '0.82rem'}}/>
@@ -42,7 +42,7 @@ export default class Intro extends PureComponent {
           </Table>;
       });
       this.setState({content});
-    });
+    }
   }
 
   myResume(event) {

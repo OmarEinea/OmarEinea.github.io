@@ -1,17 +1,13 @@
 import { PureComponent } from 'react';
 import { Grid, Grow } from 'material-ui';
-import { get } from 'db';
 import Circle from '~/skills/widgets/Circle';
 import Line from '~/skills/widgets/Line';
 
 export default class TopSkills extends PureComponent {
   state = {circles: [], lines: []};
 
-  componentWillMount() {
-    get('skills/top').then(skills => this.setState({
-      circles: Object.entries(skills.circles).reverse(),
-      lines: Object.entries(skills.lines).reverse()
-    }));
+  componentWillReceiveProps(props) {
+    if(props.data) this.setState(props.data);
   }
 
   render() {
