@@ -7,14 +7,9 @@ import Line from './widgets/Line';
 import './Skills.css';
 
 export default class Skills extends Component {
-  processData({ order, ...skills }, top) {
-    for(const key in skills) {
-      const category = skills[key];
-      for(const skill in category)
-        if(category[skill] === -1)
-          category[skill] = top[skill];
-      skills[key] = Object.entries(category).sort((a, b) => b[1] - a[1]);
-    }
+  processData({ order, ...skills }) {
+    for(const key in skills)
+      skills[key] = Object.entries(skills[key]).sort((a, b) => b[1] - a[1]);
     const orderedSkills = [];
     skills = Object.entries(skills);
     order.split(',').map(index => orderedSkills.push(skills[index - 1]));
@@ -22,9 +17,9 @@ export default class Skills extends Component {
   }
 
   componentWillMount() {
-    get('skills').then(({ top, circles, lines }) => this.setState({
-      circles: this.processData(circles, top.circles),
-      lines: this.processData(lines, top.lines)
+    get('skills').then(({ circles, lines }) => this.setState({
+      circles: this.processData(circles),
+      lines: this.processData(lines)
     }));
   }
 

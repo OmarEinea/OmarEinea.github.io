@@ -9,15 +9,12 @@ export default class Cards extends Component {
   componentWillMount() {
     const { type } = this.props;
     this.Card = cardTypes[type + 'Card'];
-    get(type.toLowerCase() + 's').then(({ top, order, ...cards }) => {
+    get(type.toLowerCase() + 's').then(({ order, ...cards }) => {
       for(const key in cards) {
-        const category = cards[key];
-        for(const card in category)
-          if(category[card] === -1)
-            category[card] = top[card];
-          else if(category[card].preload)
-            fetch(category[card].demo);
-        cards[key] = Object.entries(category);
+        cards[key] = Object.entries(cards[key]).map(([title, card]) => {
+          if(card.preload) fetch(card.demo);
+          return [title, card];
+        });
       }
       const orderedCategories = [];
       cards = Object.entries(cards);

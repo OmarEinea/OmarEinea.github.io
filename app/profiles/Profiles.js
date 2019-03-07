@@ -9,7 +9,7 @@ export default class Profiles extends Component {
   state = {img: {}};
 
   componentWillMount() {
-    get('home/profiles').then(profiles => this.setState({top: profiles}));
+    get('profiles').then(profiles => this.setState({top: profiles.Development}));
   }
 
   render() {
