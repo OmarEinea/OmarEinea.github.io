@@ -29,5 +29,7 @@ exports.update = onRequest((request, response) => {
 });
 
 exports.get = onRequest((request, response) => {
+  response.set('Access-Control-Allow-Origin', '*');
+  response.set('Access-Control-Allow-Credentials', 'true');
   database.child(request.url.replace('home', 'home/_')).once('value', data => response.send(data.val()));
 });
