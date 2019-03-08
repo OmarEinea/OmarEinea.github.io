@@ -31,6 +31,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --inline --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production && node minify.js"
   }
 }
