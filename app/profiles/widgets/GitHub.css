@@ -5,13 +5,17 @@
   height: 108px;
 }
 
-#graph .js-calendar-graph-svg {
+#graph svg {
   font-family: 'Quicksand';
   font-size: 12px;
-  fill: #9E9E9E;
+  fill: transparent;
   position: absolute;
   right: 0;
   top: 0;
+}
+
+#graph text {
+  fill: #9E9E9E;
 }
 
 #legend {
