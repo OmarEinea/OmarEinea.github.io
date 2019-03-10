@@ -10,7 +10,9 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
   }).database().ref('profiles/Development'), update = (profile, object) => {
     database.child(profile).update(object);
     console.log('Updated', profile, 'with:', JSON.stringify(object).slice(0, 84));
-  };
+  }, rect = /<rect .*?fill="#([0-9a-f]{6})".*?\/>/g, colors = [
+    'ebedf0', 'c6e48b', '7bc96f', '239a3b', '196127'
+  ];
 
 app.get('/updateProfiles', (_, response) => {
   get('https://api.stackexchange.com/2.2/users/4794459?site=stackoverflow').then(data => {
@@ -24,17 +26,10 @@ app.get('/updateProfiles', (_, response) => {
     update('GitHub', { stars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0) });
   });
   get('https://github.com/users/OmarEinea/contributions', 'text').then(html => {
+    let match, graph = '', svg = html.match(/<svg[\s\S]*?<\/svg>/)[0];
+    while(match = rect.exec(svg)) graph += colors.indexOf(match[1]);
     update('GitHub', {
-      commits: Number(html.match(/<h2 class="f4.*">\s*(\d+)[\s\S]*<\/h2>/)[1]),
-      graph: html.match(/<svg([\s\S]*?)<\/svg>/)[0]
-        .replace('translate(16, 20)', 'translate(20, 24)')
-        .replace('height="104"', 'height="108"')
-        .replace(/dx="-14"/g, 'dx="-20"')
-        .replace(/ data-hydro-click=".*">/, '>')
-        .replace(/ data-count=".*"\/>/g, '/>')
-        .replace(/ class="(month|day|wday)"/g, '')
-        .replace(/.*style="display: none;".*\n/g, '')
-        .replace(/"/g, "'").replace(/\n */g, '')
+      commits: Number(html.match(/<h2 class="f4.*">\s*(\d+)[\s\S]*<\/h2>/)[1]), graph
     });
   });
   get('https://forum.xda-developers.com/member.php?u=4800636', 'text').then(html => {
