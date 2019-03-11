@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { logo } from 'db';
+import { profile } from 'db';
 import './Flair.css';
 
 export default class XdaDevelopers extends PureComponent {
@@ -9,7 +9,7 @@ export default class XdaDevelopers extends PureComponent {
     return (
       <Grid item class="flair">
         <a href="my/xda-developers" target="_black">
-          <img height="45" src={logo('xda')}/>
+          <img height="45" src={profile('XdaDevelopers')}/>
         </a>
         <Typography variant="h6">
           <i class="fas fa-fw fa-thumbs-up"/>

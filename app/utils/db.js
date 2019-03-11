@@ -15,5 +15,6 @@ const projectId = 'eineao-website',
 export const age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 export const colors = ['#C4086E', '#Cf1D61', '#DB3255', '#E64749', '#F25C3D', '#FE7131', '#FF8533'];
 export const url = image => storageURL + image.replace(/\//g, '%2F') + '?alt=media';
-export const logo = name => url(`logos/${name.replace(' ', '%20')}.png`);
+export const skill = name => url(`skills/${name.replace(' ', '%20')}.png`);
+export const profile = name => url(`profiles/${name}/logo.png`);
 export const get = query => getCache(query) || fetch(databaseURL + query).then(json).then(setCache(query));

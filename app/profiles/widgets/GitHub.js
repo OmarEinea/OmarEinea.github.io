@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { logo } from 'db';
+import { profile } from 'db';
 import './GitHub.css';
 
 const colors = ['#eaeaea', '#c6e48b', '#7bc96f', '#239a3b', '#196127'], days = ['Mon', 'Wed', 'Fri'];
@@ -14,7 +14,7 @@ export default class GitHub extends PureComponent {
       <Grid container style={{padding: '16px 8px'}}>
         <Grid item md={3} xs={12} id="github">
           <a href="my/github" target="_blank">
-            <img height="50" src={logo('gh')}/>
+            <img height="50" src={profile('GitHub')}/>
           </a>
           <Typography variant="subtitle1">
             <i class="fas fa-fw fa-hdd"/>

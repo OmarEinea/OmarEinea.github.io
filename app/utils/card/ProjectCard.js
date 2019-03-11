@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 import { ClickAwayListener, Collapse, CardActions, CardHeader, Tooltip } from 'material-ui';
 import { Card, CardMedia, Button, IconButton, Avatar, Typography } from 'material-ui';
-import { url, logo } from 'db';
+import { url, skill } from 'db';
 import Gallery from 'gallery';
 import './Card.css';
 
@@ -43,9 +43,9 @@ export default class ProjectCard extends PureComponent {
           onClose={() => this.setState({image: false})} format="png"/>}
         <CardActions style={{padding: 16}}>
           <div style={{flex: 1, height: 44}}>
-            {skills.split(',').map(skill =>
-              <Tooltip title={skill}>
-                <img width="44" style={{marginRight: 10}} src={logo(skill)}/>
+            {skills.split(',').map(title =>
+              <Tooltip title={title}>
+                <img width="44" style={{marginRight: 10}} src={skill(title)}/>
               </Tooltip>
             )}
           </div>

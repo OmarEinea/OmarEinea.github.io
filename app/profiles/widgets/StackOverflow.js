@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Typography } from 'material-ui';
-import { logo } from 'db';
+import { profile } from 'db';
 import './Flair.css';
 
 export default class StackOverflow extends PureComponent {
@@ -9,7 +9,7 @@ export default class StackOverflow extends PureComponent {
     return (
       <Grid item class="flair">
         <a href="my/stackoverflow" target="_blank">
-          <img height="45" src={logo('so')}/>
+          <img height="45" src={profile('StackOverflow')}/>
         </a>
         <Typography variant="h6">
           <i class="fas fa-fw fa-thumbs-up"/>
