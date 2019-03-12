@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Grid, Typography, Grow, Fade } from 'material-ui';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
-import cardTypes from '~/utils/card';
+import cardTypes from './widgets';
 import 'fetch';
 
 export default class Cards extends Component {

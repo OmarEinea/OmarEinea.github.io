@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import { Grid, Zoom } from 'material-ui';
-import cardTypes from '~/utils/card';
+import cardTypes from '~/cards/widgets';
 
 export default class TopCards extends PureComponent {
   state = {cards: []};

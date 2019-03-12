@@ -3,7 +3,7 @@
   "author": "Omar Einea",
   "description": "An Interactive Resume",
   "license": "MIT",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "main": "webpack.config.js",
   "devDependencies": {
     "@material-ui/core": "^3.9.2",

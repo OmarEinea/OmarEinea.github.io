@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import { Grid, Typography, Grow, Fade } from 'material-ui';
-import { GitHub, StackOverflow, XdaDevelopers } from '~/profiles/widgets';
+import { GitHub, StackOverflow, XdaDevelopers } from './widgets';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
-import ProfileCard from '~/utils/card/ProfileCard';
+import ProfileCard from '~/cards/widgets/ProfileCard';
 
 export default class Profiles extends Component {
   componentWillMount() {
