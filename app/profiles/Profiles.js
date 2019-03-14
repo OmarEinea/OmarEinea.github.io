@@ -7,11 +7,18 @@ import ProfileCard from '~/cards/widgets/ProfileCard';
 
 export default class Profiles extends Component {
   componentWillMount() {
-    get('profiles').then(profiles => this.setState(profiles));
+    get('profiles').then(({Development, order, ...profiles}) => {
+      for(const key in profiles)
+        profiles[key] = Object.entries(profiles[key]);
+      profiles = Object.entries(profiles);
+      const orderedCategories = [];
+      order.split(',').map(index => orderedCategories.push(profiles[index - 1]));
+      this.setState({dev: Development, allProfiles: profiles});
+    });
   }
 
   render() {
-    const { Development: dev, ...profiles } = this.state  || {};
+    const { dev, allProfiles } = this.state || {};
     return dev ? (
       <Grid container class="container" style={{marginBottom: 24, marginTop: 8}}>
         <Grow in timeout={500}>
