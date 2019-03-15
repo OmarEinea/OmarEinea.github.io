@@ -42,6 +42,19 @@ export default class Profiles extends Component {
             </Grid>
           </Grow>
         </Grid>
+        {allProfiles.map(([category, profiles]) =>
+          <Grid container justify="center">
+            <Fade in>
+              <Typography variant="h4" class="category">{category}</Typography>
+            </Fade>
+            {profiles.map(([title, data]) => 
+              <Grid item sm={6} xs={12}>
+                <ProfileCard name={title} images={data.images} ratio={64}>
+                </ProfileCard>
+              </Grid>
+            )}
+          </Grid>
+        )}
       </Grid>
     ) : <Loading/>;
   }
