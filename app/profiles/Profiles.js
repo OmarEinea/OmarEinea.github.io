@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Grid, Typography, Grow, Fade, Hidden } from 'material-ui';
+import { Grid, Typography, Grow, Fade } from 'material-ui';
 import { GitHub, StackOverflow, XdaDevelopers } from './widgets';
-import { get, profile } from 'db';
+import { get } from 'db';
 import Loading from '~/utils/Loading';
 import ProfileCard from '~/cards/widgets/ProfileCard';
 
@@ -47,27 +47,11 @@ export default class Profiles extends Component {
             <Fade in>
               <Typography variant="h4" class="category">{category}</Typography>
             </Fade>
-            {profiles.map(([title, data]) => {
-              const [text, icon] = data.use.split(';');
-              return <Grid item sm={6} xs={12}>
-                <ProfileCard name={title} images={data.images} ratio={64}>
-                  <Grid container style={{padding: '16px 16px 12px'}}>
-                    <Grid item md={7} xs={12}>
-                      <a href={'my/' + title.toLowerCase().replace(/ /g, '')}>
-                        <img height="42" src={profile(title)}/>
-                      </a>
-                    </Grid>
-                    <Grid item md={5} xs={12}>
-                      <Typography variant="body1" style={{color: '#616161'}}>
-                        <Typography variant="subtitle2" inline style={{color: '#9e9e9e'}}>Main Use: </Typography>
-                        <Hidden smDown><br/></Hidden>
-                        {icon && <i class={'fa fa-fw fa-' + icon}/>} {text}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </ProfileCard>
+            {profiles.map(([title, data]) =>
+              <Grid item sm={6} xs={12}>
+                <ProfileCard name={title} images={data.images} use={data.use} ratio={64}/>
               </Grid>
-            })}
+            )}
           </Grid>
         )}
       </Grid>
