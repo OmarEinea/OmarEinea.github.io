@@ -2,9 +2,9 @@ const functions = require('firebase-functions'), { onRequest } = functions.regio
   database = require('firebase-admin').initializeApp(functions.config().firebase).database().ref();
 
 exports.update = onRequest((request, response) => {
-  const resume = request.url.slice(1) || 'default';
-  database.child('home/' + resume).once('value', sections => {
-    sections = sections.val();
+  const job = request.url.slice(1) || 'default';
+  database.child('home/' + job).once('value', entries => {
+    const { resume='resume.docx', ...sections } = entries.val();
     for(const key in sections)
       if(typeof(sections[key]) === 'object') {
         for(const sub in sections[key])
@@ -21,8 +21,9 @@ exports.update = onRequest((request, response) => {
     Promise.all(queries).then(() => {
       database.child('home/intro').once('value', intro => {
         data.intro = intro.val();
-        database.child('home/_/' + resume).update(data);
-        response.send('Updated ' + resume);  
+        data.intro.resume = resume;
+        database.child('home/_/' + job).update(data);
+        response.send('Updated ' + job);
       });
     });
   });

@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
 import { Table, TableBody, TableRow, TableCell } from 'material-ui';
-import { url, get, colors } from 'db';
+import { url, colors } from 'db';
 import './Intro.css';
 
 const third = 33.333;
@@ -20,10 +20,11 @@ export default class Intro extends PureComponent {
 
   componentWillReceiveProps(props) {
     if(props.data) {
-      const content = {}, { data } = props;
+      const content = {}, { resume, ...papers } = props.data;
+      this.resume = resume;
       this.papers.map(([title, _], index) => {
         if(index <= 3)
-          content[title] = data[title].slice(1).map(line => {
+          content[title] = papers[title].slice(1).map(line => {
             const [ text, icon ] = line.split(';').reverse();
             const [ body, head ] = text.split(':').reverse();
             return <Typography class="line" variant="subtitle1">
@@ -33,7 +34,7 @@ export default class Intro extends PureComponent {
           });
         else
           content[title] = <Table style={{marginTop: 8}}>
-            <TableBody>{data[title].map(row =>
+            <TableBody>{papers[title].map(row =>
               <TableRow>{row.split(',').map(cell =>
                 <TableCell dangerouslySetInnerHTML={{__html: cell}}
                   style={{padding: '16px 12px', fontSize: '0.82rem'}}/>
@@ -45,13 +46,13 @@ export default class Intro extends PureComponent {
     }
   }
 
-  myResume(event) {
+  openResume(event) {
     event.preventDefault();
-    window.open(url('my/resume.docx'), '_self');
+    window.open(url('my/' + this.resume), '_self');
   }
 
   render() {
-    const { myResume, papers, state: { content, expand }} = this;
+    const { content, expand } = this.state;
     return (
       <Grid container class="container" style={{paddingBottom: 80}}>
         <Grid item md={4} xs={12} align="center" id="intro">
@@ -65,9 +66,9 @@ export default class Intro extends PureComponent {
             Omar Einea
           </Typography>
           <Typography style={{fontSize: 18, color: '#616161', whiteSpace: 'nowrap'}}>
-            Application Developer. Web, Mobile & PC.
+            App Developer. Web, Mobile & PC.
           </Typography>
-          <Button variant="contained" href="my/resume" onClick={myResume}>
+          <Button variant="contained" href="my/resume" onClick={this.openResume.bind(this)}>
             <i class="fas fa-file-download" style={{marginRight: 8, fontSize: 16}}/>
             Resume
           </Button>
@@ -80,13 +81,10 @@ export default class Intro extends PureComponent {
           <Button variant="contained" target="_blank" href="my/github">
             <i class="fab fa-lg fa-github"/>
           </Button>
-          <Button variant="contained" target="_blank" href="my/stackoverflow">
-            <i class="fab fa-lg fa-stack-overflow"/>
-          </Button>
         </Grid>
         <Grid item md={8} xs={12} id="bio">
           <Grid container>
-            {papers.map(([title, paper], index) =>
+            {this.papers.map(([title, paper], index) =>
               <Paper style={paper.style} elevation={expand === title ? 3 : 1}
                 class={'paper' + (expand === title ? ' expand' : '')}
                 onMouseEnter={() => this.setState({expand: title})}
