@@ -45,4 +45,10 @@ app.get('/updateProfiles', (_, response) => {
   response.send('Updating Profiles...');
 });
 
+app.get('/cacheImages', (_, response) => {
+  database.once('value', data => {
+    data = data.val();
+  });
+});
+
 app.listen(process.env.PORT || 5000);
