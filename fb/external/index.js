@@ -3,6 +3,7 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
   get = (link, type) => fetch(link).then(type === 'text' ? text : json),
   database = firebase.initializeApp({
     databaseURL: 'https://eineao-website.firebaseio.com',
+    storageBucket: 'eineao-website.appspot.com',
     credential: firebase.credential.cert({
       projectId: 'eineao-website', privateKey: process.env.KEY.replace(/\\n/g, '\n'),
       clientEmail: 'firebase-adminsdk-xxoy3@eineao-website.iam.gserviceaccount.com'
@@ -10,7 +11,9 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
   }).database().ref('profiles/Development'), update = (profile, object) => {
     database.child(profile).update(object);
     console.log('Updated', profile, 'with:', JSON.stringify(object).slice(0, 84));
-  }, rect = /<rect .*?fill="#([0-9a-f]{6})".*?\/>/g, colors = [
+  }, storage = firebase.storage().bucket(),
+  cacheHeader = {cacheControl: 'public, max-age=' + 365*24*60*60},
+  rect = /<rect .*?fill="#([0-9a-f]{6})".*?\/>/g, colors = [
     'ebedf0', 'c6e48b', '7bc96f', '239a3b', '196127'
   ];
 
@@ -46,6 +49,9 @@ app.get('/updateProfiles', (_, response) => {
 });
 
 app.get('/cacheImages', (_, response) => {
+  const imgs = new Set();
+  imgs.add('my/logo');
+  imgs.add('my/photo');
   database.once('value', data => {
     data = data.val();
   });
