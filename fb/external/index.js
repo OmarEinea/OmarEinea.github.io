@@ -11,6 +11,13 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
   }).database().ref('profiles/Development'), update = (profile, object) => {
     database.child(profile).update(object);
     console.log('Updated', profile, 'with:', JSON.stringify(object).slice(0, 84));
+  }, cache = img => storage.file(img).setMetadata(cacheHeader).then(
+    () => console.log('Updated', img)).catch(() => console.log('NoImage', img)
+  ), forEach = (data, apply) => {
+    for(let category in data)
+      if(category !== 'order')
+        for(let title in data[category])
+          apply(title, data[category][title]);
   }, storage = firebase.storage().bucket(),
   cacheHeader = {cacheControl: 'public, max-age=' + 365*24*60*60},
   rect = /<rect .*?fill="#([0-9a-f]{6})".*?\/>/g, colors = [
