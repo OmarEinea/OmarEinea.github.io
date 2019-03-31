@@ -56,11 +56,12 @@ app.get('/updateProfiles', (_, response) => {
 });
 
 app.get('/cacheImages', (_, response) => {
-  const imgs = new Set();
-  imgs.add('my/logo');
-  imgs.add('my/photo');
-  database.once('value', data => {
-    data = data.val();
+  cache('my/logo');
+  cache('my/photo');
+  fetch('https://eineao-website.firebaseio.com/.json')
+    .then(data => data.json()).then(data => {
+    forEach(data.skills.circles, skill => cache('skills/' + skill + '.png'));
+    response.send('Cached Images!');
   });
 });
 
