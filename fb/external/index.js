@@ -60,6 +60,14 @@ app.get('/cacheImages', (_, response) => {
   cache('my/photo');
   fetch('https://eineao-website.firebaseio.com/.json')
     .then(data => data.json()).then(data => {
+    forEach(data.certs, cert => {
+      cache('certs/' + cert + '.jpg');
+      cache('certs/small/' + cert + '.jpg');
+    });
+    forEach(data.events, (event, { images }) => {
+      for(let i = 1; i <= images.split(';').length; i++)
+        cache('events/' + event + '/' + i + '.jpg');
+    });
     forEach(data.skills.circles, skill => cache('skills/' + skill + '.png'));
     response.send('Cached Images!');
   });
