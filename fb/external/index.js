@@ -68,6 +68,12 @@ app.get('/cacheImages', (_, response) => {
       for(let i = 1; i <= images.split(';').length; i++)
         cache('events/' + event + '/' + i + '.jpg');
     });
+    forEach(data.profiles, (profile, { images }) => {
+      cache('profiles/' + profile + '/logo.png');
+      cache('profiles/' + profile + '/preview.jpg');
+      for(let i = 1; i <= images.split(';').length; i++)
+        cache('profiles/' + profile + '/' + i + '.png');
+    });
     forEach(data.skills.circles, skill => cache('skills/' + skill + '.png'));
     response.send('Cached Images!');
   });
