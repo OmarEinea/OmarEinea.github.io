@@ -58,8 +58,7 @@ app.get('/updateProfiles', (_, response) => {
 app.get('/cacheImages', (_, response) => {
   cache('my/logo');
   cache('my/photo');
-  fetch('https://eineao-website.firebaseio.com/.json')
-    .then(data => data.json()).then(data => {
+  fetch('https://eineao-website.firebaseio.com/.json').then(data => data.json()).then(data => {
     forEach(data.certs, cert => {
       cache('certs/' + cert + '.jpg');
       cache('certs/small/' + cert + '.jpg');
@@ -73,6 +72,12 @@ app.get('/cacheImages', (_, response) => {
       cache('profiles/' + profile + '/preview.jpg');
       for(let i = 1; i <= images.split(';').length; i++)
         cache('profiles/' + profile + '/' + i + '.png');
+    });
+    forEach(data.projects, (project, { images }) => {
+      cache('projects/' + project + '/logo.png');
+      cache('projects/' + project + '/preview.jpg');
+      for(let i = 1; i <= images.split(';').length; i++)
+        cache('projects/' + project + '/' + i + '.png');
     });
     forEach(data.skills.circles, skill => cache('skills/' + skill + '.png'));
     response.send('Cached Images!');
