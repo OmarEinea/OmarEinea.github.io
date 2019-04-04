@@ -14,7 +14,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^1.0.1",
+    "css-loader": "^0.28.11",
     "firebase": "^5.9.3",
     "firebase-admin": "^7.2.0",
     "firebase-functions": "^2.2.1",
