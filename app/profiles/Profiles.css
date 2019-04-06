@@ -1,0 +1,5 @@
+@media screen and (min-width: 500px) {
+  #github-profile > div:first-child {
+    padding-top: 25% !important;
+  }
+}

@@ -4,6 +4,7 @@ import { GitHub, StackOverflow, XdaDevelopers } from './widgets';
 import { get } from 'db';
 import Loading from '~/utils/Loading';
 import ProfileCard from '~/cards/widgets/ProfileCard';
+import './Profiles.css';
 
 export default class Profiles extends Component {
   componentWillMount() {
@@ -22,20 +23,20 @@ export default class Profiles extends Component {
     return dev ? (
       <Grid container class="container" style={{marginBottom: 24, marginTop: 8}}>
         <Grow in timeout={500}>
-          <ProfileCard name="GitHub" images={dev.GitHub.images} ratio={25}>
+          <ProfileCard name="GitHub" images={dev.GitHub.images} id="github-profile">
             <GitHub data={dev.GitHub}/>
           </ProfileCard>
         </Grow>
         <Grid container>
           <Grow in timeout={800}>
-            <Grid item sm={6} xs={12} ratio={50}>
+            <Grid item sm={6} xs={12}>
               <ProfileCard name="StackOverflow" images={dev.StackOverflow.images}>
                 <StackOverflow data={dev.StackOverflow}/>
               </ProfileCard>
             </Grid>
           </Grow>
           <Grow in timeout={1000}>
-            <Grid item sm={6} xs={12} ratio={50}>
+            <Grid item sm={6} xs={12}>
               <ProfileCard name="XdaDevelopers" images={dev.XdaDevelopers.images}>
                 <XdaDevelopers data={dev.XdaDevelopers}/>
               </ProfileCard>
@@ -49,7 +50,7 @@ export default class Profiles extends Component {
             </Fade>
             {profiles.map(([title, data]) =>
               <Grid item sm={6} xs={12}>
-                <ProfileCard name={title} images={data.images} use={data.use} ratio={64}/>
+                <ProfileCard name={title} images={data.images} use={data.use}/>
               </Grid>
             )}
           </Grid>

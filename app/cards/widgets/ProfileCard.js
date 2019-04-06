@@ -8,11 +8,11 @@ export default class ProfileCard extends PureComponent {
   state = {image: false};
 
   render() {
-    const { name, images, style, children, ratio, use='' } = this.props,
+    const { name, images, children, use='', ...props } = this.props,
       { image } = this.state, [text, icon] = use.split(';');
     return (
-      <Card class="card" style={style}>
-        <CardMedia style={{paddingTop: `${ratio || 60}%`, position: 'relative'}}
+      <Card class="card" {...props}>
+        <CardMedia style={{paddingTop: '64%', position: 'relative', backgroundPosition: 'left'}}
           image={url(`profiles/${name}/preview.jpg`)} onClick={() => this.setState({image: true})}>
           <Button class="image-button"><i/></Button>
           <i class="fas fa-images"
