@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import { Card, CardMedia, Button, Typography, Grid, Hidden } from 'material-ui';
+import { Card, CardMedia, Button, Typography, Grid } from 'material-ui';
 import { url, profile } from 'db';
 import Gallery from 'gallery';
 import './Card.css';
@@ -28,10 +28,9 @@ export default class ProfileCard extends PureComponent {
               </a>
             </Grid>
             <Grid item md={5} xs={12}>
-              <Typography variant="body1" style={{color: '#616161', lineHeight: 1.4}}>
-                <b style={{color: '#9e9e9e', fontSize: 14}}>Main Use: </b>
-                <Hidden smDown><br/></Hidden>
-                {icon && <i class={'fa fa-fw fa-' + icon}/>} {text}
+              <Typography class="profile-use" variant="body1" style={{color: '#616161', lineHeight: 1.4}}>
+                <b style={{color: '#9e9e9e', fontSize: 14}}>Main Use:</b>
+                <br/><i class={'fa fa-fw fa-' + icon}/> {text}
               </Typography>
             </Grid>
           </Grid>}
