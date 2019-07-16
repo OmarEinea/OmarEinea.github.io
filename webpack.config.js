@@ -1,5 +1,7 @@
 const { resolve } = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 
 module.exports = (_, { mode }) => {
   const configs = {
@@ -25,7 +27,15 @@ module.exports = (_, { mode }) => {
         }, {
           test: /\.css$/,
           exclude: /node_modules/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader?url=false&minimize']
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: { hmr: mode === 'development'}
+            }, {
+              loader: 'css-loader',
+              options: { url: false }
+            }
+          ]
         }
       ]
     },
@@ -42,14 +52,16 @@ module.exports = (_, { mode }) => {
       new MiniCssExtractPlugin({
         filename: 'app.min.css'
       })
-    ]
+    ],
+    optimization: {
+      minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+    },
   };
   if(mode === 'production')
     configs.externals = {
       'react': 'React',
       'react-dom': 'ReactDOM',
-      'material-ui': 'window["material-ui"]',
-      'fetch': 'fetch'
+      'material-ui': 'MaterialUI'
     };
   return configs;
 };

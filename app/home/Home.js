@@ -10,11 +10,11 @@ import './Home.css'
 export default class Home extends Component {
   state = {data: {}, entered: 0};
   sections = Object.entries({
-    projects: [(props) => <TopCards type="Project" {...props}/>, 'laptop-code'],
+    projects: [props => <TopCards type="Project" {...props}/>, 'laptop-code'],
     skills: [TopSkills, 'brain'],
-    events: [(props) => <TopCards type="Event" {...props}/>, 'users'],
+    events: [props => <TopCards type="Event" {...props}/>, 'users'],
     profiles: [TopProfiles, 'globe'],
-    certificates: [(props) => <TopCards type="Cert" {...props}/>, 'award']
+    certificates: [props => <TopCards type="Cert" {...props}/>, 'award']
   });
 
   componentWillMount() {

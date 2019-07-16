@@ -43,7 +43,7 @@
   height: 100%;
 }
 
-.paper, .paper .title,
+#root .paper, .paper .title,
 .paper .title p {
   transition: all .5s cubic-bezier(.4, 0, .2, 1) .2s;
 }
