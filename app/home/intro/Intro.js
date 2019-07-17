@@ -1,4 +1,4 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 import { Grid, Typography, Avatar, Paper, Button } from 'material-ui';
 import { Table, TableBody, TableRow, TableCell } from 'material-ui';
 import { url, colors } from 'db';
@@ -6,7 +6,7 @@ import './Intro.css';
 
 const third = 33.333;
 
-export default class Intro extends PureComponent {
+export default class Intro extends Component {
   state = {content: {}, expand: null};
   papers = Object.entries({
     Occupation: {icon: 'address-card'},
@@ -17,38 +17,48 @@ export default class Intro extends PureComponent {
     Experience: {style: {left: `${2*third}%`}, icon: 'briefcase'},
     Publications: {style: {left: `${2*third}%`, top: `${third}%`}, icon: 'clipboard'}
   });
+  process = data => {
+    const content = {}, { resume, ...papers } = data;
+    this.resume = resume;
+    this.papers.map(([title, _], index) => {
+      if(index <= 3)
+        content[title] = papers[title].slice(1).map(line => {
+          const [ text, icon ] = line.split(';').reverse();
+          const [ body, head ] = text.split(':').reverse();
+          return <Typography class="line" variant="subtitle1">
+            {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
+            {head && <b>{head}:</b> }{body}
+          </Typography>;
+        });
+      else
+        content[title] = <Table style={{marginTop: 8}}>
+          <TableBody>{papers[title].map(row =>
+            <TableRow>{row.split(',').map(cell =>
+              <TableCell dangerouslySetInnerHTML={{__html: cell}}
+                style={{padding: '16px 12px', fontSize: '0.82rem'}}/>
+            )}</TableRow>
+          )}</TableBody>
+        </Table>;
+    });
+    return content;
+  };
+
+  constructor(props) {
+    super(props);
+    if(props.data) this.state.content = this.process(props.data);
+  }
 
   componentWillReceiveProps(props) {
-    if(props.data) {
-      const content = {}, { resume, ...papers } = props.data;
-      this.resume = resume;
-      this.papers.map(([title, _], index) => {
-        if(index <= 3)
-          content[title] = papers[title].slice(1).map(line => {
-            const [ text, icon ] = line.split(';').reverse();
-            const [ body, head ] = text.split(':').reverse();
-            return <Typography class="line" variant="subtitle1">
-              {icon && <i class={'fas fa-fw fa-' + icon} style={{marginRight: 8}}/>}
-              {head && <b>{head}:</b> }{body}
-            </Typography>;
-          });
-        else
-          content[title] = <Table style={{marginTop: 8}}>
-            <TableBody>{papers[title].map(row =>
-              <TableRow>{row.split(',').map(cell =>
-                <TableCell dangerouslySetInnerHTML={{__html: cell}}
-                  style={{padding: '16px 12px', fontSize: '0.82rem'}}/>
-              )}</TableRow>
-            )}</TableBody>
-          </Table>;
-      });
-      this.setState({content});
-    }
+    if(props.data) this.setState({content: this.process(props.data)});
   }
 
   openResume(event) {
     event.preventDefault();
     window.open(url('my/' + this.resume), '_self');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.expand !== nextState.expand;
   }
 
   render() {
