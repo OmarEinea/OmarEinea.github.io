@@ -11,7 +11,7 @@ export default class Footer extends PureComponent {
           <Grid item sm={6} xs={12} align="center" style={{paddingTop: 36}}>
             <Typography variant="h5" gutterBottom>About Me</Typography>
             <Typography variant="subtitle1" gutterBottom>
-              I'm a passionate {age} years old,<br/>
+              I'm a passionate {age} years old<br/>
               self-taught Application Developer.
             </Typography>
           </Grid>

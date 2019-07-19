@@ -50,7 +50,7 @@ export default class GitHub extends PureComponent {
                 </g>
               </svg>
             </div>
-            <Typography variant="caption" align="left" id="legend">
+            <Typography variant="caption" display="block" align="left" id="legend">
               Commits made by me
               <div style={{float: 'right'}}>
                 Less

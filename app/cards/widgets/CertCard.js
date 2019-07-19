@@ -13,20 +13,20 @@ export default class CertCard extends PureComponent {
       [ title, { desc, auth }] = this.props.data;
     return (
       <Card class="card">
-        <CardMedia style={{paddingTop: '70%', marginBottom: 82, position: 'relative'}}
+        <CardMedia style={{paddingTop: '70%', marginBottom: 78, position: 'relative'}}
           image={url(`certs/small/${title}.jpg`)} onClick={() => this.setState({image: true})}>
           <Button class="image-button"><i/></Button>
         </CardMedia>
         {image && <Gallery title={title} folder="certs" onClose={() => this.setState({image: false})}/>}
         <ClickAwayListener onClickAway={() => {if(text) this.setState({text: false})}}>
-          <Collapse in={text} collapsedHeight="82px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
+          <Collapse in={text} collapsedHeight="78px" timeout="auto" class={'collapse' + (scroll ? ' scroll' : '')}
             onEntered={() => this.setState({scroll: true})} onExit={() => this.setState({scroll: false})}>
-            <CardContent style={{padding: '16px 15.5px 16px 18px'}}>
+            <CardContent style={{padding: '14px 16px'}}>
               <Typography variant="h6" style={{fontSize: 19, marginBottom: 8, color: '#424242'}} noWrap>
                 {title}
               </Typography>
               <CardActions style={{padding: 0}}>
-                <Typography style={{flex: 1, color: '#616161'}} noWrap>
+                <Typography variant="caption" style={{flex: 1, color: '#616161'}} noWrap>
                   <i class="fas fa-landmark" style={{marginRight: 4}}/> {auth}
                 </Typography>
                 <IconButton onClick={() => this.setState({text: !text})}
@@ -35,7 +35,7 @@ export default class CertCard extends PureComponent {
                 </IconButton>
               </CardActions>
             </CardContent>
-            <Typography style={{padding: '0 16px 14px'}}>{desc}</Typography>
+            <Typography variant="body2" style={{padding: '0 16px 14px'}}>{desc}</Typography>
           </Collapse>
         </ClickAwayListener>
       </Card>
