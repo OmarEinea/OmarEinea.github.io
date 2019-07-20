@@ -16,6 +16,16 @@ export default class Home extends Component {
     profiles: [TopProfiles, 'globe'],
     certificates: [props => <TopCards type="Cert" {...props}/>, 'award']
   });
+  onScroll = () => {
+    const scroll = window.pageYOffset + window.innerHeight - 150;
+    if(scroll - this.prevScroll > 50) {
+      this.prevScroll = scroll;
+      this.tags.map((section, index) => {
+        if(scroll > section.offsetTop && index >= this.state.entered)
+          this.setState({entered: index + 1});
+      });
+    }
+  }
 
   componentWillMount() {
     get('home/default').then(data => this.setState({data}));
@@ -32,17 +42,17 @@ export default class Home extends Component {
         </Grow>
         {sections.map(([ title, [ Section, icon ]], index) =>
           <Grid container style={{background: index === 0 && '#90A4AE55' || index % 2 === 1 && '#FFFFFFAA'}}>
-            <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80}}>
+            <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80, minHeight: 512}}>
               <Fade in={index < entered} timeout={800}>
                 <Grid container justify="center" class="section">
                   <Typography variant="h3" class="headline" noWrap
                     style={{padding: '40px 0', textTransform: 'capitalize'}}>
                     <i class={'fas fa-' + icon} style={{paddingRight: 16}}/>
                     top {title}
-                    <Tooltip title="View All" placement="right" enterDelay={100}>
+                    <Tooltip title="View More" placement="right" enterDelay={100}>
                       <IconButton onClick={(event) => goto(title, event)}
                         href={title} style={{marginLeft: 8}} class="mini">
-                        <i class="fas fa-link" style={{fontSize: 17, opacity: .7}}/>
+                        <i class="fas fa-angle-right" style={{fontSize: 20, opacity: .7}}/>
                       </IconButton>
                     </Tooltip>
                   </Typography>
@@ -58,17 +68,9 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.tags = Array.from(document.getElementsByClassName('section'));
-    let prevScroll = 0;
-    window.addEventListener('scroll', this.onScroll = () => {
-      const scroll = window.pageYOffset + window.innerHeight - 50;
-      if(scroll - prevScroll > 50) {
-        prevScroll = scroll;
-        this.tags.map((section, index) => {
-          if(scroll > section.offsetTop + section.scrollHeight && index >= this.state.entered)
-            this.setState({entered: index + 1});
-        });
-      }
-    });
+    this.prevScroll = 0;
+    this.onScroll();
+    window.addEventListener('scroll', this.onScroll);
   }
 
   componentWillUnmount() {
