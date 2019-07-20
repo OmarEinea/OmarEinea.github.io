@@ -60,6 +60,7 @@ class App extends Component {
     const { state, pages } = this, CurrentPage = pages[state.page], notHome = state.page !== 'home';
     return (
       <Grid id="root" container direction="column">
+        <div id="top-shadow"/>
         <Toolbar id="toolbar" class="container">
           <Hidden smDown={!notHome}>
             <div style={{width: '34.5%', marginLeft: 12}} class={notHome ? 'show' : 'hide'}>
