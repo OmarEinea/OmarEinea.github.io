@@ -1,11 +1,11 @@
 import { Component } from 'react';
-import { Grid, Typography, IconButton, Tooltip, Grow, Fade } from 'material-ui';
+import { Grid, Typography, IconButton, Tooltip, Fade } from 'material-ui';
 import Intro from './intro/Intro';
 import TopProfiles from './sections/TopProfiles';
 import TopSkills from './sections/TopSkills';
 import TopCards from './sections/TopCards';
 import { get } from 'db';
-import './Home.css'
+import './Home.css';
 
 export default class Home extends Component {
   state = {data: {}, entered: 0};
@@ -35,11 +35,7 @@ export default class Home extends Component {
     const { sections, state: { data, entered }, props: { goto }} = this;
     return (
       <Grid container>
-        <Grow in>
-          <Grid container>
-            <Intro data={data.intro}/>
-          </Grid>
-        </Grow>
+        <Intro data={data.intro}/>
         {sections.map(([ title, [ Section, icon ]], index) =>
           <Grid container style={{background: index === 0 && '#90A4AE55' || index % 2 === 1 && '#FFFFFFAA'}}>
             <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80, minHeight: 512}}>
@@ -51,7 +47,7 @@ export default class Home extends Component {
                     top {title}
                     <Tooltip title="View More" placement="right" enterDelay={100}>
                       <IconButton onClick={(event) => goto(title, event)}
-                        href={title} style={{marginLeft: 8}} class="mini">
+                        href={title} style={{marginLeft: 8, marginTop: -12}} class="mini">
                         <i class="fas fa-angle-right" style={{fontSize: 20, opacity: .7}}/>
                       </IconButton>
                     </Tooltip>

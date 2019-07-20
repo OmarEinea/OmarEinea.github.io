@@ -16,6 +16,10 @@ h3.headline {
   }
 
   h3.headline > i {
-    vertical-align: middle !important;
+    vertical-align: top !important;
+  }
+
+  h3.headline > a {
+    margin-top: -4px !important;
   }
 }
