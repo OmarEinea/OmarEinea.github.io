@@ -19,7 +19,7 @@ const app = require('express')(), fetch = require('node-fetch'), firebase = requ
         for(let title in data[category])
           apply(title, data[category][title]);
   }, storage = firebase.storage().bucket(),
-  cacheHeader = {cacheControl: 'public, max-age=' + 365*24*60*60},
+  cacheHeader = {cacheControl: 'public, max-age=' + 24*60*60},
   rect = /<rect .*?fill="#([0-9a-f]{6})".*?\/>/g, colors = [
     'ebedf0', 'c6e48b', '7bc96f', '239a3b', '196127'
   ];

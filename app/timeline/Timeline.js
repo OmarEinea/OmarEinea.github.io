@@ -7,22 +7,19 @@ import './Timeline.css';
 
 export default class Timeline extends Component {
   state = {showEvents: true};
-
-  structureItems(items) {
-    const structured = {};
-    Object.entries(items).map(([range, desc]) => {
-      const [ a, b ] = range.split(',');
-      structured[a] = [desc.split(';'), (b || a) - a];
-    });
-    return structured;
+  is = (string, type) => string.includes(type) && type.toLowerCase();
+  structureItems = items => Object.entries(items).reduce((struct, [ range, desc ]) => {
+    const [ a, b ] = range.split(',');
+    return {...struct, [a]: [desc.split(';'), (b || a) - a]};
+  }, {});
+  onResize = () => {
+    const pc = window.innerWidth > 650;
+    if(pc !== this.state.pc)
+      this.setState({pc});
   }
 
   componentWillMount() {
-    (this.onResize = () => {
-      const pc = window.innerWidth > 650;
-      if(pc !== this.state.pc)
-        this.setState({pc});
-    })();
+    this.onResize();
     get('timeline').then(({ years, cities, institutes, events }) => this.setState({
       years: Object.entries(years).slice(1),
       cities: this.structureItems(cities),
@@ -32,20 +29,19 @@ export default class Timeline extends Component {
   }
 
   render() {
-    const { years, cities, institutes, events, showEvents, pc } = this.state,
-      is = (string, type) => string.includes(type) && type.toLowerCase();
+    const { state: { years, cities, institutes, events, showEvents, pc }, is } = this;
     let city, cityStart, cityCount, institute, instDesc, instStart, instCount;
     return years ? (
       <Grid container direction="column-reverse"
         alignItems={pc ? 'center': showEvents ? 'flex-end' : 'flex-start'}
         class="container" style={{margin: '48px auto 36px', overflow: 'hidden'}}>
-        {years.map(([year, state], index) => {
+        {years.map(([ year, state ], index) => {
           if(cityStart = year in cities)
             [ city, cityCount ] = cities[year];
           if(instStart = year in institutes)
-            [[ institute, instDesc], instCount ] = institutes[year];
+            [[ institute, instDesc ], instCount ] = institutes[year];
           return (
-            <Grow in timeout={(years.length - index) * 300}>
+            <Grow in timeout={(years.length - index) * 100 + 200}>
               <div class={'year' + (cityStart && ' start' || '') + (cityCount-- === 0 && ' end' || '')}>
                 {showEvents && cityStart && <span>
                   <b class="city-vline"><i/>
