@@ -8,37 +8,41 @@ import './Profiles.css';
 
 export default class Profiles extends Component {
   componentWillMount() {
-    get('profiles').then(({Development, order, ...profiles}) => {
-      for(const key in profiles)
+    get('profiles').then(({ Development, order, ...profiles }) => {
+      for (const key in profiles)
         profiles[key] = Object.entries(profiles[key]);
       profiles = Object.entries(profiles);
       const orderedCategories = [];
       order.split(',').map(index => orderedCategories.push(profiles[index - 1]));
-      this.setState({dev: Development, allProfiles: profiles});
+      this.setState({ dev: Development, allProfiles: profiles });
     });
   }
 
   render() {
     const { dev, allProfiles } = this.state || {};
+    console.log('allProfiles', allProfiles)
     return dev ? (
-      <Grid container class="container" style={{marginBottom: 24, marginTop: 8}}>
-        <Grow in timeout={500}>
-          <ProfileCard name="GitHub" images={dev.GitHub.images} id="github-profile">
-            <GitHub data={dev.GitHub}/>
-          </ProfileCard>
-        </Grow>
-        <Grid container>
+      <Grid container class="container" style={{ marginBottom: 24, marginTop: 8 }}>
+        <Grid container justify="center">
+
+          <Grow in timeout={600}>
+            <Grid item md={4} sm={6} xs={12}>
+              <ProfileCard name="GitHub" images={dev.GitHub.images}>
+                <GitHub data={dev.GitHub} />
+              </ProfileCard>
+            </Grid>
+          </Grow>
           <Grow in timeout={800}>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={4} sm={6} xs={12}>
               <ProfileCard name="StackOverflow" images={dev.StackOverflow.images}>
-                <StackOverflow data={dev.StackOverflow}/>
+                <StackOverflow data={dev.StackOverflow} />
               </ProfileCard>
             </Grid>
           </Grow>
           <Grow in timeout={1000}>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={4} sm={6} xs={12}>
               <ProfileCard name="XdaDevelopers" images={dev.XdaDevelopers.images}>
-                <XdaDevelopers data={dev.XdaDevelopers}/>
+                <XdaDevelopers data={dev.XdaDevelopers} />
               </ProfileCard>
             </Grid>
           </Grow>
@@ -49,13 +53,13 @@ export default class Profiles extends Component {
               <Typography variant="h4" class="category">{category}</Typography>
             </Fade>
             {profiles.map(([title, data]) =>
-              <Grid item sm={6} xs={12}>
-                <ProfileCard name={title} images={data.images} use={data.use}/>
+              <Grid item md={4} sm={6} xs={12}>
+                <ProfileCard name={title} images={data.images} use={data.use} />
               </Grid>
             )}
           </Grid>
         )}
       </Grid>
-    ) : <Loading/>;
+    ) : <Loading />;
   }
 }

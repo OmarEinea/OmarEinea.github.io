@@ -1,9 +1,3 @@
-@media screen and (min-width: 500px) {
-  #github-profile > div:first-child {
-    padding-top: 25% !important;
-  }
-}
-
 @media screen and (max-width: 960px) {
   .profile-use i {
     margin: 8px 0 0 8px;

@@ -1,17 +1,19 @@
-const functions = require('firebase-functions'), { onRequest } = functions.region('europe-west1').https,
-  database = require('firebase-admin').initializeApp(functions.config().firebase).database().ref();
+const functions = require('firebase-functions');
+const { onRequest } = functions.region('europe-west1').https;
+const database = require('firebase-admin').initializeApp(functions.config().firebase).database().ref();
 
 exports.update = onRequest((request, response) => {
   const job = request.url.slice(1) || 'default';
   database.child('home/' + job).once('value', entries => {
-    const { resume='resume.docx', ...sections } = entries.val();
-    for(const key in sections)
-      if(typeof(sections[key]) === 'object') {
-        for(const sub in sections[key])
+    const { resume = 'resume.docx', ...sections } = entries.val();
+    for (const key in sections) {
+      if (typeof (sections[key]) === 'object') {
+        for (const sub in sections[key])
           sections[key + '/' + sub] = sections[key][sub]
         delete sections[key];
       }
-    const data = {}, queries = Object.entries(sections).map(([ section, picks ]) => {
+    }
+    const data = {}, queries = Object.entries(sections).map(([section, picks]) => {
       data[section] = [];
       return database.child(section).once('value', content => {
         const items = Object.values(content.val()).reduce((all, some) => Object.assign(all, some), {});
