@@ -6,11 +6,13 @@ const projectId = 'eineao-website',
   json = data => data.json(),
   getCache = key => {
     const cache = sessionStorage.getItem(key.split('/')[0]);
-    return cache ? {then: handle => handle(JSON.parse(cache))} : false;
-  }, setCache = key => result => ({then: handle => {
-    sessionStorage.setItem(key.split('/')[0], JSON.stringify(result));
-    handle(result);
-  }});
+    return cache ? { then: handle => handle(JSON.parse(cache)) } : false;
+  }, setCache = key => result => ({
+    then: handle => {
+      sessionStorage.setItem(key.split('/')[0], JSON.stringify(result));
+      handle(result);
+    }
+  });
 
 export const age = new Date(Date.now() - 801954000000).getFullYear() - 1970;
 export const colors = ['#C4086E', '#Cf1D61', '#DB3255', '#E64749', '#F25C3D', '#FE7131', '#FF8533'];

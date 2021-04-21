@@ -80,6 +80,10 @@
   top: 24px;
 }
 
+.paper .title .clickable {
+  cursor: pointer;
+}
+
 .paper .title p {
   color: #616161;
   font-size: 16px;

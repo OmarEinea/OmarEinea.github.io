@@ -9,8 +9,9 @@ import './Profiles.css';
 export default class Profiles extends Component {
   componentWillMount() {
     get('profiles').then(({ Development, order, ...profiles }) => {
-      for (const key in profiles)
+      for (const key in profiles) {
         profiles[key] = Object.entries(profiles[key]);
+      }
       profiles = Object.entries(profiles);
       const orderedCategories = [];
       order.split(',').map(index => orderedCategories.push(profiles[index - 1]));
@@ -20,11 +21,9 @@ export default class Profiles extends Component {
 
   render() {
     const { dev, allProfiles } = this.state || {};
-    console.log('allProfiles', allProfiles)
     return dev ? (
       <Grid container class="container" style={{ marginBottom: 24, marginTop: 8 }}>
         <Grid container justify="center">
-
           <Grow in timeout={600}>
             <Grid item md={4} sm={6} xs={12}>
               <ProfileCard name="GitHub" images={dev.GitHub.images}>

@@ -8,53 +8,53 @@ import { get } from 'db';
 import './Home.css';
 
 export default class Home extends Component {
-  state = {data: {}, entered: 0};
+  state = { data: {}, entered: 0 };
   sections = Object.entries({
-    projects: [props => <TopCards type="Project" {...props}/>, 'laptop-code'],
+    projects: [props => <TopCards type="Project" {...props} />, 'laptop-code'],
     skills: [TopSkills, 'brain'],
-    events: [props => <TopCards type="Event" {...props}/>, 'users'],
+    events: [props => <TopCards type="Event" {...props} />, 'users'],
     profiles: [TopProfiles, 'globe'],
-    certificates: [props => <TopCards type="Cert" {...props}/>, 'award']
+    certificates: [props => <TopCards type="Cert" {...props} />, 'award']
   });
   onScroll = () => {
     const scroll = window.pageYOffset + window.innerHeight - 150;
-    if(scroll - this.prevScroll > 50) {
+    if (scroll - this.prevScroll > 50) {
       this.prevScroll = scroll;
       this.tags.map((section, index) => {
-        if(scroll > section.offsetTop && index >= this.state.entered)
-          this.setState({entered: index + 1});
+        if (scroll > section.offsetTop && index >= this.state.entered)
+          this.setState({ entered: index + 1 });
       });
     }
   }
 
   componentWillMount() {
-    get('home/default').then(data => this.setState({data}));
+    get('home/default').then(data => this.setState({ data }));
   }
 
   render() {
-    const { sections, state: { data, entered }, props: { goto }} = this;
+    const { sections, state: { data, entered }, props: { goto } } = this;
     return (
       <Grid container>
-        <Intro data={data.intro}/>
-        {sections.map(([ title, [ Section, icon ]], index) =>
-          <Grid container style={{background: index === 0 && '#90A4AE55' || index % 2 === 1 && '#FFFFFFAA'}}>
-            <Grid container class="container" style={{paddingTop: 40, paddingBottom: 80, minHeight: 512}}>
+        <Intro data={data.intro} />
+        {sections.map(([title, [Section, icon]], index) =>
+          <Grid container style={{ background: index === 0 && '#90A4AE55' || index % 2 === 1 && '#FFFFFFAA' }}>
+            <Grid container class="container" style={{ paddingTop: 40, paddingBottom: 80, minHeight: 512 }}>
               <Fade in={index < entered} timeout={800}>
                 <Grid container justify="center" class="section">
                   <Typography variant="h3" class="headline" noWrap
-                    style={{padding: '40px 0', textTransform: 'capitalize'}}>
-                    <i class={'fas fa-' + icon} style={{paddingRight: 16}}/>
+                    style={{ padding: '40px 0', textTransform: 'capitalize' }}>
+                    <i class={'fas fa-' + icon} style={{ paddingRight: 16 }} />
                     top {title}
                     <Tooltip title="View More" placement="right" enterDelay={100}>
                       <IconButton onClick={(event) => goto(title, event)}
-                        href={title} style={{marginLeft: 8, marginTop: -12}} class="mini">
-                        <i class="fas fa-angle-right" style={{fontSize: 20, opacity: .7}}/>
+                        href={title} style={{ marginLeft: 8, marginTop: -12 }} class="mini">
+                        <i class="fas fa-angle-right" style={{ fontSize: 20, opacity: .7 }} />
                       </IconButton>
                     </Tooltip>
                   </Typography>
                 </Grid>
               </Fade>
-              <Section visible={index < entered} data={data[title.replace('ificate', '')]}/>
+              <Section visible={index < entered} data={data[title.replace('ificate', '')]} />
             </Grid>
           </Grid>
         )}

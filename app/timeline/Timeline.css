@@ -44,7 +44,7 @@
 
 .city-vline {
   right: 100%;
-  bottom: 22px;
+  bottom: 24px;
   width: 60%;
   height: 4px;
 }
@@ -60,7 +60,7 @@
   position: absolute;
   left: 46%;
   transform: translateX(-50%);
-  bottom: -10px;
+  bottom: -12px;
   padding: 1px 8px 2px;
   font-weight: 500;
 }

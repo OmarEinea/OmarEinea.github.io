@@ -8,8 +8,8 @@ export default class ProfileCard extends PureComponent {
   state = { image: false };
 
   render() {
-    const { name, images, children, use = '', ...props } = this.props,
-      { image } = this.state, [text, icon] = use.split(';');
+    const { name, images, children, use = '', ...props } = this.props;
+    const { image } = this.state, [text, icon] = use.split(';');
     return (
       <Card class="card" {...props}>
         <CardMedia style={{ paddingTop: '64%', position: 'relative', backgroundPosition: 'left' }}

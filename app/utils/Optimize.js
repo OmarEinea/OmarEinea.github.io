@@ -6,7 +6,7 @@ export default class Optimize extends Component {
   }
 
   shouldComponentUpdate({ children }) {
-    if(this.childType !== children.type) {
+    if (this.childType !== children.type) {
       this.childType = children.type;
       return true;
     } else return false;
