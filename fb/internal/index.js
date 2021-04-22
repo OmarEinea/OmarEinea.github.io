@@ -5,7 +5,7 @@ const database = require('firebase-admin').initializeApp(functions.config().fire
 exports.update = onRequest((request, response) => {
   const job = request.url.slice(1) || 'default';
   database.child('home/' + job).once('value', entries => {
-    const { resume = 'resume.docx', ...sections } = entries.val();
+    const { resume = 'resume.pdf', ...sections } = entries.val();
     for (const key in sections) {
       if (typeof (sections[key]) === 'object') {
         for (const sub in sections[key])
