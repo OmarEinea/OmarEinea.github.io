@@ -28,7 +28,7 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
-    get('home/default').then(data => this.setState({ data }));
+    get('home').then(data => this.setState({ data }));
   }
 
   render() {
