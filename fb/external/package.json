@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.17.1",
-    "firebase": "^5.11.1",
-    "firebase-admin": "^7.4.0",
-    "node-fetch": "^2.6.0"
-  }
-}

@@ -1,4 +1,0 @@
-# Ignore local datbase files, node modules and package lock
-fb/database/
-node_modules/
-package-lock.json

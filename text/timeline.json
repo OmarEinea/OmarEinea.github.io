@@ -1,0 +1,56 @@
+{
+  "cities": {
+    "1": "Nebraska, USA",
+    "2,7": "Al-Ain, UAE",
+    "8,18": "Al-Nabek, Syria",
+    "19": "Dhahran, Saudi",
+    "20,24": "Sharjah, UAE",
+    "25,26": "Abu Dhabi, UAE"
+  },
+  "events": {
+    "6": "Visited my extended family in Syria multiple times.",
+    "15": "Worked in Upholstery during the summer break.",
+    "16": "Worked as a Technician fixing ACs, washing machines and fridges during the summer.;up",
+    "22": "Summer internship at Emirates Islamic in Dubai.",
+    "26": "Continued pursuing my Master's degree.;up"
+  },
+  "institutes": {
+    "18": "university;Al-Baath University;Finished first semester only.",
+    "24": "university;University of Sharjah;Pursuing a Master's degree.",
+    "25": "building;Saal.ai;Worked on project Curio.",
+    "26": "building;Alef Education;Worked on project Arabits.",
+    "15,17": "school;Al-Mohalaya High School;Completed a general high school degree with an overall rate of 85%.",
+    "20,23": "university;University of Sharjah;Completed a bachelors degree with Highest Honors standing in IT-Multimedia major. Also worked as Teaching Assistant and a Research Assistant for more than a year.",
+    "6,7": "school;Al-Safwa School;Started school one year earlier than normal.",
+    "8,14": "school;Al-Thanya Boys School;Resumed studying after moving to Syria, and completed a general middle school degree."
+  },
+  "years": [
+    null,
+    "Born",
+    "",
+    "",
+    "",
+    "Kindergarten",
+    "1st Grade",
+    "2nd Grade",
+    "3rd Grade",
+    "4th Grade",
+    "5th Grade",
+    "6th Grade",
+    "7th Grade",
+    "8th Grade",
+    "9th Grade",
+    "10th Grade",
+    "11th Grade",
+    "12th Grade",
+    "Electrical Eng. Freshmen",
+    "Finding Another University",
+    "IT-Multimedia Freshmen",
+    "IT-Multimedia Sophomore",
+    "IT-Multimedia Junior",
+    "IT-Multimedia Senior",
+    "Master's in Computer Science",
+    "Full Stack Developer",
+    "Full Stack Developer"
+  ]
+}

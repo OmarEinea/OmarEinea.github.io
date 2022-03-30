@@ -1,0 +1,224 @@
+{
+  "intro": {
+    "Discipline": [
+      null,
+      "Developer: I'm a self-taught Application Developer.",
+      "Programmer: I love problem solving and I code a lot, I use any language to get the job done.",
+      "Designer: I design the UI and all visuals of my projects, I also do some graphics design.",
+      "Educator: I like holding workshops to teach others and learn at the same time.",
+      "Researcher: I'm fond of investigating different Computer Science fields."
+    ],
+    "Education": [
+      "Level,Major,Institute,Duration,GPA",
+      "Master's,Computer Science,University of Sharjah,2018 - Now,3.59/4.00",
+      "Bachelor's,IT - Multimedia,University of Sharjah,2014 - 2018,3.94/4.00",
+      "Bachelor's,Electrical Engineering,Al-Baath University,2012 - 2013,Incomplete",
+      "High School,Scientific Branch,Al-Mohalaya School,2009 - 2012,214/240",
+      "School,General Education,Al-Thanya Boys School,2002 - 2009,Average"
+    ],
+    "Experience": [
+      "Company,Title,Duration,Location",
+      "Alef Education,Full Stack Developer,May 2020 - Now,Abu Dhabi",
+      "Saal.ai | Algorythma,Full Stack Developer,Sep 2019 - May 2020,Abu Dhabi",
+      "University of Sharjah,Graduate Research Assistant,Sep 2018 - Sep 2019,Sharjah",
+      "University of Sharjah,Research Assistant,Jan 2017 – Jul 2018,Sharjah",
+      "University of Sharjah,Teaching Assistant,Sep 2017 – May 2018,Sharjah",
+      "Emirates Islamic,Web Developer Intern,Jun 2017 – Jul 2017,Dubai"
+    ],
+    "Goals": [
+      null,
+      "Aspiring senior Application Developer & Data Analyst.",
+      "I want to be of benefit to the Muslim community and to the whole world.",
+      "I want to ride the Artificial Intelligence wave as it's shaping future.",
+      "I want to sharpen my skills and become the best at what I do.",
+      "I want to live a happy life and leave a good legacy behind ^_^"
+    ],
+    "Occupation": [
+      null,
+      "suitcase;Full Stack Developer | NodeJS | ReactJS",
+      "building;Alef Education | Abu Dhabi",
+      "graduation-cap;Studying Master's of Computer Science",
+      "university;University of Sharjah | Sharjah"
+    ],
+    "Origin": [
+      null,
+      "I'm Syrian and a United States passport holder.",
+      "I was born in Nebraska USA, Then moved to the Al-Ain UAE for a while.",
+      "I then moved back to Syria with family, where I spent most of my childhood.",
+      "After finishing High School, I moved to Sharjah UAE to pursue a Bachelor's degree.",
+      "Along the way, I traveled to Malaysia, France, Switzerland, Oman, Turkey and Kyrgyzstan."
+    ],
+    "Publications": [
+      "Subject,Publisher,Paper Type,Year,Status",
+      "Arabic Categorization in Deep Learning,Elsevier,Journal,2020,<a href='https://www.sciencedirect.com/science/article/pii/S0306457319303413' target='_blank'>Published</a>",
+      "Labeled Arabic News Articles Dataset,Elsevier,Journal,2019,<a href='https://www.sciencedirect.com/science/article/pii/S2352340919304305' target='_blank'>Published</a>",
+      "Enhancing Computer Science Education,Elsevier,Journal,2019,<a href='https://www.sciencedirect.com/science/article/pii/S2405844018334807' target='_blank'>Published</a>",
+      "Huge Annotated Arabic Dataset,Elsevier,Journal,2018,<a href='https://www.sciencedirect.com/science/article/pii/S1877050918321781' target='_blank'>Published</a>",
+      "Translated Text Classification,IEEE,Conference,2017,<a href='https://ieeexplore.ieee.org/document/8308320' target='_blank'>Published</a>",
+      "Book Reviews Arabic Dataset,IEEE,Conference,2016,<a href='https://ieeexplore.ieee.org/document/7945800' target='_blank'>Published</a>"
+    ],
+    "resume": "resume.pdf"
+  },
+  "certs": [
+    [
+      "BSc in IT-Multimedia Degree",
+      {
+        "auth": "University of Sharjah",
+        "desc": "I was granted a Bachelor of Science in IT and Multimedia degree with a 3.94 GPA and Highest Honors rating. This major is primarily focused on programming, it also covers some design and business topics. Android Development, Web Programming and Information Security are some of the major courses of this major."
+      }
+    ],
+    [
+      "Winning 1st Place at ENBD FISC",
+      {
+        "auth": "Emirates NBD",
+        "desc": "Won the 1st place at Emirates NBD (National Bank of Dubai)'s Future Intelligence Student Chanllenge (FISC). We showcased our idea One Click Donation (OCD) as a team of five students called FOBIAA."
+      }
+    ],
+    [
+      "Web Development Internship",
+      {
+        "auth": "Emirates Islamic",
+        "desc": "I worked with the IT & Business Innovation team in Emirates Islamic on a project called \"DynaTables\", which’s a custom made AngularJS web page hosted on SharePoint to dynamically display the company’s tabular reports. I developed the entire project from scratch with the supervision of my colleagues in the team, It's meant to be used on all reports pages of the company instead of rewriting the code every time."
+      }
+    ]
+  ],
+  "events": [
+    [
+      "2D & 3D Software Workshop",
+      {
+        "desc": "Representing OpenUAE, I delivered two workshops titled “2D / 3D Graphics Software” to educate high schools teachers from around the UAE about the basics of four open source programs, which are Blender 3D, GIMP, InkScape and Audacity.",
+        "images": "Showcasing Taught Software;Going Through Workshop's Syllabus;Introducing Blender3D (3D Modeling);Introducing GIMP (Image Editing);Receiving Appreciation Certificate",
+        "place": "Teachers Training Institute, Ajman"
+      }
+    ],
+    [
+      "DevFest 2018 Hackathon",
+      {
+        "desc": "Participated and won the 2nd place in DevFest 2018 Hackathon (worth 15000AED). In it I demonstrated my idea of an app which validates UAE id documents on the go through mobile cameras directly.",
+        "images": "Explaining my idea to mentors during teams shortlisting session;Presenting my idea to judges and participants during final round;Showing the judges my idea demo up close;Receiving second prize winner award (worth 15000AED);https://www.youtube.com/watch?v=omNkU7OTc6E",
+        "place": "In5 Innovation Center, Dubai",
+        "preview": true
+      }
+    ],
+    [
+      "Google Flutter Workshop",
+      {
+        "desc": "As an organizer in Sharjah GDG, I delivered a workshop about Flutter, Google's new mobile apps platform. During the workshop, I explained the basic concepts used in Flutter framework, then demonstrated them with a practical example.",
+        "images": "Explaining the basic theoretical concepts of Flutter;Demonstrating what we covered using a practical example;https://www.youtube.com/watch?v=C4CXd4UauX8&tight;https://www.youtube.com/watch?v=WLgviNk4CNQ&tight",
+        "place": "Sharjah University Hall, Sharjah"
+      }
+    ],
+    [
+      "Ministry of Education Meeting",
+      {
+        "desc": "As a part of our research, my doctor and I had a meeting with Ministry of Education (MOE) representatives. In that meeting we discussing MOE's future plans, organizing the teachers training workshop and improving the UAE schools curriculum.",
+        "images": "Our meeting with MOE included discussing their future plans;And organizing the teachers training workshop;And improving the UAE schools curriculum",
+        "place": "Teachers Training Institute, Ajman"
+      }
+    ],
+    [
+      "Machine Learning Workshop",
+      {
+        "desc": "Representing OpenUAE, I held two \"Intro to Machine Learning\" workshops in front of university doctors and students. In this workshop I covered the basics of Linear Regression and demonstrated it using TensorFlow to train and test a simple model.",
+        "images": "(1st session) Introducing what and why Machine Learning;Explaining Linear Algebra basics;Writing the ML model code step by step;(2nd session) Explaining the code we wrote;Showing the results of the trained ML model",
+        "place": "University of Sharjah, Sharjah"
+      }
+    ]
+  ],
+  "profiles": [
+    [
+      "GitHub",
+      {
+        "commits": 20,
+        "followers": 31,
+        "graph": "",
+        "images": "",
+        "repos": 31,
+        "stars": 50
+      }
+    ],
+    [
+      "StackOverflow",
+      {
+        "bronze": 34,
+        "gold": 6,
+        "images": "",
+        "reputation": 2410,
+        "silver": 21
+      }
+    ],
+    [
+      "XdaDevelopers",
+      {
+        "images": "",
+        "posts": 2028,
+        "thanks": 6321,
+        "threads": 45
+      }
+    ]
+  ],
+  "projects": [
+    [
+      "UOS HUB",
+      {
+        "demo": "https://uoshub.com",
+        "desc": "This is a website designed to unify all University of Sharjah (UOS) websites in one place. Once a student logs in, it automatically scrapes all his data from those websites and displays them in a user-friendly format. This was accomplished using Python Django at the back-end and AngularJS at the front-end. This was my senior college project.",
+        "images": "Dashboard: shows student's updates, deadlines, emails, grades and more;Schedule: visually displays student's week classes with details and colors;Courses: provides all information about a specific course including documents download;Emails: allows students to open their Outlook emails and write new ones;Calendar: highlights main university events in that month;https://www.youtube.com/watch?v=7C61s0LtEHY",
+        "repo": "UOSHUB",
+        "skills": "Django,AngularJS,Python,JavaScript",
+        "type": "Web Application"
+      }
+    ],
+    [
+      "InstaBlock",
+      {
+        "desc": "We live in a world where all kinds of mobile applications exist. Some of them are very useful, but many others are time wasting or dangerous for kids or even adults. This is where InstaBlock comes in, it’s an app that lets the user instantly block the installation of other applications of his choice.",
+        "images": "Instructions screen on first run;Blocked applications tab;Blocked filters tab;Application blocked popup message",
+        "repo": "OmarEinea/InstaBlock",
+        "skills": "Android,Android Studio,Java",
+        "type": "Android Application"
+      }
+    ],
+    [
+      "IoT Testbed",
+      {
+        "demo": "https://github.com/OmarEinea/IoTTestbed/releases/download/demo/iottestbed-demo.exe",
+        "desc": "As part of my IoT Testbed research project, I developed this GUI to automate the process of running single or multiple testing scripts. In the demo, I show the use of this software to run a script that turns off a WiFi socket. Any set of scripts could be loaded into this program to be run against the selected IoT device.",
+        "images": "IoT Testbed interface after running a testing script;https://www.youtube.com/watch?v=hPxwY6nR5sM",
+        "repo": "OmarEinea/IoTTestbed",
+        "skills": "PyQt,Python,PyCharm",
+        "type": "Desktop Application"
+      }
+    ]
+  ],
+  "skills": {
+    "circles": [
+      [
+        "Python",
+        91
+      ],
+      [
+        "JavaScript",
+        89
+      ],
+      [
+        "Git",
+        83
+      ]
+    ],
+    "lines": [
+      [
+        "Web Apps Development",
+        88
+      ],
+      [
+        "Web Scraping",
+        90
+      ],
+      [
+        "Android Development",
+        68
+      ]
+    ]
+  }
+}

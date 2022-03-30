@@ -1,0 +1,56 @@
+{
+  "Android Applications": {
+    "InstaBlock": {
+      "desc": "We live in a world where all kinds of mobile applications exist. Some of them are very useful, but many others are time wasting or dangerous for kids or even adults. This is where InstaBlock comes in, it’s an app that lets the user instantly block the installation of other applications of his choice.",
+      "images": "Instructions screen on first run;Blocked applications tab;Blocked filters tab;Application blocked popup message",
+      "repo": "OmarEinea/InstaBlock",
+      "skills": "Android,Android Studio,Java",
+      "type": "Android Application"
+    },
+    "Random Tasks": {
+      "desc": "An Android application that displays random tasks to the user to do every now and then. Tasks can be customized from the list of categories in the Interests tab, and once a task is mark as complete, it will be displayed in today's Progress tab. This was a small project for Design & Authoring course in my university.",
+      "images": "Choose task types you're interest in;Mark tasks as complete when done;Track your progress for the day;https://www.youtube.com/watch?v=M8yANqzZvT0",
+      "skills": "Android,Android Studio,Java"
+    }
+  },
+  "Cross-Platform Applications": {
+    "Cheat Checker": {
+      "desc": "A simple PC program that checks code submissions for possible cheating attempts among the submitted codes. This is primarily used by Teaching Assistants to spot cheaters in a Programming 1 classroom or similar courses. ",
+      "images": "Main screen showing cheaters list to the left, and similar codes side by side",
+      "repo": "OmarEinea/CheatChecker",
+      "skills": "PyQt,Python,PyCharm"
+    },
+    "IoT Testbed": {
+      "demo": "https://github.com/OmarEinea/IoTTestbed/releases/download/demo/iottestbed-demo.exe",
+      "desc": "As part of my IoT Testbed research project, I developed this GUI to automate the process of running single or multiple testing scripts. In the demo, I show the use of this software to run a script that turns off a WiFi socket. Any set of scripts could be loaded into this program to be run against the selected IoT device.",
+      "images": "IoT Testbed interface after running a testing script;https://www.youtube.com/watch?v=hPxwY6nR5sM",
+      "repo": "OmarEinea/IoTTestbed",
+      "skills": "PyQt,Python,PyCharm",
+      "type": "Desktop Application"
+    }
+  },
+  "Web Applications": {
+    "DynaTables": {
+      "desc": "A custom made AngularJS web page hosted on SharePoint to dynamically display the company’s tabular reports. I developed the entire project from scratch with the supervision of my colleagues in the team, It's meant to be used on all reports pages of the company instead of rewriting the code every time.",
+      "images": "Configure table columns to render table;Core table features",
+      "skills": "AngularJS,jQuery,JavaScript,HTML"
+    },
+    "FOBIAA (OCD)": {
+      "demo": "https://fobiaa.herokuapp.com",
+      "desc": "One Click Donation (OCD) is a donation management system that could be embedded into banking websites. It provides a simple, configurable donation button on every transaction page, as well as a dedicated section for users to view their donation progress, history and awards. This was the winning project in a competition held by EmiratesNBD in 2016.",
+      "images": "Complete mock up of bank user's dashboard screen;One Click Donation (OCD)'s popup configs in Transfer page;OCD's system dashboard which shows donation status and progress;Configurations page which lets the user set his default donation settings;Lastly, a page to show user's donation history and collected awards",
+      "preload": true,
+      "repo": "FOBIAA/OCD_Heroku",
+      "skills": "Flask,jQuery,JavaScript,HTML"
+    },
+    "UOS HUB": {
+      "demo": "https://uoshub.com",
+      "desc": "This is a website designed to unify all University of Sharjah (UOS) websites in one place. Once a student logs in, it automatically scrapes all his data from those websites and displays them in a user-friendly format. This was accomplished using Python Django at the back-end and AngularJS at the front-end. This was my senior college project.",
+      "images": "Dashboard: shows student's updates, deadlines, emails, grades and more;Schedule: visually displays student's week classes with details and colors;Courses: provides all information about a specific course including documents download;Emails: allows students to open their Outlook emails and write new ones;Calendar: highlights main university events in that month;https://www.youtube.com/watch?v=7C61s0LtEHY",
+      "repo": "UOSHUB",
+      "skills": "Django,AngularJS,Python,JavaScript",
+      "type": "Web Application"
+    }
+  },
+  "order": "3,1,2"
+}
