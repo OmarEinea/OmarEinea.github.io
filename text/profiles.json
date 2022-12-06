@@ -1,50 +1,80 @@
-{
-  "Development": {
-    "GitHub": {
-      "commits": 20,
-      "followers": 34,
-      "graph": "",
-      "images": "",
-      "repos": 31,
-      "stars": 54
-    },
-    "StackOverflow": {
-      "bronze": 34,
-      "gold": 6,
-      "images": "",
-      "reputation": 2410,
-      "silver": 21
-    },
-    "XdaDevelopers": {
-      "images": "",
-      "posts": 2028,
-      "thanks": 6321,
-      "threads": 45
-    }
+[
+  {
+    "section": "Development",
+    "type": "custom",
+    "items": [
+      {
+        "title": "GitHub",
+        "commits": 20,
+        "followers": 34,
+        "graph": "",
+        "images": [],
+        "repos": 31,
+        "stars": 54
+      },
+      {
+        "title": "StackOverflow",
+        "bronze": 34,
+        "gold": 6,
+        "images": [],
+        "reputation": 2410,
+        "silver": 21
+      },
+      {
+        "title": "XdaDevelopers",
+        "images": [],
+        "posts": 2028,
+        "thanks": 6321,
+        "threads": 45
+      }
+    ]
   },
-  "Research": {
-    "Google Scholar": {
-      "images": 1,
-      "use": "Listing;list-ol"
-    },
-    "Research Gate": {
-      "images": "1;2;3",
-      "use": "Sharing;share-square"
-    }
+  {
+    "section": "Research",
+    "items": [
+      {
+        "title": "Google Scholar",
+        "images": 1,
+        "use": "Listing;list-ol"
+      },
+      {
+        "title": "Research Gate",
+        "images": "1;2;3",
+        "use": "Sharing;share-square"
+      }
+    ]
   },
-  "Social": {
-    "Facebook": {
-      "images": "1;2;3",
-      "use": "Announcements;bullhorn"
-    },
-    "Instagram": {
-      "images": "1;2;3;4",
-      "use": "Photography;camera"
-    },
-    "LinkedIn": {
-      "images": "1;2;3",
-      "use": "Connections;users"
-    }
-  },
-  "order": "2,1"
-}
+  {
+    "section": "Social",
+    "items": [
+      {
+        "title": "Facebook",
+        "use": "Announcements;bullhorn",
+        "images": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "title": "Instagram",
+        "use": "Photography;camera",
+        "images": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "title": "LinkedIn",
+        "use": "Connections;users",
+        "images": [
+          "1",
+          "2",
+          "3"
+        ]
+      }
+    ]
+  }
+]

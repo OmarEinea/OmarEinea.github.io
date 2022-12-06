@@ -1,0 +1,82 @@
+[
+  {
+    "section": "Achievements",
+    "items": [
+      {
+        "title": "Android Developer Track",
+        "authority": "Udacity",
+        "subtitle": "Completed a Google course about Android Development on Udacity. This was a full track offered as a part of the Million Arab Coders initiative in the UAE."
+      },
+      {
+        "title": "BSc in IT-Multimedia Degree",
+        "authority": "University of Sharjah",
+        "subtitle": "I was granted a Bachelor of Science in IT and Multimedia degree with a 3.94 GPA and Highest Honors rating. This major is primarily focused on programming, it also covers some design and business topics. Android Development, Web Programming and Information Security are some of the major courses of this major."
+      },
+      {
+        "title": "Web Development Internship",
+        "authority": "Emirates Islamic",
+        "subtitle": "I worked with the IT & Business Innovation team in Emirates Islamic on a project called \"DynaTables\", which’s a custom made AngularJS web page hosted on SharePoint to dynamically display the company’s tabular reports. I developed the entire project from scratch with the supervision of my colleagues in the team, It's meant to be used on all reports pages of the company instead of rewriting the code every time."
+      },
+      {
+        "title": "Winning 1st Place at ENBD FISC",
+        "authority": "Emirates NBD",
+        "subtitle": "Won the 1st place at Emirates NBD (National Bank of Dubai)'s Future Intelligence Student Chanllenge (FISC). We showcased our idea One Click Donation (OCD) as a team of five students called FOBIAA."
+      },
+      {
+        "title": "Winning 4th Place in UPC 2017",
+        "authority": "University of Sharjah (CS)",
+        "subtitle": "Won the 4th place in University Programming Contest (UPC) which was held in University of Sharjah. And even though I had to leave one hour before the allowed time (5 hours), I got the forth place ^_^ and won a money prize for it."
+      }
+    ]
+  },
+  {
+    "section": "Contributions",
+    "items": [
+      {
+        "title": "Organizing & Judging in UPC 2018",
+        "authority": "University of Sharjah (CS)",
+        "subtitle": "Announced about the event, sent updated to students and judged during the University Programming Contest 2018 held in the University of Sharjah."
+      },
+      {
+        "title": "Preparing for Blockchain Workshop",
+        "authority": "OpenUAE R&D",
+        "subtitle": "I installed workshop requirements on an Ubuntu virtual machine, then copied it to all computers in the workshop room."
+      },
+      {
+        "title": "Training Schools Teachers",
+        "authority": "Ministry of Education (TTI)",
+        "subtitle": "Delivered two workshops titled “2D / 3D Graphics Software” about four open source programs: Blender 3D, GIMP, InkScape and Audacity."
+      }
+    ]
+  },
+  {
+    "section": "Participations",
+    "items": [
+      {
+        "title": "Competing in GPC 2017",
+        "authority": "Gulf University for Science & Technology",
+        "subtitle": "My brother and I competed against teams from all around the gulf region in a programming contest held by GUST university. We solved 5 problems, only 2 problems away from the top two teams who solved 7 problems."
+      },
+      {
+        "title": "Competing in Hajj Hackathon",
+        "authority": "Saudi Federation for Cybersecurity, Programming and Drones",
+        "subtitle": "My team and I competed against 800 teams in the largest Hackathon in the world. Our idea was rating system for Hajj caravans, it's a website we called Hamlaty."
+      },
+      {
+        "title": "Competing in NYUAD Hackathon",
+        "authority": "New York University Abu Dhabi",
+        "subtitle": "I participated in a Hackathon for social good held by New York University Abu Dhabi (NYUAD). The idea my team and I presented was a personal therapy app made using Unity3D and IBM Watson technology."
+      },
+      {
+        "title": "Competing in SMAC",
+        "authority": "Khalifa University",
+        "subtitle": "My friend and I competed in Smart Mobile Application Contest (SMAC) with our app InstaBlock."
+      },
+      {
+        "title": "Competing in UAE Hackathon",
+        "authority": "Telecom Regulatory Authority (TRA)",
+        "subtitle": "My team and I scored in the top 10 winners of UAE Hackathon 2019, which was part of the national innovation week. We presented a waste management app that connects all emirates through one platform."
+      }
+    ]
+  }
+]

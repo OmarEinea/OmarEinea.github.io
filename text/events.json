@@ -1,64 +1,136 @@
-{
-  "Attended": {
-    "Google PWA Workshop": {
-      "desc": "I attended a workshop about Progressive Web Applications (PWA) held by GDG Dubai back in 2016. PWA is a web development technology developed by Google to make websites feel more like mobile apps.",
-      "images": "Introducing Progressive Web Apps by example;Discussion and Q&A session (I'm in the middle ^_^)",
-      "place": "In5 Innovation Center, Dubai",
-      "preview": true
-    }
+[
+  {
+    "section": "Presented",
+    "items": [
+      {
+        "title": "2D & 3D Software Workshop",
+        "subtitle": "Representing OpenUAE, I delivered two workshops titled “2D / 3D Graphics Software” to educate high schools teachers from around the UAE about the basics of four open source programs, which are Blender 3D, GIMP, InkScape and Audacity.",
+        "location": "Teachers Training Institute, Ajman",
+        "images": [
+          "Showcasing Taught Software",
+          "Going Through Workshop's Syllabus",
+          "Introducing Blender3D (3D Modeling)",
+          "Introducing GIMP (Image Editing)",
+          "Receiving Appreciation Certificate"
+        ]
+      },
+      {
+        "title": "Android Apps Workshop",
+        "subtitle": "As an organizer in Sharjah GDG, I held a \"How to build your first Android app\" workshop during DevFest 2017. In which I covered topics like installing Android Studio, creating a project, adding activities, views, buttons, and linking between them.",
+        "location": "In5 Innovation Center, Dubai",
+        "images": [
+          "Introducing workshop outcomes",
+          "Creating a new project and activity",
+          "Getting familiar with the interface",
+          "Designing a simple application",
+          "Going on with the workshop"
+        ]
+      },
+      {
+        "title": "Google Flutter Workshop",
+        "subtitle": "As an organizer in Sharjah GDG, I delivered a workshop about Flutter, Google's new mobile apps platform. During the workshop, I explained the basic concepts used in Flutter framework, then demonstrated them with a practical example.",
+        "location": "Sharjah University Hall, Sharjah",
+        "images": [
+          "Explaining the basic theoretical concepts of Flutter",
+          "Demonstrating what we covered using a practical example",
+          "https://www.youtube.com/watch?v=C4CXd4UauX8&tight",
+          "https://www.youtube.com/watch?v=WLgviNk4CNQ&tight"
+        ]
+      },
+      {
+        "title": "Machine Learning Workshop",
+        "subtitle": "Representing OpenUAE, I held two \"Intro to Machine Learning\" workshops in front of university doctors and students. In this workshop I covered the basics of Linear Regression and demonstrated it using TensorFlow to train and test a simple model.",
+        "location": "University of Sharjah, Sharjah",
+        "images": [
+          "(1st session) Introducing what and why Machine Learning",
+          "Explaining Linear Algebra basics",
+          "Writing the ML model code step by step",
+          "(2nd session) Explaining the code we wrote",
+          "Showing the results of the trained ML model"
+        ]
+      },
+      {
+        "title": "My Senior Project (UOS HUB)",
+        "subtitle": "My dears friends (Basel & Muhammad) and I presented our senior project (UOS HUB) in front of our doctors and colleagues. After that we headed out for a Q&A session where projects' examiners further discuss students' projects for evaluation purposes.",
+        "location": "University of Sharjah",
+        "images": [
+          "Presenting the back-end structure of my senior project, UOSHUB",
+          "https://www.youtube.com/watch?v=jYeeME-O6WU",
+          "Standing in our project booth for Q&A session",
+          "Checking out other students' projects and posters",
+          "Group photo with all senior student of my batch"
+        ]
+      }
+    ]
   },
-  "Meetings": {
-    "IoT Meeting with DESC": {
-      "desc": "During a meeting with Dubai Cyber Security Strategy (DESC) representative, my research collegues and I demonstrated the theory and implementation of how we hacked a wifi socket (IoT Device) and discussed our plans for making an IoT Testbed.",
-      "images": "Explaining the theory behind our work;Going through the code we used to hack an IoT device;Presenting a live demo of the script we wrote;Discussing next steps and future goals",
-      "place": "University of Sharjah, Sharjah"
-    },
-    "Ministry of Education Meeting": {
-      "desc": "As a part of our research, my doctor and I had a meeting with Ministry of Education (MOE) representatives. In that meeting we discussing MOE's future plans, organizing the teachers training workshop and improving the UAE schools curriculum.",
-      "images": "Our meeting with MOE included discussing their future plans;And organizing the teachers training workshop;And improving the UAE schools curriculum",
-      "place": "Teachers Training Institute, Ajman"
-    }
+  {
+    "section": "Meetings",
+    "items": [
+      {
+        "title": "IoT Meeting with DESC",
+        "subtitle": "During a meeting with Dubai Cyber Security Strategy (DESC) representative, my research collegues and I demonstrated the theory and implementation of how we hacked a wifi socket (IoT Device) and discussed our plans for making an IoT Testbed.",
+        "location": "University of Sharjah, Sharjah",
+        "images": [
+          "Explaining the theory behind our work",
+          "Going through the code we used to hack an IoT device",
+          "Presenting a live demo of the script we wrote",
+          "Discussing next steps and future goals"
+        ]
+      },
+      {
+        "title": "Ministry of Education Meeting",
+        "subtitle": "As a part of our research, my doctor and I had a meeting with Ministry of Education (MOE) representatives. In that meeting we discussing MOE's future plans, organizing the teachers training workshop and improving the UAE schools curriculum.",
+        "location": "Teachers Training Institute, Ajman",
+        "images": [
+          "Our meeting with MOE included discussing their future plans",
+          "And organizing the teachers training workshop",
+          "And improving the UAE schools curriculum"
+        ]
+      }
+    ]
   },
-  "Participated": {
-    "DevFest 2018 Hackathon": {
-      "desc": "Participated and won the 2nd place in DevFest 2018 Hackathon (worth 15000AED). In it I demonstrated my idea of an app which validates UAE id documents on the go through mobile cameras directly.",
-      "images": "Explaining my idea to mentors during teams shortlisting session;Presenting my idea to judges and participants during final round;Showing the judges my idea demo up close;Receiving second prize winner award (worth 15000AED);https://www.youtube.com/watch?v=omNkU7OTc6E",
-      "place": "In5 Innovation Center, Dubai",
-      "preview": true
-    },
-    "Smart Mobile App Contest": {
-      "desc": "My friend Abdullahi and I participated in Smart Mobile Application Contest (SMAC) 2018, in which we presented our Android project InstaBlock. In this contest we presented our ideas in a private session in front of judges, then later in a press event.",
-      "images": "Presenting Our App (InstaBlock) in Press Event;Adding Final Touches to Code Before Presentation;Celebrating a Successful Main App Presentation",
-      "place": "Khalifa University, Abu Dhabi",
-      "preview": true
-    }
+  {
+    "section": "Participated",
+    "items": [
+      {
+        "title": "DevFest 2018 Hackathon",
+        "subtitle": "Participated and won the 2nd place in DevFest 2018 Hackathon (worth 15000AED). In it I demonstrated my idea of an app which validates UAE id documents on the go through mobile cameras directly.",
+        "location": "In5 Innovation Center, Dubai",
+        "images": [
+          "Explaining my idea to mentors during teams shortlisting session",
+          "Presenting my idea to judges and participants during final round",
+          "Showing the judges my idea demo up close",
+          "Receiving second prize winner award (worth 15000AED)",
+          "https://www.youtube.com/watch?v=omNkU7OTc6E"
+        ],
+        "preview": true
+      },
+      {
+        "title": "Smart Mobile App Contest",
+        "subtitle": "My friend Abdullahi and I participated in Smart Mobile Application Contest (SMAC) 2018, in which we presented our Android project InstaBlock. In this contest we presented our ideas in a private session in front of judges, then later in a press event.",
+        "location": "Khalifa University, Abu Dhabi",
+        "images": [
+          "Presenting Our App (InstaBlock) in Press Event",
+          "Adding Final Touches to Code Before Presentation",
+          "Celebrating a Successful Main App Presentation"
+        ],
+        "preview": true
+      }
+    ]
   },
-  "Presented": {
-    "2D & 3D Software Workshop": {
-      "desc": "Representing OpenUAE, I delivered two workshops titled “2D / 3D Graphics Software” to educate high schools teachers from around the UAE about the basics of four open source programs, which are Blender 3D, GIMP, InkScape and Audacity.",
-      "images": "Showcasing Taught Software;Going Through Workshop's Syllabus;Introducing Blender3D (3D Modeling);Introducing GIMP (Image Editing);Receiving Appreciation Certificate",
-      "place": "Teachers Training Institute, Ajman"
-    },
-    "Android Apps Workshop": {
-      "desc": "As an organizer in Sharjah GDG, I held a \"How to build your first Android app\" workshop during DevFest 2017. In which I covered topics like installing Android Studio, creating a project, adding activities, views, buttons, and linking between them.",
-      "images": "Introducing workshop outcomes;Creating a new project and activity;Getting familiar with the interface;Designing a simple application;Going on with the workshop",
-      "place": "In5 Innovation Center, Dubai"
-    },
-    "Google Flutter Workshop": {
-      "desc": "As an organizer in Sharjah GDG, I delivered a workshop about Flutter, Google's new mobile apps platform. During the workshop, I explained the basic concepts used in Flutter framework, then demonstrated them with a practical example.",
-      "images": "Explaining the basic theoretical concepts of Flutter;Demonstrating what we covered using a practical example;https://www.youtube.com/watch?v=C4CXd4UauX8&tight;https://www.youtube.com/watch?v=WLgviNk4CNQ&tight",
-      "place": "Sharjah University Hall, Sharjah"
-    },
-    "Machine Learning Workshop": {
-      "desc": "Representing OpenUAE, I held two \"Intro to Machine Learning\" workshops in front of university doctors and students. In this workshop I covered the basics of Linear Regression and demonstrated it using TensorFlow to train and test a simple model.",
-      "images": "(1st session) Introducing what and why Machine Learning;Explaining Linear Algebra basics;Writing the ML model code step by step;(2nd session) Explaining the code we wrote;Showing the results of the trained ML model",
-      "place": "University of Sharjah, Sharjah"
-    },
-    "My Senior Project (UOS HUB)": {
-      "desc": "My dears friends (Basel & Muhammad) and I presented our senior project (UOS HUB) in front of our doctors and colleagues. After that we headed out for a Q&A session where projects' examiners further discuss students' projects for evaluation purposes.",
-      "images": "Presenting the back-end structure of my senior project, UOSHUB;https://www.youtube.com/watch?v=jYeeME-O6WU;Standing in our project booth for Q&A session;Checking out other students' projects and posters;Group photo with all senior student of my batch",
-      "place": "University of Sharjah"
-    }
-  },
-  "order": "4,2,3,1"
-}
+  {
+    "section": "Attended",
+    "items": [
+      {
+        "title": "Google PWA Workshop",
+        "subtitle": "I attended a workshop about Progressive Web Applications (PWA) held by GDG Dubai back in 2016. PWA is a web development technology developed by Google to make websites feel more like mobile apps.",
+        "location": "In5 Innovation Center, Dubai",
+        "images": [
+          "Introducing Progressive Web Apps by example",
+          "Discussion and Q&A session (I'm in the middle ^_^)"
+        ],
+        "preview": true
+      }
+    ]
+  }
+]

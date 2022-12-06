@@ -15,14 +15,14 @@
     "26": "Continued pursuing my Master's degree.;up"
   },
   "institutes": {
+    "6,7": "school;Al-Safwa School;Started school one year earlier than normal.",
+    "8,14": "school;Al-Thanya Boys School;Resumed studying after moving to Syria, and completed a general middle school degree.",
+    "15,17": "school;Al-Mohalaya High School;Completed a general high school degree with an overall rate of 85%.",
     "18": "university;Al-Baath University;Finished first semester only.",
+    "20,23": "university;University of Sharjah;Completed a bachelors degree with Highest Honors standing in IT-Multimedia major. Also worked as Teaching Assistant and a Research Assistant for more than a year.",
     "24": "university;University of Sharjah;Pursuing a Master's degree.",
     "25": "building;Saal.ai;Worked on project Curio.",
-    "26": "building;Alef Education;Worked on project Arabits.",
-    "15,17": "school;Al-Mohalaya High School;Completed a general high school degree with an overall rate of 85%.",
-    "20,23": "university;University of Sharjah;Completed a bachelors degree with Highest Honors standing in IT-Multimedia major. Also worked as Teaching Assistant and a Research Assistant for more than a year.",
-    "6,7": "school;Al-Safwa School;Started school one year earlier than normal.",
-    "8,14": "school;Al-Thanya Boys School;Resumed studying after moving to Syria, and completed a general middle school degree."
+    "26": "building;Alef Education;Worked on project Arabits."
   },
   "years": [
     null,

@@ -1,85 +1,107 @@
-{
-  "circles": {
-    "Computer Software": {
-      "3Ds Max": 21,
-      "Android Studio": 77,
-      "Atom": 70,
-      "Blender": 15,
-      "Brackets": 93,
-      "CodeBlocks": 74,
-      "GIMP": 73,
-      "InkScape": 82,
-      "Jupyter": 72,
-      "Linux": 66,
-      "MS Office": 72,
-      "PyCharm": 84,
-      "Unity 3D": 24,
-      "VS Code": 81
-    },
-    "Frameworks & Tools": {
-      "Android": 63,
+[
+  {
+    "section": "Programming Languages",
+    "type": "circle",
+    "items": {
+      "HTML": 96,
+      "CSS": 93,
+      "Python": 91,
+      "JavaScript": 89,
+      "Java": 87,
+      "C++": 84,
+      "XML": 78,
+      "SQL": 69,
+      "Bash": 40,
+      "PHP": 34
+    }
+  },
+  {
+    "section": "Frameworks & Tools",
+    "type": "circle",
+    "items": {
+      "Requests": 94,
       "AngularJS": 88,
       "BeautifulSoup": 87,
-      "Django": 70,
-      "Flask": 72,
-      "Git": 83,
-      "Keras": 34,
-      "PyQt": 75,
-      "ReactJS": 71,
-      "Requests": 94,
       "Selenium": 86,
-      "TensorFlow": 11,
-      "Webpack": 49,
+      "Git": 83,
+      "PyQt": 75,
+      "Flask": 72,
+      "ReactJS": 71,
+      "Django": 70,
+      "Android": 63,
       "jQuery": 55,
-      "npm": 51
-    },
-    "Online Services": {
-      "DigitalOcean": 67,
-      "Firebase": 62,
-      "GitHub": 87,
-      "Heroku": 76,
-      "Registrars": 81
-    },
-    "Programming Languages": {
-      "Bash": 40,
-      "C++": 84,
-      "CSS": 93,
-      "HTML": 96,
-      "Java": 87,
-      "JavaScript": 89,
-      "PHP": 34,
-      "Python": 91,
-      "SQL": 69,
-      "XML": 78
-    },
-    "order": "4,2,1,3"
+      "npm": 51,
+      "Webpack": 49,
+      "Keras": 34,
+      "TensorFlow": 11
+    }
   },
-  "lines": {
-    "Languages": {
+  {
+    "section": "Computer Software",
+    "type": "circle",
+    "items": {
+      "Brackets": 93,
+      "PyCharm": 84,
+      "InkScape": 82,
+      "VS Code": 81,
+      "Android Studio": 77,
+      "CodeBlocks": 74,
+      "GIMP": 73,
+      "Jupyter": 72,
+      "MS Office": 72,
+      "Atom": 70,
+      "Linux": 66,
+      "Unity 3D": 24,
+      "3Ds Max": 21,
+      "Blender": 15
+    }
+  },
+  {
+    "section": "Online Services",
+    "type": "circle",
+    "items": {
+      "GitHub": 87,
+      "Registrars": 81,
+      "Heroku": 76,
+      "DigitalOcean": 67,
+      "Firebase": 62
+    }
+  },
+  {
+    "section": "Technical Skills",
+    "type": "line",
+    "items": {
+      "Front End Development": 92,
+      "Object Oriented Programming": 91,
+      "Web Scraping": 90,
+      "Web Apps Development": 88,
+      "RESTful APIs": 87,
+      "Functional Programming": 81,
+      "Back End Development": 78,
+      "Data Structures": 75,
+      "Android Development": 68,
+      "PC Apps Development": 44,
+      "Unified Modeling Language (UML)": 38,
+      "Machine Learning": 13
+    }
+  },
+  {
+    "section": "Other Skills",
+    "type": "line",
+    "items": {
+      "Problem Solving": 89,
+      "Public Speaking": 62,
+      "Graphics Design": 52,
+      "Image Editing": 49
+    }
+  },
+  {
+    "section": "Languages",
+    "type": "line",
+    "items": {
       "Arabic": 95,
       "English": 85,
       "Japanese": 5
-    },
-    "Other Skills": {
-      "Graphics Design": 52,
-      "Image Editing": 49,
-      "Problem Solving": 89,
-      "Public Speaking": 62
-    },
-    "Technical Skills": {
-      "Android Development": 68,
-      "Back End Development": 78,
-      "Data Structures": 75,
-      "Front End Development": 92,
-      "Functional Programming": 81,
-      "Machine Learning": 13,
-      "Object Oriented Programming": 91,
-      "PC Apps Development": 44,
-      "RESTful APIs": 87,
-      "Unified Modeling Language (UML)": 38,
-      "Web Apps Development": 88,
-      "Web Scraping": 90
-    },
-    "order": "3,2,1"
+    }
   }
-}
+]
