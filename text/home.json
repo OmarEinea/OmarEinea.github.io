@@ -58,6 +58,7 @@
       "title": "Occupation",
       "icon": "address-card",
       "type": "list",
+      "mini": true,
       "items": [
         null,
         "suitcase;Full Stack Developer | NodeJS/ReactJS",
@@ -104,7 +105,14 @@
           "title": "UOS HUB",
           "demo": "https://uoshub.com",
           "subtitle": "This is a website designed to unify all University of Sharjah (UOS) websites in one place. Once a student logs in, it automatically scrapes all his data from those websites and displays them in a user-friendly format. This was accomplished using Python Django at the back-end and AngularJS at the front-end. This was my senior college project.",
-          "images": "Dashboard: shows student's updates, deadlines, emails, grades and more;Schedule: visually displays student's week classes with details and colors;Courses: provides all information about a specific course including documents download;Emails: allows students to open their Outlook emails and write new ones;Calendar: highlights main university events in that month;https://www.youtube.com/watch?v=7C61s0LtEHY",
+          "images": [
+            "Dashboard: shows student's updates, deadlines, emails, grades and more",
+            "Schedule: visually displays student's week classes with details and colors",
+            "Courses: provides all information about a specific course including documents download",
+            "Emails: allows students to open their Outlook emails and write new ones",
+            "Calendar: highlights main university events in that month",
+            "https://www.youtube.com/watch?v=7C61s0LtEHY"
+          ],
           "repo": "UOSHUB",
           "skills": [
             "Django",
@@ -117,7 +125,12 @@
         {
           "title": "InstaBlock",
           "subtitle": "We live in a world where all kinds of mobile applications exist. Some of them are very useful, but many others are time wasting or dangerous for kids or even adults. This is where InstaBlock comes in, it’s an app that lets the user instantly block the installation of other applications of his choice.",
-          "images": "Instructions screen on first run;Blocked applications tab;Blocked filters tab;Application blocked popup message",
+          "images": [
+            "Instructions screen on first run",
+            "Blocked applications tab",
+            "Blocked filters tab",
+            "Application blocked popup message"
+          ],
           "repo": "OmarEinea/InstaBlock",
           "type": "Android Application",
           "skills": [
@@ -130,7 +143,10 @@
           "title": "IoT Testbed",
           "demo": "https://github.com/OmarEinea/IoTTestbed/releases/download/demo/iottestbed-demo.exe",
           "subtitle": "As part of my IoT Testbed research project, I developed this GUI to automate the process of running single or multiple testing scripts. In the demo, I show the use of this software to run a script that turns off a WiFi socket. Any set of scripts could be loaded into this program to be run against the selected IoT device.",
-          "images": "IoT Testbed interface after running a testing script;https://www.youtube.com/watch?v=hPxwY6nR5sM",
+          "images": [
+            "IoT Testbed interface after running a testing script",
+            "https://www.youtube.com/watch?v=hPxwY6nR5sM"
+          ],
           "repo": "OmarEinea/IoTTestbed",
           "type": "Desktop Application",
           "skills": [
@@ -172,32 +188,59 @@
         {
           "title": "2D & 3D Software Workshop",
           "subtitle": "Representing OpenUAE, I delivered two workshops titled “2D / 3D Graphics Software” to educate high schools teachers from around the UAE about the basics of four open source programs, which are Blender 3D, GIMP, InkScape and Audacity.",
-          "images": "Showcasing Taught Software;Going Through Workshop's Syllabus;Introducing Blender3D (3D Modeling);Introducing GIMP (Image Editing);Receiving Appreciation Certificate",
+          "images": [
+            "Showcasing Taught Software",
+            "Going Through Workshop's Syllabus",
+            "Introducing Blender3D (3D Modeling)",
+            "Introducing GIMP (Image Editing)",
+            "Receiving Appreciation Certificate"
+          ],
           "place": "Teachers Training Institute, Ajman"
         },
         {
           "title": "DevFest 2018 Hackathon",
           "subtitle": "Participated and won the 2nd place in DevFest 2018 Hackathon (worth 15000AED). In it I demonstrated my idea of an app which validates UAE id documents on the go through mobile cameras directly.",
-          "images": "Explaining my idea to mentors during teams shortlisting session;Presenting my idea to judges and participants during final round;Showing the judges my idea demo up close;Receiving second prize winner award (worth 15000AED);https://www.youtube.com/watch?v=omNkU7OTc6E",
+          "images": [
+            "Explaining my idea to mentors during teams shortlisting session",
+            "Presenting my idea to judges and participants during final round",
+            "Showing the judges my idea demo up close",
+            "Receiving second prize winner award (worth 15000AED)",
+            "https://www.youtube.com/watch?v=omNkU7OTc6E"
+          ],
           "place": "In5 Innovation Center, Dubai",
           "preview": true
         },
         {
           "title": "Google Flutter Workshop",
           "subtitle": "As an organizer in Sharjah GDG, I delivered a workshop about Flutter, Google's new mobile apps platform. During the workshop, I explained the basic concepts used in Flutter framework, then demonstrated them with a practical example.",
-          "images": "Explaining the basic theoretical concepts of Flutter;Demonstrating what we covered using a practical example;https://www.youtube.com/watch?v=C4CXd4UauX8&tight;https://www.youtube.com/watch?v=WLgviNk4CNQ&tight",
+          "images": [
+            "Explaining the basic theoretical concepts of Flutter",
+            "Demonstrating what we covered using a practical example",
+            "https://www.youtube.com/watch?v=C4CXd4UauX8&tight",
+            "https://www.youtube.com/watch?v=WLgviNk4CNQ&tight"
+          ],
           "place": "Sharjah University Hall, Sharjah"
         },
         {
           "title": "Ministry of Education Meeting",
           "subtitle": "As a part of our research, my doctor and I had a meeting with Ministry of Education (MOE) representatives. In that meeting we discussing MOE's future plans, organizing the teachers training workshop and improving the UAE schools curriculum.",
-          "images": "Our meeting with MOE included discussing their future plans;And organizing the teachers training workshop;And improving the UAE schools curriculum",
+          "images": [
+            "Our meeting with MOE included discussing their future plans",
+            "And organizing the teachers training workshop",
+            "And improving the UAE schools curriculum"
+          ],
           "place": "Teachers Training Institute, Ajman"
         },
         {
           "title": "Machine Learning Workshop",
           "subtitle": "Representing OpenUAE, I held two \"Intro to Machine Learning\" workshops in front of university doctors and students. In this workshop I covered the basics of Linear Regression and demonstrated it using TensorFlow to train and test a simple model.",
-          "images": "(1st session) Introducing what and why Machine Learning;Explaining Linear Algebra basics;Writing the ML model code step by step;(2nd session) Explaining the code we wrote;Showing the results of the trained ML model",
+          "images": [
+            "(1st session) Introducing what and why Machine Learning",
+            "Explaining Linear Algebra basics",
+            "Writing the ML model code step by step",
+            "(2nd session) Explaining the code we wrote",
+            "Showing the results of the trained ML model"
+          ],
           "place": "University of Sharjah, Sharjah"
         }
       ]
