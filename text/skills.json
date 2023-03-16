@@ -3,14 +3,14 @@
     "section": "Programming Languages",
     "type": "circle",
     "items": {
+      "JavaScript": 97,
+      "Python": 93,
       "HTML": 96,
       "CSS": 93,
-      "Python": 91,
-      "JavaScript": 89,
-      "Java": 87,
-      "C++": 84,
-      "XML": 78,
-      "SQL": 69,
+      "Java": 62,
+      "C++": 65,
+      "XML": 52,
+      "SQL": 55,
       "Bash": 40,
       "PHP": 34
     }
@@ -40,11 +40,11 @@
     "section": "Computer Software",
     "type": "circle",
     "items": {
-      "Brackets": 93,
+      "VS Code": 94,
       "PyCharm": 84,
       "InkScape": 82,
-      "VS Code": 81,
       "Android Studio": 77,
+      "Brackets": 76,
       "CodeBlocks": 74,
       "GIMP": 73,
       "Jupyter": 72,
@@ -71,13 +71,13 @@
     "section": "Technical Skills",
     "type": "line",
     "items": {
+      "Back End Development": 95,
       "Front End Development": 92,
       "Object Oriented Programming": 91,
       "Web Scraping": 90,
       "Web Apps Development": 88,
       "RESTful APIs": 87,
       "Functional Programming": 81,
-      "Back End Development": 78,
       "Data Structures": 75,
       "Android Development": 68,
       "PC Apps Development": 44,
@@ -100,8 +100,7 @@
     "type": "line",
     "items": {
       "Arabic": 95,
-      "English": 85,
-      "Japanese": 5
+      "English": 85
     }
   }
 ]
