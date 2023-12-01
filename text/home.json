@@ -20,7 +20,7 @@
       "type": "table",
       "items": [
         "Level,Major,Institute,Duration,GPA",
-        "Master's,Computer Science,University of Sharjah,2018 - Now,3.59/4.00",
+        "Master's,Computer Science,University of Sharjah,2018 - 2023,3.58/4.00",
         "Bachelor's,IT - Multimedia,University of Sharjah,2014 - 2018,3.94/4.00",
         "Bachelor's,Electrical Engineering,Al-Baath University,2012 - 2013,Incomplete",
         "High School,Scientific Branch,Al-Mohalaya School,2009 - 2012,214/240",
@@ -61,10 +61,9 @@
       "mini": true,
       "items": [
         null,
-        "suitcase;Full Stack Developer | NodeJS/ReactJS",
+        "suitcase;Full Stack Developer",
         "building;Alef Education | Abu Dhabi",
-        "graduation-cap;Studying Master's of Computer Science",
-        "university;University of Sharjah | Sharjah"
+        "code;NodeJS & ReactJS"
       ]
     },
     {

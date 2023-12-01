@@ -5,14 +5,15 @@
     "8,18": "Al-Nabek, Syria",
     "19": "Dhahran, Saudi",
     "20,24": "Sharjah, UAE",
-    "25,26": "Abu Dhabi, UAE"
+    "25,28": "Abu Dhabi, UAE"
   },
   "events": {
     "6": "Visited my extended family in Syria multiple times.",
     "15": "Worked in Upholstery during the summer break.",
     "16": "Worked as a Technician fixing ACs, washing machines and fridges during the summer.;up",
     "22": "Summer internship at Emirates Islamic in Dubai.",
-    "26": "Continued pursuing my Master's degree.;up"
+    "26": "Continued pursuing my Master's degree.;up",
+    "28": "Graduated from Master's program."
   },
   "institutes": {
     "6,7": "school;Al-Safwa School;Started school one year earlier than normal.",
@@ -22,7 +23,7 @@
     "20,23": "university;University of Sharjah;Completed a bachelors degree with Highest Honors standing in IT-Multimedia major. Also worked as Teaching Assistant and a Research Assistant for more than a year.",
     "24": "university;University of Sharjah;Pursuing a Master's degree.",
     "25": "building;Saal.ai;Worked on project Curio.",
-    "26": "building;Alef Education;Worked on project Arabits."
+    "26,28": "building;Alef Education;Worked on project Arabits."
   },
   "years": [
     null,
@@ -50,6 +51,8 @@
     "IT-Multimedia Junior",
     "IT-Multimedia Senior",
     "Master's in Computer Science",
+    "Full Stack Developer",
+    "Full Stack Developer",
     "Full Stack Developer",
     "Full Stack Developer"
   ]
