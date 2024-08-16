@@ -5,7 +5,7 @@
     "8,18": "Al-Nabek, Syria",
     "19": "Dhahran, Saudi",
     "20,24": "Sharjah, UAE",
-    "25,28": "Abu Dhabi, UAE"
+    "25,29": "Abu Dhabi, UAE"
   },
   "events": {
     "6": "Visited my extended family in Syria multiple times.",
@@ -23,7 +23,8 @@
     "20,23": "university;University of Sharjah;Completed a bachelors degree with Highest Honors standing in IT-Multimedia major. Also worked as Teaching Assistant and a Research Assistant for more than a year.",
     "24": "university;University of Sharjah;Pursuing a Master's degree.",
     "25": "building;Saal.ai;Worked on project Curio.",
-    "26,28": "building;Alef Education;Worked on project Arabits."
+    "26,28": "building;Alef Education;Worked on project Arabits.",
+    "29": "building;Alef Education;Worked on project Abjadyat."
   },
   "years": [
     null,
