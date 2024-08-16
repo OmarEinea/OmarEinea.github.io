@@ -5,14 +5,15 @@
     "8,18": "Al-Nabek, Syria",
     "19": "Dhahran, Saudi",
     "20,24": "Sharjah, UAE",
-    "25,30": "Abu Dhabi, UAE"
+    "25": "Abu Dhabi, UAE",
+    "26,30": "Sharjah, UAE"
   },
   "events": {
     "6": "Visited my extended family in Syria multiple times.",
     "15": "Worked in Upholstery during the summer break.",
     "16": "Worked as a Technician fixing ACs, washing machines and fridges during the summer.;up",
     "22": "Summer internship at Emirates Islamic in Dubai.",
-    "28": "Graduated from Master's program."
+    "29": "Graduated from Computer Science Master's program."
   },
   "institutes": {
     "6,7": "school;Al-Safwa School;Started school one year earlier than normal.",
