@@ -12,7 +12,6 @@
     "15": "Worked in Upholstery during the summer break.",
     "16": "Worked as a Technician fixing ACs, washing machines and fridges during the summer.;up",
     "22": "Summer internship at Emirates Islamic in Dubai.",
-    "26": "Continued pursuing my Master's degree.;up",
     "28": "Graduated from Master's program."
   },
   "institutes": {
@@ -24,8 +23,7 @@
     "24": "university;University of Sharjah;Pursuing a Master's degree.",
     "25": "building;Saal.ai;Worked on project Curio.",
     "26,28": "building;Alef Education;Worked on project Arabits.",
-    "29": "building;Alef Education;Worked on project Abjadyat.",
-    "30": "building;Alef Education;Working on Alef platform."
+    "29,30": "building;Alef Education;Working on Alef platform."
   },
   "years": [
     null,
