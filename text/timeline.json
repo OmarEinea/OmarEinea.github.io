@@ -5,7 +5,7 @@
     "8,18": "Al-Nabek, Syria",
     "19": "Dhahran, Saudi",
     "20,24": "Sharjah, UAE",
-    "25,29": "Abu Dhabi, UAE"
+    "25,30": "Abu Dhabi, UAE"
   },
   "events": {
     "6": "Visited my extended family in Syria multiple times.",
@@ -24,7 +24,8 @@
     "24": "university;University of Sharjah;Pursuing a Master's degree.",
     "25": "building;Saal.ai;Worked on project Curio.",
     "26,28": "building;Alef Education;Worked on project Arabits.",
-    "29": "building;Alef Education;Worked on project Abjadyat."
+    "29": "building;Alef Education;Worked on project Abjadyat.",
+    "30": "building;Alef Education;Working on Alef platform."
   },
   "years": [
     null,
@@ -52,6 +53,8 @@
     "IT-Multimedia Junior",
     "IT-Multimedia Senior",
     "Master's in Computer Science",
+    "Full Stack Developer",
+    "Full Stack Developer",
     "Full Stack Developer",
     "Full Stack Developer",
     "Full Stack Developer",
